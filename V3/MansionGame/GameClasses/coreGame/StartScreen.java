@@ -43,9 +43,6 @@ public class StartScreen extends JFrame implements ActionListener {
 		JPanel SSOptions = new JPanel();
 		JPanel SSCredits = new JPanel();
 		
-	JPanel MainMenu = new JPanel();
-		JPanel Load = new JPanel();
-
 	//Button instancing
 	JButton Start = new JButton("Start");
 	JButton Quit = new JButton("Quit");
@@ -53,13 +50,7 @@ public class StartScreen extends JFrame implements ActionListener {
 	JButton Credits = new JButton("Credits");
 	JButton BBCredits = new JButton("Back");
 	JButton BBOptions = new JButton("Back");
-	
-	JButton MMStart = new JButton("Start");
-	JButton MMLoad = new JButton("Load");
-	JButton MMLoadBB = new JButton("Back");
-	JButton MMLLoad = new JButton("Load");
-	JButton MMQuit = new JButton("Quit");
-	
+
 	//Radio Button
 	JRadioButton Res1 = new JRadioButton("640x480");
 	JRadioButton Res2 = new JRadioButton("1280x720");
@@ -70,14 +61,10 @@ public class StartScreen extends JFrame implements ActionListener {
 	ButtonGroup GroupWindow = new ButtonGroup();
 	
 	//Image instancing
-	ImageIcon image = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\Assets\\mansion.png");
-	ImageIcon mainMenuImage640 = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\Assets\\640.png");
-	ImageIcon mainMenuImage720 = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\Assets\\720.png");
-	ImageIcon mainMenuImage1920 = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\Assets\\1920.png");
+	ImageIcon image = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\mansion.png");
 	
 	//Label instancing
 	JLabel imageLabel = new JLabel();
-	JLabel MainMenuImage = new JLabel();
 	JLabel creditText = new  JLabel("Developer: Austin Tyler");
 	
 	//Check boxes
@@ -101,29 +88,7 @@ public class StartScreen extends JFrame implements ActionListener {
 			this.setResizable(false);
 
 	}
-		public void createMainMenu() {
-			if(this.getResolutionWidth() == 640) {
-				this.setMenu640();
-			}
-			if(this.getResolutionWidth() == 1280) {
-				this.setMenu1280();
-			}
-			if(this.getResolutionWidth() == 1920) {
-				this.setMenu1920();
-			}
-			
-			MainMenu.setBounds(0,0, FrameWidth, FrameHeight);
-			MainMenu.add(MainMenuImage);
-			MainMenu.setVisible(true);
-			
-			this.add(MainMenu);
-			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			this.setLayout(null);
-			this.setSize(FrameWidth + 15,FrameHeight + 39);
-			this.setVisible(true);
-			this.setResizable(false);
-			
-		}
+
 		//sets 
 		public void setResolution(int Width,int Height) {
 			FrameWidth = Width;
@@ -294,96 +259,6 @@ public class StartScreen extends JFrame implements ActionListener {
 			SSCredits.add(BBCredits);
 			SSCredits.add(creditText);
 		}
-		public void setMenu640() {
-			MainMenuImage.setIcon(mainMenuImage640);
-			MainMenuImage.setBounds(0,0,640,480);
-			MainMenu.setLayout(null);
-			MainMenu.add(MMStart);
-				MMStart.setBounds(20,420 - BUTTON_HEIGHT - BUTTON_HEIGHT - 40,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
-				MMStart.setOpaque(false);
-				MMStart.setContentAreaFilled(false);
-				MMStart.setBorderPainted(false);
-				MMStart.setFocusable(false);
-				MMStart.setFont(new Font("Cambria",Font.PLAIN,30));
-				MMStart.addActionListener(this);
-			MainMenu.add(MMLoad);
-				MMLoad.setBounds(20,420 - BUTTON_HEIGHT - 20,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
-				MMLoad.setOpaque(false);
-				MMLoad.setContentAreaFilled(false);
-				MMLoad.setBorderPainted(false);
-				MMLoad.setFocusable(false);
-				MMLoad.setFont(new Font("Cambria",Font.PLAIN,30));
-				MMStart.addActionListener(this);
-			MainMenu.add(MMLoadBB);
-			MainMenu.add(MMQuit);
-				MMQuit.setBounds(20,420,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
-				MMQuit.setOpaque(false);
-				MMQuit.setContentAreaFilled(false);
-				MMQuit.setBorderPainted(false);
-				MMQuit.setFocusable(false);
-				MMQuit.setFont(new Font("Cambria",Font.PLAIN,30));
-				MMStart.addActionListener(this);
-		}
-		public void setMenu1280() {
-			MainMenuImage.setIcon(mainMenuImage720);
-			MainMenuImage.setBounds(0,0,1280,720);
-			MainMenu.setLayout(null);
-			MainMenu.add(MMStart);
-				MMStart.setBounds(20,mainMenuImage720.getIconHeight() - 60 - BUTTON_HEIGHT - BUTTON_HEIGHT - 40,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
-				MMStart.setOpaque(false);
-				MMStart.setContentAreaFilled(false);
-				MMStart.setBorderPainted(false);
-				MMStart.setFocusable(false);
-				MMStart.setFont(new Font("Cambria",Font.PLAIN,30));
-				MMStart.addActionListener(this);
-			MainMenu.add(MMLoad);
-				MMLoad.setBounds(20,mainMenuImage720.getIconHeight() - 60 - BUTTON_HEIGHT - 20,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
-				MMLoad.setOpaque(false);
-				MMLoad.setContentAreaFilled(false);
-				MMLoad.setBorderPainted(false);
-				MMLoad.setFocusable(false);
-				MMLoad.setFont(new Font("Cambria",Font.PLAIN,30));
-				MMStart.addActionListener(this);
-			MainMenu.add(MMLoadBB);
-			MainMenu.add(MMQuit);
-				MMQuit.setBounds(20,mainMenuImage720.getIconHeight() - 60,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
-				MMQuit.setOpaque(false);
-				MMQuit.setContentAreaFilled(false);
-				MMQuit.setBorderPainted(false);
-				MMQuit.setFocusable(false);
-				MMQuit.setFont(new Font("Cambria",Font.PLAIN,30));
-				MMStart.addActionListener(this);
-		}
-		public void setMenu1920() {
-			MainMenuImage.setIcon(mainMenuImage1920);
-			MainMenuImage.setBounds(0,0,1920,1080);
-			MainMenu.setLayout(null);
-			MainMenu.add(MMStart);
-				MMStart.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - BUTTON_HEIGHT - BUTTON_HEIGHT - 40,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
-				MMStart.setOpaque(false);
-				MMStart.setContentAreaFilled(false);
-				MMStart.setBorderPainted(false);
-				MMStart.setFocusable(false);
-				MMStart.setFont(new Font("Cambria",Font.PLAIN,30));
-				MMStart.addActionListener(this);
-			MainMenu.add(MMLoad);
-				MMLoad.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - BUTTON_HEIGHT - 20,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
-				MMLoad.setOpaque(false);
-				MMLoad.setContentAreaFilled(false);
-				MMLoad.setBorderPainted(false);
-				MMLoad.setFocusable(false);
-				MMLoad.setFont(new Font("Cambria",Font.PLAIN,30));
-				MMStart.addActionListener(this);
-			MainMenu.add(MMLoadBB);
-			MainMenu.add(MMQuit);
-				MMQuit.setBounds(20,mainMenuImage1920.getIconHeight() - 60,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
-				MMQuit.setOpaque(false);
-				MMQuit.setContentAreaFilled(false);
-				MMQuit.setBorderPainted(false);
-				MMQuit.setFocusable(false);
-				MMQuit.setFont(new Font("Cambria",Font.PLAIN,30));
-				MMStart.addActionListener(this);
-		}
 		//gets 
 		public int getResolutionWidth() {
 			return FrameWidth;
@@ -428,7 +303,7 @@ public class StartScreen extends JFrame implements ActionListener {
 		if(e.getSource() == Start) {
 			this.setSettings();
 			StartScreen.setVisible(false);
-			this.createMainMenu();
+			//this.createMainMenu();
 			System.out.println("Starting...");
 		}
 		if(e.getSource() == Quit) {

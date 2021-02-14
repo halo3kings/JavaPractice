@@ -9,7 +9,7 @@ public class Viewer {
 	MainMenuScreen MM = new MainMenuScreen();
 	
 	public void getMainMenu() {
-		MM.createMainFrame();
+		//MM.createMainFrame();
 	}
 
 	}
