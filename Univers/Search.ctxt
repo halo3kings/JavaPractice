@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Search
+comment1.params=rl
+comment1.target=void\ setRoomLetter(int)
+comment2.params=
+comment2.target=void\ getRoomContents()
+numComments=3

@@ -1,0 +1,29 @@
+package coreGame;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+
+public class Controller extends JFrame implements ActionListener {
+	StartScreen SS = new StartScreen();
+	MainMenuScreen MMS;
+	
+	Controller(){
+		//MMS.setResolution(Height,Width);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource() == SS.Start) {
+			MMS = new MainMenuScreen();
+			MMS.setResolution(SS.getResolutionHeight(),SS.getResolutionWidth());
+			MMS.setVisibility(true);
+			SS.dispose();
+			System.out.println("Starting...");
+		}
+		
+	}
+
+}

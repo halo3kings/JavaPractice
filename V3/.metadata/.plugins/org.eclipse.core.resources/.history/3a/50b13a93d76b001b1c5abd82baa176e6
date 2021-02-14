@@ -1,0 +1,26 @@
+package coreGame;
+
+public class Model {
+	private int HEIGHT;
+	private int WIDTH;
+	
+	//sets
+	public void setHeight(int HT) {
+		HEIGHT = HT;
+	}
+	public void setWidth(int WD) {
+		WIDTH = WD;
+	}
+	//gets
+	public int getHeight() {
+		return HEIGHT;
+	}
+	public int getWidth() {
+		return WIDTH;
+	}
+	//says
+	public void sayResolution() {
+		System.out.println("X: "+HEIGHT+" Y: "+ WIDTH);
+	}
+
+}

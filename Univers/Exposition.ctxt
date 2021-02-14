@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Exposition
+comment1.params=
+comment1.target=void\ exposition_First_arrival()
+comment2.params=
+comment2.target=void\ exposition_porch()
+comment3.params=
+comment3.target=void\ getHelp()
+comment4.params=
+comment4.target=void\ expoUse()
+comment5.params=rl
+comment5.target=void\ setRoomLetter(int)
+comment6.params=ui
+comment6.target=void\ setUserInput(java.lang.String)
+comment7.params=
+comment7.target=void\ getRoomEposition()
+numComments=8

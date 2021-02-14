@@ -1,0 +1,23 @@
+package coreGame;
+
+public class Viewer {
+	
+	private int HEIGHT;
+	private int WIDTH;
+	
+	StartScreen SS = new StartScreen();
+	MainMenuScreen MM = new MainMenuScreen();
+	
+	public void setGameResolution(int HT, int WD) {
+		HEIGHT = SS.getResolutionHeight();
+		WIDTH = SS.getResolutionWidth();
+	}
+	public void changeWindow() {
+		if(SS.getOpen() == false);
+			MM.setOpen(true);
+			this.getMainMenu();
+	}
+	public void getMainMenu() {
+		MM.createMainFrame();
+	}
+}

@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\austi\OneDrive\Desktop\Practive\.metadata\.plugins\org.eclipse.jdt.core
+87792579.index

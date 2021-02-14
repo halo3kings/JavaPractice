@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Enter
+comment1.params=cr
+comment1.target=void\ setCurrentRoom(int)
+comment2.params=ui
+comment2.target=void\ setUserInput(java.lang.String)
+comment3.params=
+comment3.target=int\ computeRoom()
+numComments=4

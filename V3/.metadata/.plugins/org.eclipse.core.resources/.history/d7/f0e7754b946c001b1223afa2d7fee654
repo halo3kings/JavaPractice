@@ -1,0 +1,17 @@
+package coreGame;
+
+public class Controller{
+	Model MODEL = new Model();
+	Viewer VIEW = new Viewer();
+	
+	Controller(){
+		
+	}
+	
+	
+	//gets
+
+	//sets
+
+
+}

@@ -1,0 +1,11 @@
+package coreGame;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Controller Cont = new Controller();
+		Cont.RUNNING();
+
+	}
+
+}
