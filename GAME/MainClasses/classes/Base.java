@@ -19,6 +19,7 @@ public class Base {
 	private boolean borderless;
 	private boolean windowed;
 	private boolean visiblity;
+	private boolean open;
 	
 	JFrame Frame = new JFrame();
 	
@@ -59,6 +60,9 @@ public class Base {
 	public void setVisibility(boolean VS) {
 		visiblity = VS;
 	}
+	public void setOpen(boolean OP) {
+		open = OP;
+	}
 	//gets
 	public int getWidth() {
 		return FrameWidth;
@@ -97,6 +101,9 @@ public class Base {
 	}
 	public boolean getVisiblity() {
 		return visiblity;
+	}
+	public boolean getOpen() {
+		return open;
 	}
 	//says
 	public void sayResolution() {

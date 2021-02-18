@@ -9,6 +9,7 @@ import javax.swing.text.View;
 public class Controller implements ActionListener{
 	Model MODEL = new Model();
 	Viewer VIEW = new Viewer();
+	boolean Running = true;
 	
 	Controller(){
 		
@@ -16,45 +17,28 @@ public class Controller implements ActionListener{
 	
 	public void Start() {
 		VIEW.PLS.createPreLaunchScreen();
-		
+		this.getUpDate();
 	}
-	public void initStartScreenButtons() {
-		VIEW.PLS.getStart().addActionListener(this);
+	public void StartWasPresed() {
+		VIEW.PLS.setVisibility(false);
+		//VIEW.MM.createMainMenu(VIEW.PLS.get);
+		System.out.println("Starting...");
+	}
+	public void getUpDate() {
+		while(Running) {
+			VIEW.Check();
+		}
 	}
 	//gets
 
-	//sets
 	@Override
-	public void actionPerformed(ActionEvent e) { // all the button actions are listed below
-		if(e.getSource() == VIEW.PLS.getStart()) {
-			VIEW.PLS.setVisibility(false);
-			//VIEW.MM.createMainMenu(VIEW.PLS.get);
-			System.out.println("Starting...");
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==VIEW.PLS.getStart()) {
+			System.out.println("Start Fired");
 		}
-		if(e.getSource() == VIEW.PLS.getQuit()) {
-			System.out.println("Quiting...");
-		}
-		if(e.getSource() == VIEW.PLS.getOptions()) {
-			System.out.println("Changing for options...");
-			VIEW.PLS.PLSOptions.setVisible(true);
-			VIEW.PLS.PLSMenu.setVisible(false);
-		}
-		if(e.getSource() == VIEW.PLS.getCredits()) {
-			System.out.println("Changing to credits...");
-			VIEW.PLS.PLSCredits.setVisible(true);
-			VIEW.PLS.PLSMenu.setVisible(false);
-		}
-		if(e.getSource() == VIEW.PLS.getBBOptions()) {
-			System.out.println("Changing to menu...");
-			VIEW.PLS.PLSOptions.setVisible(false);
-			VIEW.PLS.PLSMenu.setVisible(true);
-		}
-		if(e.getSource() == VIEW.PLS.getBBCredits()) {
-			System.out.println("Changing to menu...");
-			VIEW.PLS.PLSCredits.setVisible(false);
-			VIEW.PLS.PLSMenu.setVisible(true);
-
-		}
-
+		
 	}
+
+	//sets
+
 }
