@@ -11,15 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MainMenuScreen extends JFrame{
-	//Constants
-	private static int BUTTON_WIDTH = 80;
-	private static int BUTTON_HEIGHT = 40;
+public class MainMenuScreen extends Base{
 
-	//class variables - integers
-	private int FrameWidth;
-	private int FrameHeight;
-	
 	JPanel MainMenu = new JPanel();
 	JPanel Load = new JPanel();
 
@@ -37,6 +30,7 @@ public class MainMenuScreen extends JFrame{
 	
 	
 	public void createMainMenu() {
+		
 		if(this.getResolutionWidth() == 640) {
 			this.setMenu640();
 		}
@@ -47,30 +41,30 @@ public class MainMenuScreen extends JFrame{
 			this.setMenu1920();
 		}
 		
-		MainMenu.setBounds(0,0, FrameWidth, FrameHeight);
+		MainMenu.setBounds(0,0, getWidth(), getHeight());
 		MainMenu.add(MainMenuImage);
 		MainMenu.setVisible(true);
 		
-		this.add(MainMenu);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(null);
-		this.setSize(FrameWidth + 15,FrameHeight + 39);
-		this.setVisible(true);
-		this.setResizable(false);
+		this.Frame.add(MainMenu);
+		this.Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.Frame.setLayout(null);
+		this.Frame.setSize(getWidth() + 15,getHeight() + 39);
+		this.Frame.setVisible(true);
+		this.Frame.setResizable(false);
 	}
 	public void setMenu640() {
 		MainMenuImage.setIcon(mainMenuImage640);
 		MainMenuImage.setBounds(0,0,640,480);
 		MainMenu.setLayout(null);
 		MainMenu.add(MMStart);
-			MMStart.setBounds(20,420 - BUTTON_HEIGHT - BUTTON_HEIGHT - 40,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
+			MMStart.setBounds(20,420 - getButtonH() - getButtonH() - 40,getButtonW() + 30,getButtonH());
 			MMStart.setOpaque(false);
 			MMStart.setContentAreaFilled(false);
 			MMStart.setBorderPainted(false);
 			MMStart.setFocusable(false);
 			MMStart.setFont(new Font("Cambria",Font.PLAIN,30));
 		MainMenu.add(MMLoad);
-			MMLoad.setBounds(20,420 - BUTTON_HEIGHT - 20,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
+			MMLoad.setBounds(20,420 - getButtonH() - 20,getButtonW() + 30,getButtonH());
 			MMLoad.setOpaque(false);
 			MMLoad.setContentAreaFilled(false);
 			MMLoad.setBorderPainted(false);
@@ -78,7 +72,7 @@ public class MainMenuScreen extends JFrame{
 			MMLoad.setFont(new Font("Cambria",Font.PLAIN,30));
 		MainMenu.add(MMLoadBB);
 		MainMenu.add(MMQuit);
-			MMQuit.setBounds(20,420,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
+			MMQuit.setBounds(20,420,getButtonW() + 30,getButtonH());
 			MMQuit.setOpaque(false);
 			MMQuit.setContentAreaFilled(false);
 			MMQuit.setBorderPainted(false);
@@ -90,14 +84,14 @@ public class MainMenuScreen extends JFrame{
 		MainMenuImage.setBounds(0,0,1280,720);
 		MainMenu.setLayout(null);
 		MainMenu.add(MMStart);
-			MMStart.setBounds(20,mainMenuImage720.getIconHeight() - 60 - BUTTON_HEIGHT - BUTTON_HEIGHT - 40,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
+			MMStart.setBounds(20,mainMenuImage720.getIconHeight() - 60 - getButtonH() - getButtonH() - 40,getButtonW() + 30,getButtonH());
 			MMStart.setOpaque(false);
 			MMStart.setContentAreaFilled(false);
 			MMStart.setBorderPainted(false);
 			MMStart.setFocusable(false);
 			MMStart.setFont(new Font("Cambria",Font.PLAIN,30));
 		MainMenu.add(MMLoad);
-			MMLoad.setBounds(20,mainMenuImage720.getIconHeight() - 60 - BUTTON_HEIGHT - 20,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
+			MMLoad.setBounds(20,mainMenuImage720.getIconHeight() - 60 - getButtonH() - 20,getButtonW() + 30,getButtonH());
 			MMLoad.setOpaque(false);
 			MMLoad.setContentAreaFilled(false);
 			MMLoad.setBorderPainted(false);
@@ -105,7 +99,7 @@ public class MainMenuScreen extends JFrame{
 			MMLoad.setFont(new Font("Cambria",Font.PLAIN,30));
 		MainMenu.add(MMLoadBB);
 		MainMenu.add(MMQuit);
-			MMQuit.setBounds(20,mainMenuImage720.getIconHeight() - 60,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
+			MMQuit.setBounds(20,mainMenuImage720.getIconHeight() - 60,getButtonW() + 30,getButtonH());
 			MMQuit.setOpaque(false);
 			MMQuit.setContentAreaFilled(false);
 			MMQuit.setBorderPainted(false);
@@ -117,14 +111,14 @@ public class MainMenuScreen extends JFrame{
 		MainMenuImage.setBounds(0,0,1920,1080);
 		MainMenu.setLayout(null);
 		MainMenu.add(MMStart);
-			MMStart.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - BUTTON_HEIGHT - BUTTON_HEIGHT - 40,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
+			MMStart.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - getButtonH() - getButtonH() - 40,getButtonW() + 30,getButtonH());
 			MMStart.setOpaque(false);
 			MMStart.setContentAreaFilled(false);
 			MMStart.setBorderPainted(false);
 			MMStart.setFocusable(false);
 			MMStart.setFont(new Font("Cambria",Font.PLAIN,30));
 		MainMenu.add(MMLoad);
-			MMLoad.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - BUTTON_HEIGHT - 20,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
+			MMLoad.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - getButtonH() - 20,getButtonW() + 30,getButtonH());
 			MMLoad.setOpaque(false);
 			MMLoad.setContentAreaFilled(false);
 			MMLoad.setBorderPainted(false);
@@ -132,7 +126,7 @@ public class MainMenuScreen extends JFrame{
 			MMLoad.setFont(new Font("Cambria",Font.PLAIN,30));
 		MainMenu.add(MMLoadBB);
 		MainMenu.add(MMQuit);
-			MMQuit.setBounds(20,mainMenuImage1920.getIconHeight() - 60,BUTTON_WIDTH + 30,BUTTON_HEIGHT);
+			MMQuit.setBounds(20,mainMenuImage1920.getIconHeight() - 60,getButtonW() + 30,getButtonH());
 			MMQuit.setOpaque(false);
 			MMQuit.setContentAreaFilled(false);
 			MMQuit.setBorderPainted(false);
@@ -140,12 +134,6 @@ public class MainMenuScreen extends JFrame{
 			MMQuit.setFont(new Font("Cambria",Font.PLAIN,30));
 	}
 	//gets
-		public int getResolutionWidth() {
-			return FrameWidth;
-		}
-		public int getResolutionHeight() {
-			return FrameHeight;
-		}
 
 
 	}

@@ -1,9 +1,5 @@
 package classes;
 
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,7 +8,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PreLaunchScreen extends Base implements ActionListener  {
+public class PreLaunchScreen extends Base {
 	
 	//Panel instancing
 	JPanel PreLaunchScreen = new JPanel();
@@ -104,37 +100,37 @@ public class PreLaunchScreen extends Base implements ActionListener  {
 	Start.setBounds(20, 420, getButtonW(), getButtonH());
 	Start.setFocusable(false);
 	Start.setVisible(true);
-	Start.addActionListener(this);
+	//Start.addActionListener(this);
 	
 	//Quit Button Data----
 	Quit.setBounds(320, 420, getButtonW(), getButtonH());
 	Quit.setFocusable(false);
 	Quit.setVisible(true);
-	Quit.addActionListener(this);
+	//Quit.addActionListener(this);
 	
 	//Option Button Data----
 	Options.setBounds(220, 420, getButtonW(), getButtonH());
 	Options.setFocusable(false);
 	Options.setVisible(true);
-	Options.addActionListener(this);
+	//Options.addActionListener(this);
 	
 	//Credit Button Data----
 	Credits.setBounds(120, 420, getButtonW(), getButtonH());
 	Credits.setFocusable(false);
 	Credits.setVisible(true);
-	Credits.addActionListener(this);
+	//Credits.addActionListener(this);
 	
 	//Credit BackButton Data----
 	BBCredits.setBounds(320, 420, getButtonW(), getButtonH());
 	BBCredits.setFocusable(false);
 	BBCredits.setVisible(true);
-	BBCredits.addActionListener(this);
+	//BBCredits.addActionListener(this);
 	
 	//Options BackButton Data----
 	BBOptions.setBounds(330, 420, getButtonW(), getButtonH());
 	BBOptions.setFocusable(false);
 	BBOptions.setVisible(true);
-	BBOptions.addActionListener(this);
+	//BBOptions.addActionListener(this);
 	
 	//Panel Building
 	PreLaunchScreen.setBounds(-10, 0, 440, 510);
@@ -208,41 +204,5 @@ public class PreLaunchScreen extends Base implements ActionListener  {
 		return BBOptions;
 	}
 	
-	
-	@Override
-	public void actionPerformed(ActionEvent e) { // all the button actions are listed below
-		if(e.getSource() == Start) {
-			System.out.println("Starting...");
-			this.setOpen(false);
-			this.Frame.dispose();
-		}
-		if(e.getSource() == Quit) {
-			System.out.println("Quiting...");
-			this.Frame.dispose();
-		}
-		if(e.getSource() == Options) {
-			System.out.println("Changing for options...");
-			PLSOptions.setVisible(true);
-			PLSMenu.setVisible(false);
-		}
-		if(e.getSource() == Credits) {
-			System.out.println("Changing to credits...");
-			PLSCredits.setVisible(true);
-			PLSMenu.setVisible(false);
-		}
-		if(e.getSource() == BBOptions) {
-			System.out.println("Changing to menu...");
-			PLSOptions.setVisible(false);
-			PLSMenu.setVisible(true);
-		}
-		if(e.getSource() == BBCredits) {
-			System.out.println("Changing to menu...");
-			PLSCredits.setVisible(false);
-			PLSMenu.setVisible(true);
-
-		}
-
-	}
-	
-	
+		
 }
