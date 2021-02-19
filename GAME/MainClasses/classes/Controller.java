@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.text.View;
 
-public class Controller implements ActionListener{
+public class Controller{
 	Model MODEL = new Model();
 	Viewer VIEW = new Viewer();
 	boolean Running = true;
@@ -24,66 +24,96 @@ public class Controller implements ActionListener{
 		//VIEW.MM.createMainMenu(VIEW.PLS.get);
 		System.out.println("Starting...");
 	}
-	
 	//gets
-
 	public void setButtonActionEventsPLS() {
-		VIEW.PLS.getStart().addActionListener(this);
-		VIEW.PLS.getOptions().addActionListener(this);
-		VIEW.PLS.getCredits().addActionListener(this);
-		VIEW.PLS.getQuit().addActionListener(this);
-		VIEW.PLS.getBBOptions().addActionListener(this);
-		VIEW.PLS.getBBCredits().addActionListener(this);
+		VIEW.PLS.getStart().addActionListener(e ->this.PLS_StartAction());
+		VIEW.PLS.getOptions().addActionListener(e ->this.PLS_Options());
+		VIEW.PLS.getCredits().addActionListener(e ->this.PLS_Credits());
+		VIEW.PLS.getQuit().addActionListener(e ->this.PLS_Quit());
+		VIEW.PLS.getBBOptions().addActionListener(e ->this.PLS_BBOptions());
+		VIEW.PLS.getBBCredits().addActionListener(e ->this.PLS_BBCredits());
 	}
-	@Override
-	public void actionPerformed(ActionEvent e) { // all the button actions are listed below
-		if(e.getSource() == VIEW.PLS.Start) {
-			System.out.println("Starting...");
-			if(VIEW.PLS.Res1.isSelected() == true) {
-				MODEL.setGameH(480);
-				MODEL.setGameW(640);
-				//640x480
-			}
-			if(VIEW.PLS.Res2.isSelected() == true) {
-				MODEL.setGameH(480);
-				MODEL.setGameW(640);
-				//640x480
-			}
-			if(VIEW.PLS.Res3.isSelected() == true) {
-				MODEL.setGameH(480);
-				MODEL.setGameW(640);
-				//640x480
-			}
-			
-			VIEW.PLS.setOpen(false);
-			VIEW.PLS.Frame.dispose();
-		}
-		if(e.getSource() == VIEW.PLS.Quit) {
-			System.out.println("Quiting...");
-			VIEW.PLS.Frame.dispose();
-		}
-		if(e.getSource() == VIEW.PLS.Options) {
-			System.out.println("Changing for options...");
-			VIEW.PLS.PLSOptions.setVisible(true);
-			VIEW.PLS.PLSMenu.setVisible(false);
-		}
-		if(e.getSource() == VIEW.PLS.Credits) {
-			System.out.println("Changing to credits...");
-			VIEW.PLS.PLSCredits.setVisible(true);
-			VIEW.PLS.PLSMenu.setVisible(false);
-		}
-		if(e.getSource() == VIEW.PLS.BBOptions) {
-			System.out.println("Changing to menu...");
-			VIEW.PLS.PLSOptions.setVisible(false);
-			VIEW.PLS.PLSMenu.setVisible(true);
-		}
-		if(e.getSource() == VIEW.PLS.BBCredits) {
-			System.out.println("Changing to menu...");
-			VIEW.PLS.PLSCredits.setVisible(false);
-			VIEW.PLS.PLSMenu.setVisible(true);
-
-		}
-		
-
+	public void setButtonActionEventsMMS() {
+		VIEW.MMS.getStartButton().addActionListener(e ->this.MMS_Start());
+		VIEW.MMS.getQuit().addActionListener(e ->this.MMS_Quit());
+		VIEW.MMS.getLoad().addActionListener(e ->this.MMS_Load());
+		VIEW.MMS.getLLoad().addActionListener(e ->this.MMS_LLoad());
+		VIEW.MMS.getLoadBB().addActionListener(e ->this.MMS_LoadBB());
 	}
+	public void updateRoomID(int ID) {
+		MODEL.setWindowID(ID);
+	}
+	public int getGameH() {
+		return MODEL.getGameH();
+	}
+	public int getGameW() {
+		return MODEL.getGameW();
+	}
+	//---------------------------------------------Button Actions-------------------\\
+	//----------------PreLaunch Screen------------\\
+	public void PLS_StartAction() {
+		System.out.println("Starting...");
+		if(VIEW.PLS.Res1.isSelected() == true) {
+			MODEL.setGameH(480);
+			MODEL.setGameW(640);
+		}
+		if(VIEW.PLS.Res2.isSelected() == true) {
+			MODEL.setGameH(720);
+			MODEL.setGameW(1280);
+			//1280x720
+		}
+		if(VIEW.PLS.Res3.isSelected() == true) {
+			MODEL.setGameH(1080);
+			MODEL.setGameW(1920);
+			//1920x1080
+		}
+		VIEW.PLS.setOpen(false);
+		VIEW.PLS.Frame.dispose();
+		VIEW.createMainMenuScreen(MODEL.getGameW(), MODEL.getGameH());
+		this.setButtonActionEventsMMS();
+		this.updateRoomID(VIEW.MMS.getWindowNumber());
+	}
+	public void PLS_Quit() {
+		System.out.println("Quiting...");
+		VIEW.PLS.Frame.dispose();
+	}
+	public void PLS_Options() {
+		System.out.println("Changing for options...");
+		VIEW.PLS.PLSOptions.setVisible(true);
+		VIEW.PLS.PLSMenu.setVisible(false);
+	}
+	public void PLS_Credits() {
+		System.out.println("Changing to credits...");
+		VIEW.PLS.PLSCredits.setVisible(true);
+		VIEW.PLS.PLSMenu.setVisible(false);	
+	}
+	public void PLS_BBOptions() {
+		System.out.println("Changing to menu...");
+		VIEW.PLS.PLSOptions.setVisible(false);
+		VIEW.PLS.PLSMenu.setVisible(true);
+	}
+	public void PLS_BBCredits() {
+		System.out.println("Changing to menu...");
+		VIEW.PLS.PLSCredits.setVisible(false);
+		VIEW.PLS.PLSMenu.setVisible(true);
+	}
+	//-----------------------------Main Menu Screen button actions-------------\\
+	public void MMS_Start() {
+		System.out.println("Starting...");
+	}
+	public void MMS_Load() {
+		System.out.println("Opening loading screen...");
+	}
+	public void MMS_Quit() {
+		System.out.println("Quiting...");
+		VIEW.MMS.Frame.dispose();
+	}
+	public void MMS_LLoad() {
+		System.out.println("Loading save file");
+	}
+	public void MMS_LoadBB() {
+		System.out.println("Returning to start");
+	}
+
+
 }

@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MainMenuScreen extends Base{
+	
+	private static int WindowID = 0;
 
 	JPanel MainMenu = new JPanel();
 	JPanel Load = new JPanel();
@@ -21,23 +23,25 @@ public class MainMenuScreen extends Base{
 	ImageIcon mainMenuImage720 = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\720.png");
 	ImageIcon mainMenuImage1920 = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\1920.png");
 	
-	JButton MMStart = new JButton("Start");
-	JButton MMLoad = new JButton("Load");
-	JButton MMLoadBB = new JButton("Back");
-	JButton MMLLoad = new JButton("Load");
-	JButton MMQuit = new JButton("Quit");
+	JButton MMSStart = new JButton("Start");
+	JButton MMSLoad = new JButton("Load");
+	JButton MMSLoadBB = new JButton("Back");
+	JButton MMSLLoad = new JButton("Load");
+	JButton MMSQuit = new JButton("Quit");
 	
 	
-	
-	public void createMainMenu() {
+	MainMenuScreen(int W, int H) {
+		super(W, H);
+	}
+	public void createMainMenuScreen() {
 		
-		if(this.getResolutionWidth() == 640) {
+		if(this.getWidth() == 640) {
 			this.setMenu640();
 		}
-		if(this.getResolutionWidth() == 1280) {
+		if(this.getWidth() == 1280) {
 			this.setMenu1280();
 		}
-		if(this.getResolutionWidth() == 1920) {
+		if(this.getWidth() == 1920) {
 			this.setMenu1920();
 		}
 		
@@ -56,85 +60,122 @@ public class MainMenuScreen extends Base{
 		MainMenuImage.setIcon(mainMenuImage640);
 		MainMenuImage.setBounds(0,0,640,480);
 		MainMenu.setLayout(null);
-		MainMenu.add(MMStart);
-			MMStart.setBounds(20,420 - getButtonH() - getButtonH() - 40,getButtonW() + 30,getButtonH());
-			MMStart.setOpaque(false);
-			MMStart.setContentAreaFilled(false);
-			MMStart.setBorderPainted(false);
-			MMStart.setFocusable(false);
-			MMStart.setFont(new Font("Cambria",Font.PLAIN,30));
-		MainMenu.add(MMLoad);
-			MMLoad.setBounds(20,420 - getButtonH() - 20,getButtonW() + 30,getButtonH());
-			MMLoad.setOpaque(false);
-			MMLoad.setContentAreaFilled(false);
-			MMLoad.setBorderPainted(false);
-			MMLoad.setFocusable(false);
-			MMLoad.setFont(new Font("Cambria",Font.PLAIN,30));
-		MainMenu.add(MMLoadBB);
-		MainMenu.add(MMQuit);
-			MMQuit.setBounds(20,420,getButtonW() + 30,getButtonH());
-			MMQuit.setOpaque(false);
-			MMQuit.setContentAreaFilled(false);
-			MMQuit.setBorderPainted(false);
-			MMQuit.setFocusable(false);
-			MMQuit.setFont(new Font("Cambria",Font.PLAIN,30));
+		MainMenu.add(Load);
+		MainMenu.add(MMSStart);
+			MMSStart.setBounds(20,420 - getButtonH() - getButtonH() - 40,getButtonW() + 30,getButtonH());
+			MMSStart.setOpaque(false);
+			MMSStart.setContentAreaFilled(false);
+			MMSStart.setBorderPainted(false);
+			MMSStart.setFocusable(false);
+			MMSStart.setFont(new Font("Cambria",Font.PLAIN,30));
+		MainMenu.add(MMSLoad);
+			MMSLoad.setBounds(20,420 - getButtonH() - 20,getButtonW() + 30,getButtonH());
+			MMSLoad.setOpaque(false);
+			MMSLoad.setContentAreaFilled(false);
+			MMSLoad.setBorderPainted(false);
+			MMSLoad.setFocusable(false);
+			MMSLoad.setFont(new Font("Cambria",Font.PLAIN,30));
+		MainMenu.add(MMSLoadBB);
+		MainMenu.add(MMSQuit);
+			MMSQuit.setBounds(20,420,getButtonW() + 30,getButtonH());
+			MMSQuit.setOpaque(false);
+			MMSQuit.setContentAreaFilled(false);
+			MMSQuit.setBorderPainted(false);
+			MMSQuit.setFocusable(false);
+			MMSQuit.setFont(new Font("Cambria",Font.PLAIN,30));
 	}
 	public void setMenu1280() {
 		MainMenuImage.setIcon(mainMenuImage720);
 		MainMenuImage.setBounds(0,0,1280,720);
 		MainMenu.setLayout(null);
-		MainMenu.add(MMStart);
-			MMStart.setBounds(20,mainMenuImage720.getIconHeight() - 60 - getButtonH() - getButtonH() - 40,getButtonW() + 30,getButtonH());
-			MMStart.setOpaque(false);
-			MMStart.setContentAreaFilled(false);
-			MMStart.setBorderPainted(false);
-			MMStart.setFocusable(false);
-			MMStart.setFont(new Font("Cambria",Font.PLAIN,30));
-		MainMenu.add(MMLoad);
-			MMLoad.setBounds(20,mainMenuImage720.getIconHeight() - 60 - getButtonH() - 20,getButtonW() + 30,getButtonH());
-			MMLoad.setOpaque(false);
-			MMLoad.setContentAreaFilled(false);
-			MMLoad.setBorderPainted(false);
-			MMLoad.setFocusable(false);
-			MMLoad.setFont(new Font("Cambria",Font.PLAIN,30));
-		MainMenu.add(MMLoadBB);
-		MainMenu.add(MMQuit);
-			MMQuit.setBounds(20,mainMenuImage720.getIconHeight() - 60,getButtonW() + 30,getButtonH());
-			MMQuit.setOpaque(false);
-			MMQuit.setContentAreaFilled(false);
-			MMQuit.setBorderPainted(false);
-			MMQuit.setFocusable(false);
-			MMQuit.setFont(new Font("Cambria",Font.PLAIN,30));
+		MainMenu.add(Load);
+		MainMenu.add(MMSStart);
+			MMSStart.setBounds(20,mainMenuImage720.getIconHeight() - 60 - getButtonH() - getButtonH() - 40,getButtonW() + 30,getButtonH());
+			MMSStart.setOpaque(true);
+			MMSStart.setContentAreaFilled(false);
+			MMSStart.setBorderPainted(false);
+			MMSStart.setFocusable(false);
+			MMSStart.setFont(new Font("Cambria",Font.PLAIN,30));
+		MainMenu.add(MMSLoad);
+			MMSLoad.setBounds(20,mainMenuImage720.getIconHeight() - 60 - getButtonH() - 20,getButtonW() + 30,getButtonH());
+			MMSLoad.setOpaque(true);
+			MMSLoad.setContentAreaFilled(false);
+			MMSLoad.setBorderPainted(false);
+			MMSLoad.setFocusable(false);
+			MMSLoad.setFont(new Font("Cambria",Font.PLAIN,30));
+		MainMenu.add(MMSLoadBB);
+		MainMenu.add(MMSQuit);
+			MMSQuit.setBounds(20,mainMenuImage720.getIconHeight() - 60,getButtonW() + 30,getButtonH());
+			MMSQuit.setOpaque(true);
+			MMSQuit.setContentAreaFilled(false);
+			MMSQuit.setBorderPainted(false);
+			MMSQuit.setFocusable(false);
+			MMSQuit.setFont(new Font("Cambria",Font.PLAIN,30));
 	}
 	public void setMenu1920() {
 		MainMenuImage.setIcon(mainMenuImage1920);
 		MainMenuImage.setBounds(0,0,1920,1080);
 		MainMenu.setLayout(null);
-		MainMenu.add(MMStart);
-			MMStart.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - getButtonH() - getButtonH() - 40,getButtonW() + 30,getButtonH());
-			MMStart.setOpaque(false);
-			MMStart.setContentAreaFilled(false);
-			MMStart.setBorderPainted(false);
-			MMStart.setFocusable(false);
-			MMStart.setFont(new Font("Cambria",Font.PLAIN,30));
-		MainMenu.add(MMLoad);
-			MMLoad.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - getButtonH() - 20,getButtonW() + 30,getButtonH());
-			MMLoad.setOpaque(false);
-			MMLoad.setContentAreaFilled(false);
-			MMLoad.setBorderPainted(false);
-			MMLoad.setFocusable(false);
-			MMLoad.setFont(new Font("Cambria",Font.PLAIN,30));
-		MainMenu.add(MMLoadBB);
-		MainMenu.add(MMQuit);
-			MMQuit.setBounds(20,mainMenuImage1920.getIconHeight() - 60,getButtonW() + 30,getButtonH());
-			MMQuit.setOpaque(false);
-			MMQuit.setContentAreaFilled(false);
-			MMQuit.setBorderPainted(false);
-			MMQuit.setFocusable(false);
-			MMQuit.setFont(new Font("Cambria",Font.PLAIN,30));
+		MainMenu.add(Load);
+		MainMenu.add(MMSStart);
+			MMSStart.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - getButtonH() - getButtonH() - 40,getButtonW() + 30,getButtonH());
+			MMSStart.setOpaque(false);
+			MMSStart.setContentAreaFilled(false);
+			MMSStart.setBorderPainted(false);
+			MMSStart.setFocusable(false);
+			MMSStart.setFont(new Font("Cambria",Font.PLAIN,30));
+		MainMenu.add(MMSLoad);
+			MMSLoad.setBounds(20,mainMenuImage1920.getIconHeight() - 60 - getButtonH() - 20,getButtonW() + 30,getButtonH());
+			MMSLoad.setOpaque(false);
+			MMSLoad.setContentAreaFilled(false);
+			MMSLoad.setBorderPainted(false);
+			MMSLoad.setFocusable(false);
+			MMSLoad.setFont(new Font("Cambria",Font.PLAIN,30));
+		MainMenu.add(MMSLoadBB);
+		MainMenu.add(MMSQuit);
+			MMSQuit.setBounds(20,mainMenuImage1920.getIconHeight() - 60,getButtonW() + 30,getButtonH());
+			MMSQuit.setOpaque(false);
+			MMSQuit.setContentAreaFilled(false);
+			MMSQuit.setBorderPainted(false);
+			MMSQuit.setFocusable(false);
+			MMSQuit.setFont(new Font("Cambria",Font.PLAIN,30));
 	}
+
+	public void setStartButton(JButton ST) {
+		MMSStart = ST;
+	}
+	public void setQuit(JButton QT) {
+		MMSQuit = QT;
+	}
+	public void setLoad(JButton LD) {
+		MMSLoad = LD;
+	}
+	public void setLoadBB(JButton LB) {
+		MMSLoadBB = LB;
+	}
+	public void setLLoad(JButton LL) {
+		MMSLLoad = LL;
+	}
+	
 	//gets
-
-
+	public int getWindowNumber() {
+		return WindowID;
 	}
+	public JButton getStartButton() {
+		return MMSStart;
+	}
+	public JButton getQuit() {
+		return MMSQuit;
+	}
+	public JButton getLoad() {
+		return MMSLoad;
+	}
+	public JButton getLoadBB() {
+		return MMSLoadBB;
+	}
+	public JButton getLLoad() {
+		return MMSLLoad;
+	}
+
+}
 

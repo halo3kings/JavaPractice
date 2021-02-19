@@ -43,7 +43,7 @@ public class PreLaunchScreen extends Base {
 	//Check boxes
 	JCheckBox win4 = new JCheckBox("Full Screen");
 	JCheckBox win5 = new JCheckBox("Windowed");
-	JCheckBox win6 = new JCheckBox("BorderlePLS Window");
+	JCheckBox win6 = new JCheckBox("Borderless Window");
 
 	PreLaunchScreen(int W, int H) {
 		super(W, H);

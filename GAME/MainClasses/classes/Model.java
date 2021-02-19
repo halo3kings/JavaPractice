@@ -4,11 +4,16 @@ public class Model {
 	private int GameW;
 	private int GameH;
 	
+	private int WindowID;
+	
 	public void setGameW(int GW) {
 		GameW = GW;
 	}
 	public void setGameH(int GH) {
 		GameH = GH;
+	}
+	public void setWindowID(int ID) {
+		WindowID = ID;
 	}
 	//gets
 	public int getGameW() {
@@ -16,5 +21,8 @@ public class Model {
 	}
 	public int getGameH() {
 		return GameH;
+	}
+	public int getWindowID() {
+		return WindowID;
 	}
 }
