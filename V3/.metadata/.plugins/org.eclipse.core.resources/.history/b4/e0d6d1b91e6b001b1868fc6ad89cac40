@@ -1,0 +1,10 @@
+package practice;
+
+import javax.swing.JFrame;
+
+public class Main_menuGui extends JFrame implements ActionListener {
+	
+	StartScreen  screen = new StartScreen();
+	
+	
+}

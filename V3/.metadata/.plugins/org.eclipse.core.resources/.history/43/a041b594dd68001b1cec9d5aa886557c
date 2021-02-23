@@ -1,0 +1,73 @@
+package practice;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Main implements ActionListener {
+	
+	static int BUTTON_WIDTH = 80;
+	static int BUTTON_HEIGHT = 50;
+
+	public static void main(String[] args) {
+		
+		//new MyFrame();
+		JFrame STARTANDOPTIONS = new JFrame();
+		
+		//Image
+		ImageIcon image = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\V3\\V3\\src\\practice\\mansion.png");
+
+		//Labels
+		JLabel imageLabel = new JLabel();
+		imageLabel.setIcon(image);
+		imageLabel.setBounds(10,10,image.getIconWidth(),image.getIconHeight());
+		imageLabel.setVisible(true);
+
+		//buttons
+		String[] ResolutionTypes = {"720,480","1920,1080"};
+		JComboBox Resolution = new JComboBox(ResolutionTypes);
+		
+		JButton Start = new JButton("Start");
+		Start.setBounds(10, 420, BUTTON_WIDTH, BUTTON_HEIGHT);
+		Start.setFocusable(false);
+		
+		JButton Quit = new JButton("Quit");
+		Quit.setBounds(340, 420, BUTTON_WIDTH, BUTTON_HEIGHT);
+		Quit.setFocusable(false);
+		
+		JButton Options = new JButton("Options");
+		Options.setBounds(230, 420, BUTTON_WIDTH, BUTTON_HEIGHT);
+		Options.setFocusable(false);
+		
+		JButton Credits = new JButton("Credits");
+		Credits.setBounds(120, 420, BUTTON_WIDTH, BUTTON_HEIGHT);
+		Credits.setFocusable(false);
+		
+		//STARTANDOPTIONS.add(Resolution);
+		STARTANDOPTIONS.add(imageLabel);
+		STARTANDOPTIONS.add(Start);
+		STARTANDOPTIONS.add(Quit);
+		STARTANDOPTIONS.add(Options);
+		STARTANDOPTIONS.add(Credits);
+		
+		STARTANDOPTIONS.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		STARTANDOPTIONS.setLayout(null);
+		STARTANDOPTIONS.setSize(500,500);
+		STARTANDOPTIONS.setVisible(true);
+		STARTANDOPTIONS.setResizable(false);
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

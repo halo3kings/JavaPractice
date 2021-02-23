@@ -1,0 +1,23 @@
+package coreGame;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Controller implements ActionListener {
+	Model MODEL = new Model();
+	Viewer VIEW = new Viewer();
+	
+	Controller(){
+		
+	}
+	public void RUNNING() {
+		VIEW.MM.createMainFrame();
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+			System.out.println("Starting...");
+		
+	}
+
+}
