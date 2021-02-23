@@ -8,7 +8,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PreLaunchScreen extends Base {
+public class PreLaunchScreen {
+	//Constants
+	private static int BUTTON_WIDTH = 80;
+	private static int BUTTON_HEIGHT = 40;
+	private static int CHECKBOX_WIDTH = 150;
+	private static int CHECKBOX_HEIGHT = 25;
+	
+	private boolean Visibility = true;
 	
 	//Panel instancing
 	JPanel PreLaunchScreen = new JPanel();
@@ -45,15 +52,11 @@ public class PreLaunchScreen extends Base {
 	JCheckBox win5 = new JCheckBox("Windowed");
 	JCheckBox win6 = new JCheckBox("Borderless Window");
 
-	PreLaunchScreen(int W, int H) {
-		super(W, H);
+	PreLaunchScreen() {
+		this.setPreLaunchScreen();
 	}
 	public void createPreLaunchScreen() {
-		this.setPreLaunchScreen();
-		this.setOpen(true);
-		Frame.add(PreLaunchScreen);
-		this.setVisibility(true);
-		this.createWindow();
+
 	}
 	//sets
 	public void setPreLaunchScreen() {
@@ -134,7 +137,7 @@ public class PreLaunchScreen extends Base {
 	
 	//Panel Building
 	PreLaunchScreen.setBounds(-10, 0, 440, 510);
-	PreLaunchScreen.setVisible(true);
+	PreLaunchScreen.setVisible(Visibility);
 	PreLaunchScreen.setLayout(null);
 	
 	PreLaunchScreen.add(PLSMenu);
@@ -164,6 +167,9 @@ public class PreLaunchScreen extends Base {
 		PLSCredits.setLayout(null);
 		PLSCredits.add(BBCredits);
 		PLSCredits.add(creditText);
+	}
+	public void setVisibility(boolean Vis) {
+		Visibility = Vis;
 	}
 	//Button sets 
 	public void setStartButton(JButton ST) {
@@ -232,7 +238,21 @@ public class PreLaunchScreen extends Base {
 	public JPanel getCreditsPanel() {
 		return PLSCredits;
 	}
-
+	public JPanel getPreLaunchScreen() {
+		return PreLaunchScreen;
+	}
+	public int getButtonW() {
+		return BUTTON_WIDTH;
+	}
+	public int getButtonH() {
+		return BUTTON_HEIGHT;
+	}
+	public int getCheckBoxW() {
+		return CHECKBOX_WIDTH;
+	}
+	public int getCheckBoxH() {
+		return CHECKBOX_HEIGHT;
+	}
 
 	
 		

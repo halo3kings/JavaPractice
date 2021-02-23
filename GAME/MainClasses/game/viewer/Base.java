@@ -18,8 +18,8 @@ public class Base {
 	private boolean fullScreen;
 	private boolean borderless;
 	private boolean windowed;
-	private boolean visiblity;
 	private boolean open;
+	private boolean visiblity = true;
 	
 	JFrame Frame = new JFrame();
 	
@@ -32,7 +32,7 @@ public class Base {
 		//JFrame settings 
 		Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Frame.setLayout(null);
-		Frame.setSize(FrameHeight,FrameWidth);
+		Frame.setSize(FrameWidth,FrameHeight);
 		Frame.setVisible(visiblity);
 		Frame.setResizable(false);
 

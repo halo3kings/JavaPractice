@@ -10,7 +10,7 @@ public class Model {
 		GameW = GW;
 	}
 	public void setGameH(int GH) {
-		GameH = GH;
+		GameH = GH;//the 29 is for the top task bar of the window
 	}
 	public void setWindowID(int ID) {
 		WindowID = ID;

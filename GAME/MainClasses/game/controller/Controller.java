@@ -11,21 +11,17 @@ import game.viewer.Viewer;
 
 public class Controller{
 	Model MODEL = new Model();
-	Viewer VIEW = new Viewer();
+	Viewer VIEW;
 	boolean Running = true;
 	
 	public Controller(){
-		
-	}
-	
-	public void Start() {
-		VIEW.getPLS().createPreLaunchScreen();
+		MODEL.setGameW(440);
+		MODEL.setGameH(510);
+		VIEW = new Viewer(MODEL.getGameW(),MODEL.getGameH());
+		VIEW.createPreLaunchScreen();
+		VIEW.getPLS().getMenuPanel().setVisible(false);
+		VIEW.getPLS().getMenuPanel().setVisible(true);
 		this.setButtonActionEventsPLS();
-	}
-	public void StartWasPresed() {
-		VIEW.getPLS().setVisibility(false);
-		//VIEW.MM.createMainMenu(VIEW.PLS.get);
-		System.out.println("Starting...");
 	}
 	//gets
 	public void setButtonActionEventsPLS() {
@@ -43,6 +39,10 @@ public class Controller{
 		VIEW.getMMS().getLLoad().addActionListener(e ->this.MMS_LLoad());
 		VIEW.getMMS().getLoadBB().addActionListener(e ->this.MMS_LoadBB());
 	}
+	public void setButtonActionEventsFP() {
+		VIEW.getFP().getGarage().addActionListener(e ->);
+		VIEW.getFP().getHallway().addActionListener(e ->);
+	}
 	public void updateRoomID(int ID) {
 		MODEL.setWindowID(ID);
 	}
@@ -57,28 +57,43 @@ public class Controller{
 	public void PLS_StartAction() {
 		System.out.println("Starting...");
 		if(VIEW.getPLS().getRes1().isSelected() == true) {
-			MODEL.setGameH(480);
+			MODEL.setGameH(480+29);
 			MODEL.setGameW(640);
+			System.out.println("Resolution is 640x480");
 		}
 		if(VIEW.getPLS().getRes2().isSelected() == true) {
-			MODEL.setGameH(720);
+			MODEL.setGameH(720+29);
 			MODEL.setGameW(1280);
+			System.out.println("Resolution is 1280x720");
 			//1280x720
 		}
 		if(VIEW.getPLS().getRes3().isSelected() == true) {
-			MODEL.setGameH(1080);
+			MODEL.setGameH(1080+29);
 			MODEL.setGameW(1920);
+			System.out.println("Resolution is 1920x1080");
 			//1920x1080
 		}
-		VIEW.getPLS().setOpen(false);
-		VIEW.getPLS().getFrame().dispose();
+		VIEW.getPLS().getPreLaunchScreen().setVisible(false);
+		System.out.println("setting the PreLaunch screen invisible");
+		
 		VIEW.createMainMenuScreen(MODEL.getGameW(), MODEL.getGameH());
+		System.out.println("creating the mainmenu screen with its needed resolution");
+		
+		VIEW.getFrame().setSize(MODEL.getGameW(),MODEL.getGameH());
+		System.out.println("setting JFrame to the new user selected resolution");
+		
+		VIEW.getMMS().getMainMenu().setVisible(false);
+		VIEW.getMMS().getMainMenu().setVisible(true);
+		VIEW.getFrame().setVisible(false);
+		VIEW.getFrame().setVisible(true);
+		System.out.println("Refreshing JFrame");
+		
 		this.setButtonActionEventsMMS();
-		this.updateRoomID(VIEW.getMMS().getWindowNumber());
+		System.out.println("Main Menu buttons initialized");
 	}
 	public void PLS_Quit() {
 		System.out.println("Quiting...");
-		VIEW.getPLS().getFrame().dispose();
+		VIEW.getFrame().dispose();
 	}
 	public void PLS_Options() {
 		System.out.println("Changing for options...");
@@ -103,13 +118,27 @@ public class Controller{
 	//-----------------------------Main Menu Screen button actions-------------\\
 	public void MMS_Start() {
 		System.out.println("Starting...");
+		System.out.println("Passing in model Width:  " +MODEL.getGameW()+" Passing in model Height:  "+MODEL.getGameH());
+		System.out.println("creating the FrontPorch scene with its needed resolution");
+		VIEW.createFrontPorch(MODEL.getGameW(),MODEL.getGameH());
+		
+		System.out.println("setting Main menu invisible");
+		VIEW.getMMS().getMainMenu().setVisible(false);
+
+
+		VIEW.getFrame().setVisible(false);
+		VIEW.getFrame().setVisible(true);
+		VIEW.getFP().getFrontPorch().setVisible(false);
+		VIEW.getFP().getFrontPorch().setVisible(true);
+		System.out.println("Refreshing JFrame");
+		
 	}
 	public void MMS_Load() {
 		System.out.println("Opening loading screen...");
 	}
 	public void MMS_Quit() {
 		System.out.println("Quiting...");
-		VIEW.getMMS().getFrame().dispose();
+		VIEW.getFrame().dispose();
 	}
 	public void MMS_LLoad() {
 		System.out.println("Loading save file");

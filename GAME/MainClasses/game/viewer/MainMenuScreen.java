@@ -11,10 +11,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MainMenuScreen extends Base{
+public class MainMenuScreen{
+	//Constants
+	private static int BUTTON_WIDTH = 80;
+	private static int BUTTON_HEIGHT = 40;
+	private static int CHECKBOX_WIDTH = 150;
+	private static int CHECKBOX_HEIGHT = 25;
+
 	
 	private static int WindowID = 0;
-
+	private int Width;
+	private int Height;
+	private boolean Visibility = true;
+	
 	JPanel MainMenu = new JPanel();
 	JPanel Load = new JPanel();
 
@@ -31,7 +40,11 @@ public class MainMenuScreen extends Base{
 	
 	
 	MainMenuScreen(int W, int H) {
-		super(W, H);
+		Width = W;
+		Height = H;
+		this.createMainMenuScreen();
+		System.out.println("Finished MainMenu constructor");
+	
 	}
 	public void createMainMenuScreen() {
 		
@@ -47,14 +60,9 @@ public class MainMenuScreen extends Base{
 		
 		MainMenu.setBounds(0,0, getWidth(), getHeight());
 		MainMenu.add(MainMenuImage);
-		MainMenu.setVisible(true);
+		MainMenu.setVisible(Visibility);
+		System.out.println("Finished Creating main menu screen");
 		
-		this.Frame.add(MainMenu);
-		this.Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.Frame.setLayout(null);
-		this.Frame.setSize(getWidth() + 15,getHeight() + 39);
-		this.Frame.setVisible(true);
-		this.Frame.setResizable(false);
 	}
 	public void setMenu640() {
 		MainMenuImage.setIcon(mainMenuImage640);
@@ -83,6 +91,8 @@ public class MainMenuScreen extends Base{
 			MMSQuit.setBorderPainted(false);
 			MMSQuit.setFocusable(false);
 			MMSQuit.setFont(new Font("Cambria",Font.PLAIN,30));
+		
+		System.out.println("Finished 640 menu set");
 	}
 	public void setMenu1280() {
 		MainMenuImage.setIcon(mainMenuImage720);
@@ -111,6 +121,8 @@ public class MainMenuScreen extends Base{
 			MMSQuit.setBorderPainted(false);
 			MMSQuit.setFocusable(false);
 			MMSQuit.setFont(new Font("Cambria",Font.PLAIN,30));
+			
+		System.out.println("Finished 1280 menu set");
 	}
 	public void setMenu1920() {
 		MainMenuImage.setIcon(mainMenuImage1920);
@@ -139,8 +151,12 @@ public class MainMenuScreen extends Base{
 			MMSQuit.setBorderPainted(false);
 			MMSQuit.setFocusable(false);
 			MMSQuit.setFont(new Font("Cambria",Font.PLAIN,30));
+		System.out.println("Finished 1920 menu set");
 	}
-
+	
+	public void setVisibility(boolean Vis) {
+		Visibility = Vis;
+	}
 	public void setStartButton(JButton ST) {
 		MMSStart = ST;
 	}
@@ -155,8 +171,7 @@ public class MainMenuScreen extends Base{
 	}
 	public void setLLoad(JButton LL) {
 		MMSLLoad = LL;
-	}
-	
+	}	
 	//gets
 	public int getWindowNumber() {
 		return WindowID;
@@ -175,6 +190,28 @@ public class MainMenuScreen extends Base{
 	}
 	public JButton getLLoad() {
 		return MMSLLoad;
+	}
+	public JPanel getMainMenu() {
+		return MainMenu;
+	}
+	
+	public int getHeight() {
+		return Height;
+	}
+	public int getWidth() {
+		return Width;
+	}
+	public int getButtonW() {
+		return BUTTON_WIDTH;
+	}
+	public int getButtonH() {
+		return BUTTON_HEIGHT;
+	}
+	public int getCheckBoxW() {
+		return CHECKBOX_WIDTH;
+	}
+	public int getCheckBoxH() {
+		return CHECKBOX_HEIGHT;
 	}
 
 }
