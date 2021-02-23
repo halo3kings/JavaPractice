@@ -28,9 +28,9 @@ public class FrontPorch{
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 640 ");
 			
-			FrontPorch.add(Garage);
-			Garage.setBounds(100, 0, 120, BackGround.getIconHeight());
-			Garage.setVisible(true);
+			FrontPorch.add(Hallway);
+			Hallway.setBounds(100, 0, 120, BackGround.getIconHeight());
+			Hallway.setVisible(true);
 		}
 		if(W == 1280) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -38,6 +38,10 @@ public class FrontPorch{
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1280 ");
+			
+			FrontPorch.add(Hallway);
+			Hallway.setBounds(200, 0, 300, BackGround.getIconHeight());
+			Hallway.setVisible(true);
 		}
 		if(W == 1920) {
 			ImageLabel.setIcon(BackGround);
