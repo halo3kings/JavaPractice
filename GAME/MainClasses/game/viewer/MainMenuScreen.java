@@ -17,9 +17,8 @@ public class MainMenuScreen{
 	private static int BUTTON_HEIGHT = 40;
 	private static int CHECKBOX_WIDTH = 150;
 	private static int CHECKBOX_HEIGHT = 25;
-
-	
 	private static int WindowID = 0;
+	
 	private int Width;
 	private int Height;
 	private boolean Visibility = true;
@@ -48,7 +47,7 @@ public class MainMenuScreen{
 	}
 	public void createMainMenuScreen() {
 		
-		if(this.getWidth() == 640) {
+		if(this.getWidth() == 660) {
 			this.setMenu640();
 		}
 		if(this.getWidth() == 1280) {
@@ -66,7 +65,7 @@ public class MainMenuScreen{
 	}
 	public void setMenu640() {
 		MainMenuImage.setIcon(mainMenuImage640);
-		MainMenuImage.setBounds(0,0,640,480);
+		MainMenuImage.setBounds(0,0,mainMenuImage640.getIconWidth(),mainMenuImage640.getIconHeight());
 		MainMenu.setLayout(null);
 		MainMenu.add(Load);
 		MainMenu.add(MMSStart);
@@ -194,7 +193,7 @@ public class MainMenuScreen{
 	public JPanel getMainMenu() {
 		return MainMenu;
 	}
-	
+
 	public int getHeight() {
 		return Height;
 	}

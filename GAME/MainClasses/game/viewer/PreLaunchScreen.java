@@ -234,8 +234,7 @@ public class PreLaunchScreen {
 	public JPanel getOptionsPanel() {
 		return PLSOptions;
 	}
-
-	public JPanel getCreditsPanel() {
+    public JPanel getCreditsPanel() {
 		return PLSCredits;
 	}
 	public JPanel getPreLaunchScreen() {

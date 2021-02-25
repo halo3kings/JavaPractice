@@ -19,8 +19,6 @@ public class FrontPorch{
 	Image Resize = BackGround.getImage();
 
 	FrontPorch(int W, int H) {
-		
-
 		if(W == 640) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -29,8 +27,20 @@ public class FrontPorch{
 			System.out.println("resizing to 640 ");
 			
 			FrontPorch.add(Hallway);
-			Hallway.setBounds(100, 0, 120, BackGround.getIconHeight());
-			Hallway.setVisible(true);
+				Hallway.setBounds(100, 0, 120, BackGround.getIconHeight());
+				Hallway.setVisible(true);
+				Hallway.setOpaque(false);
+				Hallway.setContentAreaFilled(false);
+				Hallway.setBorderPainted(false);
+				Hallway.setFocusable(false);
+			
+			FrontPorch.add(Garage);
+				Garage.setBounds(550, 70, 300, 100);
+				Garage.setVisible(true);
+				Garage.setOpaque(false);
+				Garage.setContentAreaFilled(false);
+				Garage.setBorderPainted(false);
+				Garage.setFocusable(false);
 		}
 		if(W == 1280) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -40,20 +50,43 @@ public class FrontPorch{
 			System.out.println("resizing to 1280 ");
 			
 			FrontPorch.add(Hallway);
-			Hallway.setBounds(200, 0, 300, BackGround.getIconHeight());
-			Hallway.setVisible(true);
+				Hallway.setBounds(100*2, 0*2, 120*2, BackGround.getIconHeight());
+				Hallway.setVisible(true);
+				Hallway.setOpaque(false);
+				Hallway.setContentAreaFilled(false);
+				Hallway.setBorderPainted(false);
+				Hallway.setFocusable(false);
+				
+			FrontPorch.add(Garage);
+				Garage.setBounds(550*2, 120, 300*2, 100*2);
+				Garage.setVisible(true);
+				Garage.setOpaque(false);
+				Garage.setContentAreaFilled(false);
+				Garage.setBorderPainted(false);
+				Garage.setFocusable(false);
 		}
 		if(W == 1920) {
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1920 ");
+			
+			FrontPorch.add(Hallway);
+				Hallway.setBounds(100*3, 0*3, 120*3, BackGround.getIconHeight());
+				Hallway.setVisible(true);
+				Hallway.setOpaque(false);
+				Hallway.setContentAreaFilled(false);
+				Hallway.setBorderPainted(false);
+				Hallway.setFocusable(false);
+			
+			FrontPorch.add(Garage);
+				Garage.setBounds(550*3, 170, 300*3, 100*3);
+				Garage.setVisible(true);
+				Garage.setOpaque(false);
+				Garage.setContentAreaFilled(false);
+				Garage.setBorderPainted(false);
+				Garage.setFocusable(false);
 		}
 
-		FrontPorch.add(Garage);
-			Garage.setBounds(200, 0, 300, BackGround.getIconHeight());
-			Garage.setVisible(true);
-
-		
 		System.out.println("building front porch ");
 		ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
 		FrontPorch.add(ImageLabel);

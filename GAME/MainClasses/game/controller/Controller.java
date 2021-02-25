@@ -17,13 +17,29 @@ public class Controller{
 	public Controller(){
 		MODEL.setGameW(440);
 		MODEL.setGameH(510);
+		System.out.println("Resolution is 440x510");
+		
 		VIEW = new Viewer(MODEL.getGameW(),MODEL.getGameH());
-		VIEW.createPreLaunchScreen();
+		System.out.println("creating Viewer");
+		
+		VIEW.PreLaunchScreen(true);
+		System.out.println("creating Pre Launch Screen");
+		
 		VIEW.getPLS().getMenuPanel().setVisible(false);
 		VIEW.getPLS().getMenuPanel().setVisible(true);
+		System.out.println("Refreshed preLaunch Screen");
+		
 		this.setButtonActionEventsPLS();
+		System.out.println("Button Events instanced");
 	}
+	
 	//gets
+	public void setAllButtonEvents() {
+		this.setButtonActionEventsFP();
+		this.setButtonActionEventsMMS();
+		this.setButtonActionEventsPLS();
+		this.setButtonActionEventsGarage();
+	}
 	public void setButtonActionEventsPLS() {
 		VIEW.getPLS().getStart().addActionListener(e ->this.PLS_StartAction());
 		VIEW.getPLS().getOptions().addActionListener(e ->this.PLS_Options());
@@ -40,8 +56,22 @@ public class Controller{
 		VIEW.getMMS().getLoadBB().addActionListener(e ->this.MMS_LoadBB());
 	}
 	public void setButtonActionEventsFP() {
-		VIEW.getFP().getGarage().addActionListener(e ->);
-		VIEW.getFP().getHallway().addActionListener(e ->);
+		VIEW.getFP().getGarage().addActionListener(e ->this.FP_GarageDoor());
+		VIEW.getFP().getHallway().addActionListener(e ->this.FP_HallwayDoor());
+	}
+	public void setButtonActionEventsGarage() {
+		VIEW.getGarage().getFrontPorch().addActionListener(e ->this.Garage_FrontPortch());
+	}
+	public void setButtonActionEventsHallWay() {
+		VIEW.getHallway().getLounge().addActionListener(e ->this.HallWay_Lounge());
+		VIEW.getHallway().getDining().addActionListener(e ->this.HallWay_Dining());
+		VIEW.getHallway().getKitchen().addActionListener(e ->this.HallWay_Kitchen());
+		VIEW.getHallway().getStairs().addActionListener(e ->this.HallWay_Stairs());
+		VIEW.getHallway().getKitchen2().addActionListener(e ->this.HallWay_Kitchen2());
+		VIEW.getHallway().getPoolHall().addActionListener(e ->this.HallWay_PoolHall());
+		VIEW.getHallway().getLibrary().addActionListener(e ->this.HallWay_Library());
+		VIEW.getHallway().getLibrary().addActionListener(e ->this.HallWay_FrontPorch());
+		
 	}
 	public void updateRoomID(int ID) {
 		MODEL.setWindowID(ID);
@@ -53,43 +83,37 @@ public class Controller{
 		return MODEL.getGameW();
 	}
 	//---------------------------------------------Button Actions-------------------\\
-	//----------------PreLaunch Screen------------\\
+	//---PreLaunch screen buttons
 	public void PLS_StartAction() {
 		System.out.println("Starting...");
 		if(VIEW.getPLS().getRes1().isSelected() == true) {
-			MODEL.setGameH(480+29);
-			MODEL.setGameW(640);
+			MODEL.setGameH(510);
+			MODEL.setGameW(660);
+			VIEW.initRooms(MODEL.getGameW(),MODEL.getGameH());
+			VIEW.updateWindow(MODEL.getGameW(),MODEL.getGameH());
+			System.out.println(MODEL.getGameW() +" "+ MODEL.getGameH());
 			System.out.println("Resolution is 640x480");
 		}
 		if(VIEW.getPLS().getRes2().isSelected() == true) {
 			MODEL.setGameH(720+29);
 			MODEL.setGameW(1280);
+			VIEW.initRooms(MODEL.getGameW(),MODEL.getGameH());
+			VIEW.updateWindow(MODEL.getGameW(),MODEL.getGameH());
 			System.out.println("Resolution is 1280x720");
 			//1280x720
 		}
 		if(VIEW.getPLS().getRes3().isSelected() == true) {
 			MODEL.setGameH(1080+29);
 			MODEL.setGameW(1920);
+			VIEW.initRooms(MODEL.getGameW(),MODEL.getGameH());
+			VIEW.updateWindow(MODEL.getGameW(),MODEL.getGameH());
 			System.out.println("Resolution is 1920x1080");
 			//1920x1080
 		}
-		VIEW.getPLS().getPreLaunchScreen().setVisible(false);
-		System.out.println("setting the PreLaunch screen invisible");
-		
-		VIEW.createMainMenuScreen(MODEL.getGameW(), MODEL.getGameH());
-		System.out.println("creating the mainmenu screen with its needed resolution");
-		
-		VIEW.getFrame().setSize(MODEL.getGameW(),MODEL.getGameH());
-		System.out.println("setting JFrame to the new user selected resolution");
-		
-		VIEW.getMMS().getMainMenu().setVisible(false);
-		VIEW.getMMS().getMainMenu().setVisible(true);
-		VIEW.getFrame().setVisible(false);
-		VIEW.getFrame().setVisible(true);
-		System.out.println("Refreshing JFrame");
-		
+		VIEW.PreLaunchScreen(false);
+		VIEW.MainMenuScreen(true);
 		this.setButtonActionEventsMMS();
-		System.out.println("Main Menu buttons initialized");
+		
 	}
 	public void PLS_Quit() {
 		System.out.println("Quiting...");
@@ -115,23 +139,12 @@ public class Controller{
 		VIEW.getPLS().getCreditsPanel().setVisible(false);
 		VIEW.getPLS().getMenuPanel().setVisible(true);
 	}
-	//-----------------------------Main Menu Screen button actions-------------\\
+	//---Main Menu Screen buttons
 	public void MMS_Start() {
 		System.out.println("Starting...");
-		System.out.println("Passing in model Width:  " +MODEL.getGameW()+" Passing in model Height:  "+MODEL.getGameH());
-		System.out.println("creating the FrontPorch scene with its needed resolution");
-		VIEW.createFrontPorch(MODEL.getGameW(),MODEL.getGameH());
-		
-		System.out.println("setting Main menu invisible");
-		VIEW.getMMS().getMainMenu().setVisible(false);
-
-
-		VIEW.getFrame().setVisible(false);
-		VIEW.getFrame().setVisible(true);
-		VIEW.getFP().getFrontPorch().setVisible(false);
-		VIEW.getFP().getFrontPorch().setVisible(true);
-		System.out.println("Refreshing JFrame");
-		
+		VIEW.MainMenuScreen(false);
+		VIEW.FrontPorch(true);
+		this.setButtonActionEventsFP();
 	}
 	public void MMS_Load() {
 		System.out.println("Opening loading screen...");
@@ -146,6 +159,56 @@ public class Controller{
 	public void MMS_LoadBB() {
 		System.out.println("Returning to start");
 	}
-
-
+	//---Front Porch Buttons
+	public void FP_HallwayDoor() {
+		System.out.println("HallWay door");
+		VIEW.FrontPorch(false);
+		VIEW.Hallway(true);
+	}
+	public void FP_GarageDoor() {
+		System.out.println("Garage door");
+		this.setButtonActionEventsGarage();
+		VIEW.FrontPorch(false);
+		VIEW.Garage(true);
+	}
+	//---Garage Buttons
+	public void Garage_FrontPortch() {
+		System.out.print("Going to front porch");
+		VIEW.FrontPorch(true);
+		VIEW.Garage(false);
+	}
+	//---HallWay Buttons
+	public void HallWay_Lounge() {
+		System.out.print("Going to Lounge");
+		VIEW.Hallway(false);
+	}
+	public void HallWay_Dining() {
+		System.out.print("Going to Dining");
+		VIEW.Hallway(false);
+	}
+	public void HallWay_Kitchen() {
+		System.out.print("Going to Kitchen");
+		VIEW.Hallway(false);
+	}
+	public void HallWay_Stairs() {
+		System.out.print("Going to Stairs");
+		VIEW.Hallway(false);
+	}
+	public void HallWay_Kitchen2() {
+		System.out.print("Going to Kitchen");
+		VIEW.Hallway(false);
+	}
+	public void HallWay_PoolHall() {
+		System.out.print("Going to Pool Hall");
+		VIEW.Hallway(false);
+	}
+	public void HallWay_Library() {
+		System.out.print("Going to Library");
+		VIEW.Hallway(false);
+	}
+	public void HallWay_FrontPorch() {
+		System.out.print("Going to Front Porch");
+		VIEW.Hallway(false);
+		VIEW.FrontPorch(true);
+	}
 }
