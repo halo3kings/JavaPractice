@@ -47,13 +47,13 @@ public class MainMenuScreen{
 	}
 	public void createMainMenuScreen() {
 		
-		if(this.getWidth() == 660) {
+		if(this.getWidth() == 656) {
 			this.setMenu640();
 		}
-		if(this.getWidth() == 1280) {
+		if(this.getWidth() == 1296) {
 			this.setMenu1280();
 		}
-		if(this.getWidth() == 1920) {
+		if(this.getWidth() == 1936) {
 			this.setMenu1920();
 		}
 		

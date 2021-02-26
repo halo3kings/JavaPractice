@@ -14,11 +14,11 @@ public class Garage {
 	
 	JButton FrontPorch = new JButton();
 	
-	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Garage.png");
+	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\Garage.png");
 	Image Resize = BackGround.getImage();
 	
 	Garage(int W, int H) {
-		if(W == 640) {
+		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
 			ImageLabel.setIcon(BackGround);
@@ -28,12 +28,12 @@ public class Garage {
 			Garage.add(FrontPorch);
 				FrontPorch.setBounds(0, 0, 220, 360);
 				FrontPorch.setVisible(true);
-				FrontPorch.setOpaque(false);
-				FrontPorch.setContentAreaFilled(false);
-				FrontPorch.setBorderPainted(false);
-				FrontPorch.setFocusable(false);
+				//FrontPorch.setOpaque(false);
+				//FrontPorch.setContentAreaFilled(false);
+				//FrontPorch.setBorderPainted(false);
+				//FrontPorch.setFocusable(false);
 		}
-		if(W == 1280) {
+		if(W == 1296) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize1280);
 			ImageLabel.setIcon(BackGround);
@@ -43,12 +43,12 @@ public class Garage {
 			Garage.add(FrontPorch);
 				FrontPorch.setBounds(0*2, 0*2, 220*2, 520);
 				FrontPorch.setVisible(true);
-				FrontPorch.setOpaque(false);
-				FrontPorch.setContentAreaFilled(false);
-				FrontPorch.setBorderPainted(false);
-				FrontPorch.setFocusable(false);
+				//FrontPorch.setOpaque(false);
+				//FrontPorch.setContentAreaFilled(false);
+				//FrontPorch.setBorderPainted(false);
+				//FrontPorch.setFocusable(false);
 		}
-		if(W == 1920) {
+		if(W == 1936) {
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1920 ");
@@ -56,10 +56,10 @@ public class Garage {
 			Garage.add(FrontPorch);
 				FrontPorch.setBounds(0*3, 0*3, 220*3, 880);
 				FrontPorch.setVisible(true);
-				FrontPorch.setOpaque(false);
-				FrontPorch.setContentAreaFilled(false);
-				FrontPorch.setBorderPainted(false);
-				FrontPorch.setFocusable(false);
+				//FrontPorch.setOpaque(false);
+				//FrontPorch.setContentAreaFilled(false);
+				//FrontPorch.setBorderPainted(false);
+				//FrontPorch.setFocusable(false);
 		}
 		
 		System.out.println("building Garage ");
