@@ -39,11 +39,21 @@ public class Controller{
 		this.setButtonActionEvents_PoolHall();
 		this.setButtonActionEvents_Kitchen();
 		this.setButtonActionEvents_DiningRoom();
+		
 		this.setButtonActionEvents_SecondHall();
 		this.setButtonActionEvents_Study();
 		this.setButtonActionEvents_Office();
 		this.setButtonActionEvents_GuestRoom1();
 		this.setButtonActionEvents_GuestRoom2();
+		
+		this.setButtonActionEvents_ThirdHall();
+		this.setButtonActionEvents_MasterBedroom();
+		this.setButtonActionEvents_PaintersStudio();
+		this.setButtonActionEvents_AntiquesRoom();
+		this.setButtonActionEvents_AntiquesRoom2();
+		
+		this.setButtonActionEvents_Attic();
+		this.setButtonActionEvents_AtticRoom();
 	}
 	public void setButtonActionEvents_PLS() {
 		VIEW.getPLS().getStart().addActionListener(e ->this.PLS_StartAction());
@@ -119,6 +129,33 @@ public class Controller{
 	public void setButtonActionEvents_GuestRoom2() {
 		VIEW.getGuestRoom2().getHall().addActionListener(e -> this.GuestRoom2_SecondHall());
 	}
+	public void setButtonActionEvents_ThirdHall() {
+		VIEW.getThirdHall().getAntiquesRoom().addActionListener(e -> this.ThirdHall_AntiquesRoom());
+		VIEW.getThirdHall().getMasterBedroom().addActionListener(e -> this.ThirdHall_MasterBedroom());
+		VIEW.getThirdHall().getPaintersStudio().addActionListener(e -> this.ThirdHall_PaintersStudio());
+		VIEW.getThirdHall().getAttic().addActionListener(e -> this.ThirdHall_Attic());
+		VIEW.getThirdHall().getSecondHall().addActionListener(e -> this.ThirdHall_SecondHall());
+	}
+	public void setButtonActionEvents_MasterBedroom() {
+		VIEW.getMasterBedroom().getHallWay().addActionListener(e -> this.MasterBedroom_Hall());
+	}
+	public void setButtonActionEvents_PaintersStudio() {
+		VIEW.getPaintersStudio().getHallWay().addActionListener(e -> this.PaintersStudio_Hall());
+	}
+	public void setButtonActionEvents_AntiquesRoom() {
+		VIEW.getAntiquesRoom().getHallWay().addActionListener(e -> this.AntiquesRoom_Hall());
+		VIEW.getAntiquesRoom().getAntiquesRoom2().addActionListener(e -> this.AntiquesRoom_AntiquesRoom2());
+	}
+	public void setButtonActionEvents_AntiquesRoom2() {
+		VIEW.getAntiquesRoom2().getAntiquesRoom().addActionListener(e -> this.AntiquesRoom2_AntiquesRoom());
+	}
+	public void setButtonActionEvents_Attic() {
+		VIEW.getAttic().getAtticRoom().addActionListener(e -> this.Attic_AtticRoom());
+		VIEW.getAttic().getThirdHall().addActionListener(e -> this.Attic_ThirdHall());
+	}
+	public void setButtonActionEvents_AtticRoom() {
+		VIEW.getAtticRoom().getAttic().addActionListener(e -> this.AtticRoom_Attic());
+	}
 	
 	public void updateRoomID(int ID) {
 		MODEL.setWindowID(ID);
@@ -160,7 +197,7 @@ public class Controller{
 		VIEW.PreLaunchScreen(false);
 		
 		//VIEW.MainMenuScreen(true); DEFAULT
-		VIEW.FrontPorch(true); // enter room here for immediate start room.
+		VIEW.ThirdHall(true); // enter room here for immediate start room.
 		this.setAllButtonEvents();
 		
 	}
@@ -348,7 +385,7 @@ public class Controller{
 	public void SecondHall_ThirdHall() {
 		System.out.println("Going to Third Hall");
 		VIEW.SecondHall(false);
-		//VIEW.ThirdHall(true);
+		VIEW.ThirdHall(true);
 	}
 	//===Study Button
 	public void Study_SecondHall() {
@@ -375,5 +412,77 @@ public class Controller{
 		VIEW.GuestRoom2(false);
 	}
 	
-	
+	//=-=Third Hall buttons
+	public void ThirdHall_AntiquesRoom() {
+		System.out.println("Going to Antiques Room");
+		VIEW.ThirdHall(false);
+		VIEW.AntiquesRoom(true);
+	}
+	public void ThirdHall_PaintersStudio() {
+		System.out.println("Going to Painters Studio");
+		VIEW.ThirdHall(false);
+		VIEW.PaintersStudio(true);
+	}
+	public void ThirdHall_MasterBedroom() {
+		System.out.println("Going to masterBedroom");
+		VIEW.ThirdHall(false);
+		VIEW.MasterBedroom(true);
+	}
+	public void ThirdHall_Attic() {
+		System.out.println("Going to Attic");
+		VIEW.ThirdHall(false);
+		VIEW.Attic(true);
+	}
+	public void ThirdHall_SecondHall() {
+		System.out.println("Going to Second Hall");
+		VIEW.ThirdHall(false);
+		VIEW.SecondHall(true);
+	}
+	//=-=MasterBedroom Buttons
+	public void MasterBedroom_Hall() {
+		System.out.println("Going to Third Hall");
+		VIEW.MasterBedroom(false);
+		VIEW.ThirdHall(true);
+	}
+	//=-=PaintersStudio Buttons
+	public void PaintersStudio_Hall() {
+		System.out.println("Going to Third Hall");
+		VIEW.PaintersStudio(false);
+		VIEW.ThirdHall(true);
+	}
+	//=-=AntiquesRoom buttons
+	public void AntiquesRoom_Hall() {
+		System.out.println("Going to Third Hall");
+		VIEW.AntiquesRoom(false);
+		VIEW.ThirdHall(true);
+	}
+	public void AntiquesRoom_AntiquesRoom2() {
+		System.out.println("Going to back of Room");
+		VIEW.AntiquesRoom(false);
+		VIEW.AntiquesRoom2(true);
+	}
+	//=-=AntiquesRoom2 Buttons
+	public void AntiquesRoom2_AntiquesRoom() {
+		System.out.println("Going to Antiques room");
+		VIEW.AntiquesRoom(true);
+		VIEW.AntiquesRoom2(false);
+	}
+
+	//-=-Attic
+	public void Attic_AtticRoom() {
+		System.out.println("Going to Attic Room");
+		VIEW.AtticRoom(true);
+		VIEW.Attic(false);
+	}
+	public void Attic_ThirdHall() {
+		System.out.println("Going to Third Hall");
+		VIEW.ThirdHall(true);
+		VIEW.Attic(false);
+	}
+	//-=- Attic Room
+	public void AtticRoom_Attic() {
+		System.out.println("Going to Attic");
+		VIEW.Attic(true);
+		VIEW.AtticRoom(false);
+	}
 }

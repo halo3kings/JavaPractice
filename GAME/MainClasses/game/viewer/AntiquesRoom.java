@@ -7,24 +7,25 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Lounge {
-	
+public class AntiquesRoom {
 
-	JPanel Lounge = new JPanel();
+	
+	JPanel AntiquesRoom = new JPanel();
+	
 	JLabel ImageLabel = new JLabel();
 	
-	JButton GreenHouse = new JButton();
-		ButtonDataStorage BDS = new ButtonDataStorage(210, 160, 30, 120);
+	JButton AntiquesRoom2 = new JButton();
+		ButtonDataStorage BDS = new ButtonDataStorage(530, 100, 100, 200);
 	JButton HallWay = new JButton();
-		ButtonDataStorage BDS1 = new ButtonDataStorage(530, 100, 100, 300);
+		ButtonDataStorage BDS1 = new ButtonDataStorage(30, 80, 140, 200);
 	
-	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\Lounge.png");
+	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\AntiquesRoom.png");
 	Image Resize = BackGround.getImage();
 	
 	private int Height;
 	private int Width;
 	
-	Lounge(int W, int H) {
+	AntiquesRoom(int W, int H) {
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -34,15 +35,15 @@ public class Lounge {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-			Lounge.add(GreenHouse);
-				GreenHouse.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				GreenHouse.setVisible(true);
-				//GreenHouse.setOpaque(false);
-				//GreenHouse.setContentAreaFilled(false);
-				//GreenHouse.setBorderPainted(false);
-				//GreenHouse.setFocusable(false);
+			AntiquesRoom.add(AntiquesRoom2);
+				AntiquesRoom2.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				AntiquesRoom2.setVisible(true);
+				//AntiquesRoom2.setOpaque(false);
+				//AntiquesRoom2.setContentAreaFilled(false);
+				//AntiquesRoom2.setBorderPainted(false);
+				//AntiquesRoom2.setFocusable(false);
 				
-			Lounge.add(HallWay);
+			AntiquesRoom.add(HallWay);
 				HallWay.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				HallWay.setVisible(true);
 				//HallWay.setOpaque(false);
@@ -59,15 +60,15 @@ public class Lounge {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-			Lounge.add(GreenHouse);
-				GreenHouse.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				GreenHouse.setVisible(true);
-				//GreenHouse.setOpaque(false);
-				//GreenHouse.setContentAreaFilled(false);
-				//GreenHouse.setBorderPainted(false);
-				//GreenHouse.setFocusable(false);
+			AntiquesRoom.add(AntiquesRoom2);
+				AntiquesRoom2.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				AntiquesRoom2.setVisible(true);
+				//AntiquesRoom2.setOpaque(false);
+				//AntiquesRoom2.setContentAreaFilled(false);
+				//AntiquesRoom2.setBorderPainted(false);
+				//AntiquesRoom2.setFocusable(false);
 			
-			Lounge.add(HallWay);
+			AntiquesRoom.add(HallWay);
 				HallWay.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				HallWay.setVisible(true);
 				//HallWay.setOpaque(false);
@@ -84,15 +85,15 @@ public class Lounge {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-			Lounge.add(GreenHouse);
-				GreenHouse.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				GreenHouse.setVisible(true);
-				//GreenHouse.setOpaque(false);
-				//GreenHouse.setContentAreaFilled(false);
-				//GreenHouse.setBorderPainted(false);
-				//GreenHouse.setFocusable(false);
+			AntiquesRoom.add(AntiquesRoom2);
+				AntiquesRoom2.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				AntiquesRoom2.setVisible(true);
+				//AntiquesRoom2.setOpaque(false);
+				//AntiquesRoom2.setContentAreaFilled(false);
+				//AntiquesRoom2.setBorderPainted(false);
+				//AntiquesRoom2.setFocusable(false);
 				
-			Lounge.add(HallWay);
+			AntiquesRoom.add(HallWay);
 				HallWay.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				HallWay.setVisible(true);
 				//HallWay.setOpaque(false);
@@ -101,21 +102,21 @@ public class Lounge {
 				//HallWay.setFocusable(false);	
 		}
 		
-		System.out.println("building Lounge ");
+		System.out.println("building AntiquesRoom ");
 		ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
-		Lounge.add(ImageLabel);
-		Lounge.setBounds(0,0,W,H);
-		Lounge.setLayout(null);
-		Lounge.setVisible(true);
+		AntiquesRoom.add(ImageLabel);
+		AntiquesRoom.setBounds(0,0,W,H);
+		AntiquesRoom.setLayout(null);
+		AntiquesRoom.setVisible(true);
 	}
-	public JButton getGreenHouse() {
-		return GreenHouse;
+	public JButton getAntiquesRoom2() {
+		return AntiquesRoom2;
 	}
 	public JButton getHallWay() {
 		return HallWay;
 	}
-	public JPanel getLounge() {
-		return Lounge;
+	public JPanel getAntiquesRoom() {
+		return AntiquesRoom;
 	}
 	public void setHeight(int height) {
 		Height = height;

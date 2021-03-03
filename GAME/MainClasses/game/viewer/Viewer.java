@@ -26,6 +26,15 @@ public class Viewer extends Base {
 	GuestRoom1 GR1;
 	GuestRoom2 GR2;
 	
+	ThirdHall TH;
+	MasterBedroom MB;
+	PaintersStudio PS;
+	AntiquesRoom AR;
+	AntiquesRoom2 AR2;
+	
+	Attic AT;
+	AtticRoom ATR;
+	
 	public void initRooms(int WD, int HT) {
 		//Initializing all the rooms.
 		
@@ -99,16 +108,51 @@ public class Viewer extends Base {
 		this.Frame.add(OF.getOffice());
 		OF.getOffice().setVisible(false);
 		
-		System.out.println("Initiializing GuestRoom1");
+		System.out.println("Initializing GuestRoom1");
 		GR1 = new GuestRoom1(WD,HT);
 		this.Frame.add(GR1.getGuestRoom1());
 		GR1.getGuestRoom1().setVisible(false);
 		
-		System.out.println("Initiializing GuestRoom1");
+		System.out.println("Initializing GuestRoom1");
 		GR2 = new GuestRoom2(WD,HT);
 		this.Frame.add(GR2.getGuestRoom2());
 		GR2.getGuestRoom2().setVisible(false);
 		
+		System.out.println("Initializing Third Hall");
+		TH = new ThirdHall(WD,HT);
+		this.Frame.add(TH.getThirdHall());
+		TH.getThirdHall().setVisible(false);
+		
+		System.out.println("Initializing MasterBedroom");
+		MB = new MasterBedroom(WD,HT);
+		this.Frame.add(MB.getMasterBedroom());
+		MB.getMasterBedroom().setVisible(false);
+		
+		System.out.println("Initializing Painters Studio");
+		PS = new PaintersStudio(WD,HT);
+		this.Frame.add(PS.getPaintersStudio());
+		PS.getPaintersStudio().setVisible(false);
+		
+		System.out.println("Initializing Antiques Room");
+		AR = new AntiquesRoom(WD,HT);
+		this.Frame.add(AR.getAntiquesRoom());
+		AR.getAntiquesRoom().setVisible(false);
+		
+		System.out.println("Initializing Antiques Room");
+		AR2 = new AntiquesRoom2(WD,HT);
+		this.Frame.add(AR2.getAntiquesRoom2());
+		AR2.getAntiquesRoom2().setVisible(false);
+		
+		System.out.println("Initializing Antiques Room");
+		AT = new Attic(WD,HT);
+		this.Frame.add(AT.getAttic());
+		AT.getAttic().setVisible(false);
+		
+		System.out.println("Initializing Antiques Room");
+		ATR = new AtticRoom(WD,HT);
+		this.Frame.add(ATR.getAtticRoom());
+		ATR.getAtticRoom().setVisible(false);
+			
 	}
 	//calling the rooms to be visible or not.
 	public void MainMenuScreen(boolean Visible) {
@@ -159,6 +203,27 @@ public class Viewer extends Base {
 	public void GuestRoom2(boolean Visible) {
 		GR2.getGuestRoom2().setVisible(Visible);
 	}
+	public void ThirdHall(boolean Visible) {
+		TH.getThirdHall().setVisible(Visible);
+	}
+	public void MasterBedroom(boolean Visible) {
+		MB.getMasterBedroom().setVisible(Visible);
+	}
+	public void PaintersStudio(boolean Visible) {
+		PS.getPaintersStudio().setVisible(Visible);
+	}
+	public void AntiquesRoom(boolean Visible) {
+		AR.getAntiquesRoom().setVisible(Visible);
+	}
+	public void AntiquesRoom2(boolean Visible) {
+		AR2.getAntiquesRoom2().setVisible(Visible);
+	}
+	public void Attic(boolean Visible) {
+		AT.getAttic().setVisible(Visible);
+	}
+	public void AtticRoom(boolean Visible) {
+		ATR.getAtticRoom().setVisible(Visible);
+	}
 	
 	
 	public PreLaunchScreen getPLS() {
@@ -208,6 +273,27 @@ public class Viewer extends Base {
 	}
 	public GuestRoom2 getGuestRoom2() {
 		return GR2;
+	}
+	public ThirdHall getThirdHall() {
+		return TH;
+	}
+	public MasterBedroom getMasterBedroom() {
+		return MB;
+	}
+	public PaintersStudio getPaintersStudio() {
+		return PS;
+	}
+	public AntiquesRoom getAntiquesRoom() {
+		return AR;
+	}
+	public AntiquesRoom2 getAntiquesRoom2() {
+		return AR2;
+	}
+	public Attic getAttic() {
+		return AT;
+	}
+	public AtticRoom getAtticRoom() {
+		return ATR;
 	}
 	
 	public void updateWindow(int Width, int Height) {
