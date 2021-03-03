@@ -20,8 +20,20 @@ public class Viewer extends Base {
 	Kitchen KT;
 	DiningRoom DR;
 	
+	secondHall SH;
+	Study SD;
+	Office OF;
+	GuestRoom1 GR1;
+	GuestRoom2 GR2;
+	
 	public void initRooms(int WD, int HT) {
 		//Initializing all the rooms.
+		
+		//System.out.println("initializing "The new Room you want to add" ");
+		//create the room object(int Width and int Height);
+		//add the new Room Object to the JFrame this.Frame.add(object.get(RoomPannel through getMethod());
+		//then set the new Room Objects Panel visibility to false.
+		
 		System.out.println("initializing MainMenu ");
 		MMS = new MainMenuScreen(WD,HT);
 		this.Frame.add(MMS.getMainMenu());
@@ -72,6 +84,31 @@ public class Viewer extends Base {
 		this.Frame.add(DR.getDiningRoom());
 		DR.getDiningRoom().setVisible(false);
 		
+		System.out.println("Initializing Second Floor Hall");
+		SH = new secondHall(WD,HT);
+		this.Frame.add(SH.getsecondHall());
+		SH.getsecondHall().setVisible(false);
+		
+		System.out.println("Initializing Study");
+		SD = new Study(WD,HT);
+		this.Frame.add(SD.getStudy());
+		SD.getStudy().setVisible(false);
+		
+		System.out.println("Initializing Office");
+		OF = new Office(WD,HT);
+		this.Frame.add(OF.getOffice());
+		OF.getOffice().setVisible(false);
+		
+		System.out.println("Initiializing GuestRoom1");
+		GR1 = new GuestRoom1(WD,HT);
+		this.Frame.add(GR1.getGuestRoom1());
+		GR1.getGuestRoom1().setVisible(false);
+		
+		System.out.println("Initiializing GuestRoom1");
+		GR2 = new GuestRoom2(WD,HT);
+		this.Frame.add(GR2.getGuestRoom2());
+		GR2.getGuestRoom2().setVisible(false);
+		
 	}
 	//calling the rooms to be visible or not.
 	public void MainMenuScreen(boolean Visible) {
@@ -107,6 +144,22 @@ public class Viewer extends Base {
 	public void DiningRoom(boolean Visible) {
 		DR.getDiningRoom().setVisible(Visible);
 	}
+	public void SecondHall(boolean Visible) {
+		SH.getsecondHall().setVisible(Visible);
+	}
+	public void Study(boolean Visible) {
+		SD.getStudy().setVisible(Visible);
+	}
+	public void Office(boolean Visible) {
+		OF.getOffice().setVisible(Visible);
+	}
+	public void GuestRoom1(boolean Visible) {
+		GR1.getGuestRoom1().setVisible(Visible);
+	}
+	public void GuestRoom2(boolean Visible) {
+		GR2.getGuestRoom2().setVisible(Visible);
+	}
+	
 	
 	public PreLaunchScreen getPLS() {
 		return PLS;
@@ -140,6 +193,21 @@ public class Viewer extends Base {
 	}
 	public DiningRoom getDiningRoom() {
 		return DR;
+	}
+	public secondHall getSecondHall()  {
+		return SH;
+	}
+	public Study getStudy() {
+		return SD;
+	}
+	public Office getOffice() {
+		return OF;
+	}
+	public GuestRoom1 getGuestRoom1() {
+		return GR1;
+	}
+	public GuestRoom2 getGuestRoom2() {
+		return GR2;
 	}
 	
 	public void updateWindow(int Width, int Height) {

@@ -12,10 +12,16 @@ public class DiningRoom {
 	JLabel ImageLabel = new JLabel();
 	
 	JButton Hall = new JButton();
+		ButtonDataStorage BDS = new ButtonDataStorage(450, 150, 150, 210);
+	
 	JButton Kitchen = new JButton();
+		ButtonDataStorage BDS1 = new ButtonDataStorage(295, 150, 30, 100);
 	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\DiningRoom.png");
 	Image Resize = BackGround.getImage();
+	
+	private int Height;
+	private int Width;
 	
 	DiningRoom(int W, int H) {
 		if(W == 656) {
@@ -24,9 +30,11 @@ public class DiningRoom {
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 640 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			DiningRoom.add(Hall);
-				Hall.setBounds(450, 150, 150, 210);
+				Hall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Hall.setVisible(true);
 				//Hall.setOpaque(false);
 				//Hall.setContentAreaFilled(false);
@@ -34,7 +42,7 @@ public class DiningRoom {
 				//Hall.setFocusable(false);
 				
 			DiningRoom.add(Kitchen);
-				Kitchen.setBounds(295, 150, 30, 100);
+				Kitchen.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				Kitchen.setVisible(true);
 				//Kitchen.setOpaque(false);
 				//Kitchen.setContentAreaFilled(false);
@@ -47,9 +55,11 @@ public class DiningRoom {
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1280 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			DiningRoom.add(Hall);
-				Hall.setBounds(450*2, 225, 150*2, 315);
+				Hall.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Hall.setVisible(true);
 				//Hall.setOpaque(false);
 				//Hall.setContentAreaFilled(false);
@@ -57,7 +67,7 @@ public class DiningRoom {
 				//Hall.setFocusable(false);
 				
 			DiningRoom.add(Kitchen);
-				Kitchen.setBounds(295*2, 225, 30*2, 150);
+				Kitchen.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				Kitchen.setVisible(true);
 				//Kitchen.setOpaque(false);
 				//Kitchen.setContentAreaFilled(false);
@@ -65,12 +75,16 @@ public class DiningRoom {
 				//Kitchen.setFocusable(false);
 		}
 		if(W == 1936) {
+			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
+			BackGround = new ImageIcon(Resize1920);
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1920 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			DiningRoom.add(Hall);
-				Hall.setBounds(450*3, 320, 150*3, 445);
+				Hall.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Hall.setVisible(true);
 				//Hall.setOpaque(false);
 				//Hall.setContentAreaFilled(false);
@@ -78,7 +92,7 @@ public class DiningRoom {
 				//Hall.setFocusable(false);
 				
 			DiningRoom.add(Kitchen);
-				Kitchen.setBounds(295*3, 320, 30*3, 213);
+				Kitchen.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				Kitchen.setVisible(true);
 				//Kitchen.setOpaque(false);
 				//Kitchen.setContentAreaFilled(false);
@@ -86,7 +100,7 @@ public class DiningRoom {
 				//Kitchen.setFocusable(false);
 		}
 		
-		System.out.println("building Library ");
+		System.out.println("building DiningRoom ");
 		ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
 		DiningRoom.add(ImageLabel);
 		DiningRoom.setBounds(0,0,W,H);
@@ -102,4 +116,42 @@ public class DiningRoom {
 	public JPanel getDiningRoom() {
 		return DiningRoom;
 	}
+	public void setHeight(int height) {
+		Height = height;
+	}
+	public int getHeight() {
+		return Height;
+	}
+	public void setWidth(int width) {
+		Width = width;
+	}
+	public int getWidth() {
+		return Width;
+	}
+	public double getHeightRatio(int H) {
+		double Ratio;
+		Ratio = (double)H/(double)480.0;
+		return Ratio;
+	}
+	public double getWidthRatio(int W) {
+		double Ratio;
+		Ratio = (double)W/(double)640.0;
+		return Ratio;
+	}
+	public int ScalingHeight(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getHeightRatio(this.getHeight()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
+	}
+	public int ScalingWidth(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
+	}
+	
+
 }

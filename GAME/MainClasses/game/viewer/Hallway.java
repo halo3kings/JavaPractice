@@ -12,16 +12,34 @@ public class Hallway {
 	JLabel ImageLabel = new JLabel();
 	
 	JButton Lounge = new JButton();
+		ButtonDataStorage BDS = new ButtonDataStorage(60, 170, 70, 170);
+			
 	JButton	Dining = new JButton();
+		ButtonDataStorage BDS1 = new ButtonDataStorage(180, 200, 30, 90);
+			
 	JButton Kitchen = new JButton();
+		ButtonDataStorage BDS2 = new ButtonDataStorage(225, 220, 30, 70);
+				
 	JButton Stairs = new JButton();
+		ButtonDataStorage BDS3 = new ButtonDataStorage(280, 180, 90, 120);
+				
 	JButton Kitchen2 = new JButton();
+		ButtonDataStorage BDS4 = new ButtonDataStorage(390, 220, 30, 70);
+				
 	JButton PoolHall = new JButton();
+		ButtonDataStorage BDS5 = new ButtonDataStorage(440, 200, 30, 90);
+				
 	JButton Library = new JButton();
+		ButtonDataStorage BDS6 = new ButtonDataStorage(520, 170, 70, 170);
+				
 	JButton FrontPorch = new JButton();
+		ButtonDataStorage BDS7 = new ButtonDataStorage(20,420, 600, 40);
 	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\MainHall.png");
 	Image Resize = BackGround.getImage();
+	
+	private int Height;
+	private int Width;
 	
 	Hallway(int W, int H) {
 		if(W == 656) {
@@ -31,8 +49,12 @@ public class Hallway {
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to:" + BackGround.getIconWidth() +" "+BackGround.getIconHeight());
 			
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
+			
+			
 			HallWay.add(Lounge);
-				Lounge.setBounds(60, 170, 70, 170);
+				Lounge.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Lounge.setVisible(true);
 				//Lounge.setOpaque(false);
 				//Lounge.setContentAreaFilled(false);
@@ -40,7 +62,7 @@ public class Hallway {
 				//Lounge.setFocusable(false);
 		
 			HallWay.add(Dining);
-				Dining.setBounds(180, 200, 30, 90);
+				Dining.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				Dining.setVisible(true);
 				//Dining.setOpaque(false);
 				//Dining.setContentAreaFilled(false);
@@ -48,7 +70,7 @@ public class Hallway {
 				//Dining.setFocusable(false);
 				
 			HallWay.add(Kitchen);
-				Kitchen.setBounds(225, 220, 30, 70);
+				Kitchen.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
 				Kitchen.setVisible(true);
 				//Kitchen.setOpaque(false);
 				//Kitchen.setContentAreaFilled(false);
@@ -56,7 +78,7 @@ public class Hallway {
 				//Kitchen.setFocusable(false);
 				
 			HallWay.add(Stairs);
-				Stairs.setBounds(280, 180, 90, 120);
+				Stairs.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), this.ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
 				Stairs.setVisible(true);
 				//Stairs.setOpaque(false);
 				//Stairs.setContentAreaFilled(false);
@@ -64,7 +86,7 @@ public class Hallway {
 			    //Stairs.setFocusable(false);
 				
 			HallWay.add(Kitchen2);
-				Kitchen2.setBounds(390, 220, 30, 70);
+				Kitchen2.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
 				Kitchen2.setVisible(true);
 				//Kitchen2.setOpaque(false);
 				//Kitchen2.setContentAreaFilled(false);
@@ -72,7 +94,7 @@ public class Hallway {
 				//Kitchen2.setFocusable(false);
 				
 			HallWay.add(PoolHall);
-				PoolHall.setBounds(440, 200, 30, 90);
+				PoolHall.setBounds(this.ScalingWidth(BDS5.getX()), this.ScalingHeight(BDS5.getY()), this.ScalingWidth(BDS5.getWidth()), this.ScalingHeight(BDS5.getHeight()));
 				PoolHall.setVisible(true);
 				//PoolHall.setOpaque(false);
 				//PoolHall.setContentAreaFilled(false);
@@ -80,7 +102,7 @@ public class Hallway {
 				//PoolHall.setFocusable(false);
 				
 			HallWay.add(Library);
-				Library.setBounds(520, 170, 70, 170);
+				Library.setBounds(this.ScalingWidth(BDS6.getX()), this.ScalingHeight(BDS6.getY()), this.ScalingWidth(BDS6.getWidth()), this.ScalingHeight(BDS6.getHeight()));
 				Library.setVisible(true);
 				//Library.setOpaque(false);
 				//Library.setContentAreaFilled(false);
@@ -88,7 +110,7 @@ public class Hallway {
 				//Library.setFocusable(false);
 			
 			HallWay.add(FrontPorch);
-				FrontPorch.setBounds(20,420, 600, 40);
+				FrontPorch.setBounds(this.ScalingWidth(BDS7.getX()), this.ScalingHeight(BDS7.getY()), this.ScalingWidth(BDS7.getWidth()), this.ScalingHeight(BDS7.getHeight()));
 				FrontPorch.setVisible(true);
 				//FrontPorch.setOpaque(false);
 				//FrontPorch.setContentAreaFilled(false);
@@ -104,8 +126,11 @@ public class Hallway {
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1280 ");
 			
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
+			
 		HallWay.add(Lounge);
-			Lounge.setBounds(60*2, 250, 130, 255);
+			Lounge.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 			Lounge.setVisible(true);
 			//Lounge.setOpaque(false);
 			//Lounge.setContentAreaFilled(false);
@@ -113,7 +138,7 @@ public class Hallway {
 			//Lounge.setFocusable(false);
 	
 		HallWay.add(Dining);
-			Dining.setBounds(185*2, 300, 45, 135);
+			Dining.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 			Dining.setVisible(true);
 			//Dining.setOpaque(false);
 			//Dining.setContentAreaFilled(false);
@@ -121,7 +146,7 @@ public class Hallway {
 			//Dining.setFocusable(false);
 			
 		HallWay.add(Kitchen);
-			Kitchen.setBounds(230*2, 330, 45, 105);
+			Kitchen.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
 			Kitchen.setVisible(true);
 			//Kitchen.setOpaque(false);
 			//Kitchen.setContentAreaFilled(false);
@@ -129,7 +154,7 @@ public class Hallway {
 			//Kitchen.setFocusable(false);
 			
 		HallWay.add(Stairs);
-			Stairs.setBounds(280*2, 270, 180, 180);
+			Stairs.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), this.ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
 			Stairs.setVisible(true);
 			//Stairs.setOpaque(false);
 			//Stairs.setContentAreaFilled(false);
@@ -137,7 +162,7 @@ public class Hallway {
 		    //Stairs.setFocusable(false);
 			
 		HallWay.add(Kitchen2);
-			Kitchen2.setBounds(395*2, 330, 45, 105);
+			Kitchen2.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
 			Kitchen2.setVisible(true);
 			//Kitchen2.setOpaque(false);
 			//Kitchen2.setContentAreaFilled(false);
@@ -145,7 +170,7 @@ public class Hallway {
 			//Kitchen2.setFocusable(false);
 			
 		HallWay.add(PoolHall);
-			PoolHall.setBounds(440*2, 300, 45, 135);
+			PoolHall.setBounds(this.ScalingWidth(BDS5.getX()), this.ScalingHeight(BDS5.getY()), this.ScalingWidth(BDS5.getWidth()), this.ScalingHeight(BDS5.getHeight()));
 			PoolHall.setVisible(true);
 			//PoolHall.setOpaque(false);
 			//PoolHall.setContentAreaFilled(false);
@@ -153,7 +178,7 @@ public class Hallway {
 			//PoolHall.setFocusable(false);
 			
 		HallWay.add(Library);
-			Library.setBounds(520*2, 255, 120, 255);
+			Library.setBounds(this.ScalingWidth(BDS6.getX()), this.ScalingHeight(BDS6.getY()), this.ScalingWidth(BDS6.getWidth()), this.ScalingHeight(BDS6.getHeight()));
 			Library.setVisible(true);
 			//Library.setOpaque(false);
 			//Library.setContentAreaFilled(false);
@@ -161,7 +186,7 @@ public class Hallway {
 			//Library.setFocusable(false);
 			
 		HallWay.add(FrontPorch);
-			FrontPorch.setBounds(20*2,630, 1200, 60);
+			FrontPorch.setBounds(this.ScalingWidth(BDS7.getX()), this.ScalingHeight(BDS7.getY()), this.ScalingWidth(BDS7.getWidth()), this.ScalingHeight(BDS7.getHeight()));
 			FrontPorch.setVisible(true);
 			//FrontPorch.setOpaque(false);
 			//FrontPorch.setContentAreaFilled(false);
@@ -171,12 +196,17 @@ public class Hallway {
 		
 		}
 		if(W == 1936) {
+			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
+			BackGround = new ImageIcon(Resize1920);
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1920 ");
 			
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
+			
 		HallWay.add(Lounge);
-			Lounge.setBounds(200, 361, 200, 360);
+			Lounge.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 			Lounge.setVisible(true);
 			//Lounge.setOpaque(false);
 			//Lounge.setContentAreaFilled(false);
@@ -184,7 +214,7 @@ public class Hallway {
 			//Lounge.setFocusable(false);
 	
 		HallWay.add(Dining);
-			Dining.setBounds(560, 450, 64, 200);
+			Dining.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 			Dining.setVisible(true);
 			//Dining.setOpaque(false);
 			//Dining.setContentAreaFilled(false);
@@ -192,7 +222,7 @@ public class Hallway {
 			//Dining.setFocusable(false);
 			
 		HallWay.add(Kitchen);
-			Kitchen.setBounds(675, 500, 80, 160);
+			Kitchen.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
 			Kitchen.setVisible(true);
 			//Kitchen.setOpaque(false);
 			//Kitchen.setContentAreaFilled(false);
@@ -200,7 +230,7 @@ public class Hallway {
 			//Kitchen.setFocusable(false);
 			
 		HallWay.add(Stairs);
-			Stairs.setBounds(840, 400, 270, 260);
+			Stairs.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), this.ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
 			Stairs.setVisible(true);
 			//Stairs.setOpaque(false);
 			//Stairs.setContentAreaFilled(false);
@@ -208,7 +238,7 @@ public class Hallway {
 		    //Stairs.setFocusable(false);
 			
 		HallWay.add(Kitchen2);
-			Kitchen2.setBounds(1180, 500, 80, 160);
+			Kitchen2.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
 			Kitchen2.setVisible(true);
 			//Kitchen2.setOpaque(false);
 			//Kitchen2.setContentAreaFilled(false);
@@ -216,7 +246,7 @@ public class Hallway {
 			//Kitchen2.setFocusable(false);
 			
 		HallWay.add(PoolHall);
-			PoolHall.setBounds(1320, 450, 64, 200);
+			PoolHall.setBounds(this.ScalingWidth(BDS5.getX()), this.ScalingHeight(BDS5.getY()), this.ScalingWidth(BDS5.getWidth()), this.ScalingHeight(BDS5.getHeight()));
 			PoolHall.setVisible(true);
 			//PoolHall.setOpaque(false);
 			//PoolHall.setContentAreaFilled(false);
@@ -224,7 +254,7 @@ public class Hallway {
 			//PoolHall.setFocusable(false);
 			
 		HallWay.add(Library);
-			Library.setBounds(1560, 361, 200, 360);
+			Library.setBounds(this.ScalingWidth(BDS6.getX()), this.ScalingHeight(BDS6.getY()), this.ScalingWidth(BDS6.getWidth()), this.ScalingHeight(BDS6.getHeight()));
 			Library.setVisible(true);
 			//Library.setOpaque(false);
 			//Library.setContentAreaFilled(false);
@@ -232,7 +262,7 @@ public class Hallway {
 			//Library.setFocusable(false);
 	
 		HallWay.add(FrontPorch);
-			FrontPorch.setBounds(20*3,893, 600*3, 20+40*2);
+			FrontPorch.setBounds(this.ScalingWidth(BDS7.getX()), this.ScalingHeight(BDS7.getY()), this.ScalingWidth(BDS7.getWidth()), this.ScalingHeight(BDS7.getHeight()));
 			FrontPorch.setVisible(true);
 			//FrontPorch.setOpaque(false);
 			//FrontPorch.setContentAreaFilled(false);
@@ -240,7 +270,7 @@ public class Hallway {
 			//FrontPorch.setFocusable(false);
 		}
 		
-		System.out.println("building Garage ");
+		System.out.println("building Hallway ");
 		ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
 		HallWay.add(ImageLabel);
 		HallWay.setBounds(0,0,W,H);
@@ -273,5 +303,42 @@ public class Hallway {
 	}
 	public JButton getFrontPorch() {
 		return FrontPorch;
+	}
+	
+	public void setHeight(int height) {
+		Height = height;
+	}
+	public int getHeight() {
+		return Height;
+	}
+	public void setWidth(int width) {
+		Width = width;
+	}
+	public int getWidth() {
+		return Width;
+	}
+	public double getHeightRatio(int H) {
+		double Ratio;
+		Ratio = (double)H/(double)480.0;
+		return Ratio;
+	}
+	public double getWidthRatio(int W) {
+		double Ratio;
+		Ratio = (double)W/(double)640.0;
+		return Ratio;
+	}
+	public int ScalingHeight(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getHeightRatio(this.getHeight()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
+	}
+	public int ScalingWidth(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
 	}
 }

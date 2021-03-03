@@ -9,24 +9,21 @@ import javax.swing.JPanel;
 
 public class Lounge {
 	
-	private int greenHouseButtonX = 210;
-	private int greenHouseButtonY = 160;
-	private int greenHouseButtonW = 30;
-	private int greenHouseButtonH = 120;
-	
-	private int hallWayButtonX = 530;
-	private int hallWayButtonY = 100;
-	private int hallWayButtonW = 100;
-	private int hallWayButtonH = 400;
-	
+
 	JPanel Lounge = new JPanel();
+		ButtonDataStorage BDS = new ButtonDataStorage(210, 160, 30, 120);
+	
 	JLabel ImageLabel = new JLabel();
+		ButtonDataStorage BDS1 = new ButtonDataStorage(530, 100, 100, 300);
 	
 	JButton GreenHouse = new JButton();
 	JButton HallWay = new JButton();
 	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\Lounge.png");
 	Image Resize = BackGround.getImage();
+	
+	private int Height;
+	private int Width;
 	
 	Lounge(int W, int H) {
 		if(W == 656) {
@@ -35,9 +32,11 @@ public class Lounge {
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 640 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			Lounge.add(GreenHouse);
-				GreenHouse.setBounds(greenHouseButtonX, greenHouseButtonY, greenHouseButtonW, greenHouseButtonH);
+				GreenHouse.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				GreenHouse.setVisible(true);
 				//GreenHouse.setOpaque(false);
 				//GreenHouse.setContentAreaFilled(false);
@@ -45,7 +44,7 @@ public class Lounge {
 				//GreenHouse.setFocusable(false);
 				
 			Lounge.add(HallWay);
-				HallWay.setBounds(hallWayButtonX, hallWayButtonY, hallWayButtonW, hallWayButtonH);
+				HallWay.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				HallWay.setVisible(true);
 				//HallWay.setOpaque(false);
 				//HallWay.setContentAreaFilled(false);
@@ -58,9 +57,11 @@ public class Lounge {
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1280 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			Lounge.add(GreenHouse);
-				GreenHouse.setBounds(greenHouseButtonX*2,240 , greenHouseButtonW*2,180 );
+				GreenHouse.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				GreenHouse.setVisible(true);
 				//GreenHouse.setOpaque(false);
 				//GreenHouse.setContentAreaFilled(false);
@@ -68,7 +69,7 @@ public class Lounge {
 				//GreenHouse.setFocusable(false);
 			
 			Lounge.add(HallWay);
-				HallWay.setBounds(hallWayButtonX*2, 150, hallWayButtonW*2, hallWayButtonH+100);
+				HallWay.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				HallWay.setVisible(true);
 				//HallWay.setOpaque(false);
 				//HallWay.setContentAreaFilled(false);
@@ -76,12 +77,16 @@ public class Lounge {
 				//HallWay.setFocusable(false);	
 		}
 		if(W == 1936) {
+			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
+			BackGround = new ImageIcon(Resize1920);
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1920 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			Lounge.add(GreenHouse);
-				GreenHouse.setBounds(greenHouseButtonX*3,340 , greenHouseButtonW*3, 100+greenHouseButtonH*2);
+				GreenHouse.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				GreenHouse.setVisible(true);
 				//GreenHouse.setOpaque(false);
 				//GreenHouse.setContentAreaFilled(false);
@@ -89,7 +94,7 @@ public class Lounge {
 				//GreenHouse.setFocusable(false);
 				
 			Lounge.add(HallWay);
-				HallWay.setBounds(hallWayButtonX*3, 213, hallWayButtonW*3, hallWayButtonH+300);
+				HallWay.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				HallWay.setVisible(true);
 				//HallWay.setOpaque(false);
 				//HallWay.setContentAreaFilled(false);
@@ -97,7 +102,7 @@ public class Lounge {
 				//HallWay.setFocusable(false);	
 		}
 		
-		System.out.println("building Garage ");
+		System.out.println("building Lounge ");
 		ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
 		Lounge.add(ImageLabel);
 		Lounge.setBounds(0,0,W,H);
@@ -113,4 +118,42 @@ public class Lounge {
 	public JPanel getLounge() {
 		return Lounge;
 	}
+	public void setHeight(int height) {
+		Height = height;
+	}
+	public int getHeight() {
+		return Height;
+	}
+	public void setWidth(int width) {
+		Width = width;
+	}
+	public int getWidth() {
+		return Width;
+	}
+	public double getHeightRatio(int H) {
+		double Ratio;
+		Ratio = (double)H/(double)480.0;
+		return Ratio;
+	}
+	public double getWidthRatio(int W) {
+		double Ratio;
+		Ratio = (double)W/(double)640.0;
+		return Ratio;
+	}
+	public int ScalingHeight(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getHeightRatio(this.getHeight()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
+	}
+	public int ScalingWidth(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
+	}
+	
+
 }

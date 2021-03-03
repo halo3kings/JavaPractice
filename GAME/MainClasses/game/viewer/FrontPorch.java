@@ -10,13 +10,19 @@ import javax.swing.JPanel;
 public class FrontPorch{
 	
 	JPanel FrontPorch = new JPanel();
+		ButtonDataStorage BDS = new ButtonDataStorage(100,0,120,480);
+		
 	JLabel ImageLabel = new JLabel();
+		ButtonDataStorage BDS1 = new ButtonDataStorage(550, 70, 300, 100);
 	
 	JButton Garage = new JButton();
 	JButton Hallway = new JButton();
 	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\FrontPorch.png");
 	Image Resize = BackGround.getImage();
+	
+	private int Height;
+	private int Width;
 
 	FrontPorch(int W, int H) {
 		if(W == 656) {
@@ -25,9 +31,12 @@ public class FrontPorch{
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 640 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
+			
 			
 			FrontPorch.add(Hallway);
-				Hallway.setBounds(100, 0, 120, BackGround.getIconHeight());
+				Hallway.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Hallway.setVisible(true);
 				//Hallway.setOpaque(false);
 				//Hallway.setContentAreaFilled(false);
@@ -35,7 +44,7 @@ public class FrontPorch{
 				//Hallway.setFocusable(false);
 			
 			FrontPorch.add(Garage);
-				Garage.setBounds(550, 70, 300, 100);
+				Garage.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				Garage.setVisible(true);
 				//Garage.setOpaque(false);
 				//Garage.setContentAreaFilled(false);
@@ -48,9 +57,11 @@ public class FrontPorch{
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1280 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			FrontPorch.add(Hallway);
-				Hallway.setBounds(100*2, 0*2, 120*2, BackGround.getIconHeight());
+				Hallway.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Hallway.setVisible(true);
 				//Hallway.setOpaque(false);
 				//Hallway.setContentAreaFilled(false);
@@ -58,7 +69,7 @@ public class FrontPorch{
 				//Hallway.setFocusable(false);
 				
 			FrontPorch.add(Garage);
-				Garage.setBounds(550*2, 120, 300*2, 100*2);
+				Garage.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				Garage.setVisible(true);
 				//Garage.setOpaque(false);
 				//Garage.setContentAreaFilled(false);
@@ -66,12 +77,16 @@ public class FrontPorch{
 				//Garage.setFocusable(false);
 		}
 		if(W == 1936) {
+			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
+			BackGround = new ImageIcon(Resize1920);
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1920 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			FrontPorch.add(Hallway);
-				Hallway.setBounds(100*3, 0*3, 120*3, BackGround.getIconHeight());
+				Hallway.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Hallway.setVisible(true);
 				//Hallway.setOpaque(false);
 				//Hallway.setContentAreaFilled(false);
@@ -79,7 +94,7 @@ public class FrontPorch{
 				//Hallway.setFocusable(false);
 			
 			FrontPorch.add(Garage);
-				Garage.setBounds(550*3, 170, 300*3, 100*3);
+				Garage.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
 				Garage.setVisible(true);
 				//Garage.setOpaque(false);
 				//Garage.setContentAreaFilled(false);
@@ -106,6 +121,42 @@ public class FrontPorch{
 		return Hallway;
 	}
 	
+	public void setHeight(int height) {
+		Height = height;
+	}
+	public int getHeight() {
+		return Height;
+	}
+	public void setWidth(int width) {
+		Width = width;
+	}
+	public int getWidth() {
+		return Width;
+	}
+	public double getHeightRatio(int H) {
+		double Ratio;
+		Ratio = (double)H/(double)480.0;
+		return Ratio;
+	}
+	public double getWidthRatio(int W) {
+		double Ratio;
+		Ratio = (double)W/(double)640.0;
+		return Ratio;
+	}
+	public int ScalingHeight(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getHeightRatio(this.getHeight()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
+	}
+	public int ScalingWidth(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
+	}
 	
 
 }

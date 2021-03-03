@@ -1,11 +1,5 @@
 package game.controller;
 
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.text.View;
-
 import game.model.Model;
 import game.viewer.Viewer;
 
@@ -29,24 +23,29 @@ public class Controller{
 		VIEW.getPLS().getMenuPanel().setVisible(true);
 		System.out.println("Refreshed preLaunch Screen");
 		
-		this.setButtonActionEventsPLS();
+		this.setButtonActionEvents_PLS();
 		System.out.println("Button Events instanced");
 	}
 	
 	//All the button Action events
 	public void setAllButtonEvents() {
-		this.setButtonActionEventsFP();
-		this.setButtonActionEventsMMS();
-		this.setButtonActionEventsGarage();
-		this.setButtonActionEventsHallWay();
-		this.setButtonActionEventsLounge();
-		this.setButtonActionEventsGreenHouse();
-		this.setButtonActionEventsLibrary();
-		this.setButtonActionEventsPoolHall();
-		this.setButtonActionEventsKitchen();
-		this.setButtonActionEventsDiningRoom();
+		this.setButtonActionEvents_FrontPorch();
+		this.setButtonActionEvents_MMS();
+		this.setButtonActionEvents_Garage();
+		this.setButtonActionEvents_HallWay();
+		this.setButtonActionEvents_Lounge();
+		this.setButtonActionEvents_GreenHouse();
+		this.setButtonActionEvents_Library();
+		this.setButtonActionEvents_PoolHall();
+		this.setButtonActionEvents_Kitchen();
+		this.setButtonActionEvents_DiningRoom();
+		this.setButtonActionEvents_SecondHall();
+		this.setButtonActionEvents_Study();
+		this.setButtonActionEvents_Office();
+		this.setButtonActionEvents_GuestRoom1();
+		this.setButtonActionEvents_GuestRoom2();
 	}
-	public void setButtonActionEventsPLS() {
+	public void setButtonActionEvents_PLS() {
 		VIEW.getPLS().getStart().addActionListener(e ->this.PLS_StartAction());
 		VIEW.getPLS().getOptions().addActionListener(e ->this.PLS_Options());
 		VIEW.getPLS().getCredits().addActionListener(e ->this.PLS_Credits());
@@ -54,21 +53,21 @@ public class Controller{
 		VIEW.getPLS().getBBOptions().addActionListener(e ->this.PLS_BBOptions());
 		VIEW.getPLS().getBBCredits().addActionListener(e ->this.PLS_BBCredits());
 	}
-	public void setButtonActionEventsMMS() {
+	public void setButtonActionEvents_MMS() {
 		VIEW.getMMS().getStartButton().addActionListener(e ->this.MMS_Start());
 		VIEW.getMMS().getQuit().addActionListener(e ->this.MMS_Quit());
 		VIEW.getMMS().getLoad().addActionListener(e ->this.MMS_Load());
 		VIEW.getMMS().getLLoad().addActionListener(e ->this.MMS_LLoad());
 		VIEW.getMMS().getLoadBB().addActionListener(e ->this.MMS_LoadBB());
 	}
-	public void setButtonActionEventsFP() {
+	public void setButtonActionEvents_FrontPorch() {
 		VIEW.getFP().getGarage().addActionListener(e ->this.FP_GarageDoor());
 		VIEW.getFP().getHallway().addActionListener(e ->this.FP_HallwayDoor());
 	}
-	public void setButtonActionEventsGarage() {
+	public void setButtonActionEvents_Garage() {
 		VIEW.getGarage().getFrontPorch().addActionListener(e ->this.Garage_FrontPortch());
 	}
-	public void setButtonActionEventsHallWay() {
+	public void setButtonActionEvents_HallWay() {
 		VIEW.getHallway().getLounge().addActionListener(e ->this.HallWay_Lounge());
 		VIEW.getHallway().getDining().addActionListener(e ->this.HallWay_Dining());
 		VIEW.getHallway().getKitchen().addActionListener(e ->this.HallWay_Kitchen());
@@ -78,27 +77,47 @@ public class Controller{
 		VIEW.getHallway().getLibrary().addActionListener(e ->this.HallWay_Library());
 		VIEW.getHallway().getFrontPorch().addActionListener(e ->this.HallWay_FrontPorch());	
 	}
-	public void setButtonActionEventsLounge() {
+	public void setButtonActionEvents_Lounge() {
 		VIEW.getLounge().getGreenHouse().addActionListener(e ->this.Lounge_GreenHouse());
 		VIEW.getLounge().getHallWay().addActionListener(e ->this.Lounge_HallWay());
 	}
-	public void setButtonActionEventsGreenHouse() {
+	public void setButtonActionEvents_GreenHouse() {
 		VIEW.getGreenHouse().getLounge().addActionListener(e ->this.GreenHouse_Lounge());
 	}
-	public void setButtonActionEventsLibrary() {
+	public void setButtonActionEvents_Library() {
 		VIEW.getLibrary().getHall().addActionListener(e -> this.Library_Hall());
 	}
-	public void setButtonActionEventsPoolHall() {
+	public void setButtonActionEvents_PoolHall() {
 		VIEW.getPoolHall().getHall().addActionListener(e -> this.PoolHall_Hall());
 	}
-	public void setButtonActionEventsKitchen() {
+	public void setButtonActionEvents_Kitchen() {
 		VIEW.getKitchen().getHall().addActionListener(e -> this.Kitchen_Hall());
 		VIEW.getKitchen().getHall2().addActionListener(e -> this.Kitchen_Hall2());
 		VIEW.getKitchen().getDiningRoom().addActionListener(e -> this.Kitchen_DiningRoom());
 	}
-	public void setButtonActionEventsDiningRoom() {
+	public void setButtonActionEvents_DiningRoom() {
 		VIEW.getDiningRoom().getHall().addActionListener(e -> this.DiningRoom_Hall());
 		VIEW.getDiningRoom().getKitchen().addActionListener(e -> this.DiningRoom_Kitchen());
+	}
+	public void setButtonActionEvents_SecondHall() {
+		VIEW.getSecondHall().getHall().addActionListener(e -> this.SecondHall_Hall());
+		VIEW.getSecondHall().getGuestRoom1().addActionListener(e -> this.SecondHall_GuestRoom1());
+		VIEW.getSecondHall().getGuestRoom2().addActionListener(e -> this.SecondHall_GuestRoom2());
+		VIEW.getSecondHall().GetOffice().addActionListener(e -> this.SecondHall_Office());
+		VIEW.getSecondHall().GetStudy().addActionListener(e -> this.SecondHall_Study());
+		VIEW.getSecondHall().GetThirdHall().addActionListener(e -> this.SecondHall_ThirdHall());
+	}
+	public void setButtonActionEvents_Study() {
+		VIEW.getStudy().getHall().addActionListener(e -> this.Study_SecondHall());
+	}
+	public void setButtonActionEvents_Office() {
+		VIEW.getOffice().getHall().addActionListener(e -> this.Office_SecondHall());
+	}
+	public void setButtonActionEvents_GuestRoom1() {
+		VIEW.getGuestRoom1().getHall().addActionListener(e -> this.GuestRoom1_SecondHall());
+	}
+	public void setButtonActionEvents_GuestRoom2() {
+		VIEW.getGuestRoom2().getHall().addActionListener(e -> this.GuestRoom2_SecondHall());
 	}
 	
 	public void updateRoomID(int ID) {
@@ -141,7 +160,7 @@ public class Controller{
 		VIEW.PreLaunchScreen(false);
 		
 		//VIEW.MainMenuScreen(true); DEFAULT
-		VIEW.DiningRoom(true); // enter room here for immediate start room.
+		VIEW.FrontPorch(true); // enter room here for immediate start room.
 		this.setAllButtonEvents();
 		
 	}
@@ -223,7 +242,8 @@ public class Controller{
 	}
 	public void HallWay_Stairs() {
 		System.out.println("Going up Stairs");
-		//VIEW.Hallway(false);
+		VIEW.Hallway(false);
+		VIEW.SecondHall(true);
 	}
 	public void HallWay_Kitchen2() {
 		this.HallWay_Kitchen();
@@ -296,6 +316,63 @@ public class Controller{
 		System.out.println("Going to hall");
 		VIEW.Library(false);
 		VIEW.Hallway(true);
+	}
+	
+	
+	//===Second Hall Buttons
+	public void SecondHall_Hall() {
+		System.out.println("Going to hall");
+		VIEW.Hallway(true);
+		VIEW.SecondHall(false);
+	}
+	public void SecondHall_Study() {
+		System.out.println("Going to Study");
+		VIEW.SecondHall(false);
+		VIEW.Study(true);
+	}
+	public void SecondHall_Office() {
+		System.out.println("Going to Office");
+		VIEW.SecondHall(false);
+		VIEW.Office(true);
+	}
+	public void SecondHall_GuestRoom1() {
+		System.out.println("Going to GuestRoom1");
+		VIEW.SecondHall(false);
+		VIEW.GuestRoom1(true);
+	}
+	public void SecondHall_GuestRoom2() {
+		System.out.println("Going to GuestRoom2");
+		VIEW.SecondHall(false);
+		VIEW.GuestRoom2(true);
+	}
+	public void SecondHall_ThirdHall() {
+		System.out.println("Going to Third Hall");
+		VIEW.SecondHall(false);
+		//VIEW.ThirdHall(true);
+	}
+	//===Study Button
+	public void Study_SecondHall() {
+		System.out.println("Going to Second Hall");
+		VIEW.SecondHall(true);
+		VIEW.Study(false);
+	}
+	//===Office
+	public void Office_SecondHall() {
+		System.out.println("Going to Second Hall");
+		VIEW.SecondHall(true);
+		VIEW.Office(false);
+	}
+	//===GuestRoom1
+	public void GuestRoom1_SecondHall() {
+		System.out.println("Going to Second Hall");
+		VIEW.SecondHall(true);
+		VIEW.GuestRoom1(false);
+	}
+	//===GuestRoom2
+	public void GuestRoom2_SecondHall() {
+		System.out.println("Going to Second Hall");
+		VIEW.SecondHall(true);
+		VIEW.GuestRoom2(false);
 	}
 	
 	

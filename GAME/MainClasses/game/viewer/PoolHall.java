@@ -13,9 +13,13 @@ public class PoolHall {
 	JLabel ImageLabel = new JLabel();
 	
 	JButton Hall = new JButton();
+	ButtonDataStorage BDS = new ButtonDataStorage(30, 150, 180, 210);
 	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\PoolHall.png");
 	Image Resize = BackGround.getImage();
+	
+	private int Height;
+	private int Width;
 	
 	PoolHall(int W, int H) {
 		if(W == 656) {
@@ -24,9 +28,11 @@ public class PoolHall {
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 640 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			PoolHall.add(Hall);
-				Hall.setBounds(30, 150, 180, 210);
+				Hall.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Hall.setVisible(true);
 				//Hall.setOpaque(false);
 				//Hall.setContentAreaFilled(false);
@@ -39,9 +45,11 @@ public class PoolHall {
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1280 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			PoolHall.add(Hall);
-				Hall.setBounds(30*2, 225, 360, 315);
+				Hall.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Hall.setVisible(true);
 				//Hall.setOpaque(false);
 				//Hall.setContentAreaFilled(false);
@@ -49,12 +57,16 @@ public class PoolHall {
 				//Hall.setFocusable(false);
 		}
 		if(W == 1936) {
+			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
+			BackGround = new ImageIcon(Resize1920);
 			ImageLabel.setIcon(BackGround);
 			ImageLabel.setVisible(true);
 			System.out.println("resizing to 1920 ");
+			this.setHeight(BackGround.getIconHeight());
+			this.setWidth(BackGround.getIconWidth());
 			
 			PoolHall.add(Hall);
-				Hall.setBounds(30*3, 319, 540, 446);
+				Hall.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
 				Hall.setVisible(true);
 				//Hall.setOpaque(false);
 				//Hall.setContentAreaFilled(false);
@@ -62,7 +74,7 @@ public class PoolHall {
 				//Hall.setFocusable(false);
 		}
 		
-		System.out.println("building Library ");
+		System.out.println("building Pool Hall ");
 		ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
 		PoolHall.add(ImageLabel);
 		PoolHall.setBounds(0,0,W,H);
@@ -74,5 +86,41 @@ public class PoolHall {
 	}
 	public JPanel getPoolHall() {
 		return PoolHall;
+	}
+	public void setHeight(int height) {
+		Height = height;
+	}
+	public int getHeight() {
+		return Height;
+	}
+	public void setWidth(int width) {
+		Width = width;
+	}
+	public int getWidth() {
+		return Width;
+	}
+	public double getHeightRatio(int H) {
+		double Ratio;
+		Ratio = (double)H/(double)480.0;
+		return Ratio;
+	}
+	public double getWidthRatio(int W) {
+		double Ratio;
+		Ratio = (double)W/(double)640.0;
+		return Ratio;
+	}
+	public int ScalingHeight(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getHeightRatio(this.getHeight()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
+	}
+	public int ScalingWidth(int numberToCalc) {
+		double Temp;
+		int Calc;
+		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
+		Calc = (int)Math.floor(Temp);
+		return Calc;
 	}
 }
