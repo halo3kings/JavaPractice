@@ -13,11 +13,11 @@ public class InventoryScreen {
 	JLabel ImageLabel = new JLabel();
 	
 	JButton LeftArrow = new JButton();
-		ButtonDataStorage BDS = new ButtonDataStorage(0, 0, 220, 360);
+		ButtonDataStorage BDS = new ButtonDataStorage(0, 0, 20, 20);
 	JButton RightArrow = new JButton();
-		ButtonDataStorage BDS1 = new ButtonDataStorage(0, 0, 220, 360);
+		ButtonDataStorage BDS1 = new ButtonDataStorage(20, 20, 20, 20);
 	JButton ItemSelected = new JButton();
-		ButtonDataStorage BDS2 = new ButtonDataStorage(0, 0, 220, 360);
+		ButtonDataStorage BDS2 = new ButtonDataStorage(40, 40, 20, 20);
 	
 	public boolean Opaque = true;
 	public boolean AreaFilled = true;
@@ -32,7 +32,7 @@ public class InventoryScreen {
 	private int Width;
 	
 	InventoryScreen(int W, int H) {
-		this.toggleButtonStateFinal();
+		//this.toggleButtonStateFinal();
 		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
@@ -123,9 +123,15 @@ public class InventoryScreen {
 		InventoryScreen.add(ImageLabel);
 		InventoryScreen.setBounds(0,0,W,H);
 		InventoryScreen.setLayout(null);
-		InventoryScreen.setVisible(true);
+		InventoryScreen.setVisible(false);
 	}
 	public JButton getLeftArrow() {
+		return LeftArrow;
+	}
+	public JButton getRightArrow() {
+		return LeftArrow;
+	}
+	public JButton getItemSelected() {
 		return LeftArrow;
 	}
 	public JPanel getInventoryScreen() {

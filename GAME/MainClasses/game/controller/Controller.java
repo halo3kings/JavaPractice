@@ -10,28 +10,39 @@ public class Controller implements KeyListener{
 	Model MODEL = new Model();
 	Viewer VIEW;
 	boolean Running = true;
+	boolean InventoryOpen  = false;
 	
 	public Controller(){
+		
+		//Setting the initial resolution of the preLaunch screen 
 		MODEL.setGameW(440);
 		MODEL.setGameH(510);
 		System.out.println("Resolution is 440x510");
 		
+		//creating the ViewerClass and passing in the resolution from the previous section 
 		VIEW = new Viewer(MODEL.getGameW(),MODEL.getGameH());
 		System.out.println("creating Viewer");
 		
+		//setting the preLaunchScreen visible
 		VIEW.PreLaunchScreen(true);
 		System.out.println("creating Pre Launch Screen");
 		
+		//Refreshing the prelaunch screen
 		VIEW.getPLS().getMenuPanel().setVisible(false);
 		VIEW.getPLS().getMenuPanel().setVisible(true);
 		System.out.println("Refreshed preLaunch Screen");
 		
+		//initializing the buttons for the prelaunch screen. 
 		this.setButtonActionEvents_PLS();
 		System.out.println("Button Events instanced");
+		
+		//adds a Keylistener to the Frame in View.
+		VIEW.getFrame().addKeyListener(this);
 		
 	}
 	
 	//All the button Action events
+	//this method when called Initializes each button's actions when pressed. 
 	
 	public void setAllButtonEvents() {
 		this.setButtonActionEvents_FrontPorch();
@@ -60,7 +71,6 @@ public class Controller implements KeyListener{
 		this.setButtonActionEvents_Attic();
 		this.setButtonActionEvents_AtticRoom();
 		
-		//this method when called Initializes each button's actions when pressed. 
 	}
 	
 	// the following setButtonActionEvents_RoomName methods all are the assigning each buttons action to their respective response methods.
@@ -191,6 +201,7 @@ public class Controller implements KeyListener{
 			System.out.println(MODEL.getGameW() +" "+ MODEL.getGameH());
 			System.out.println("Resolution is 640x480");
 		}
+		
 		if(VIEW.getPLS().getRes2().isSelected() == true) {
 			MODEL.setGameH(720+30);
 			MODEL.setGameW(1280+16);
@@ -199,6 +210,7 @@ public class Controller implements KeyListener{
 			System.out.println("Resolution is 1280x720");
 			//1280x720
 		}
+		
 		if(VIEW.getPLS().getRes3().isSelected() == true) {
 			MODEL.setGameH(1080+29);
 			MODEL.setGameW(1920+16);
@@ -207,8 +219,8 @@ public class Controller implements KeyListener{
 			System.out.println("Resolution is 1920x1080");
 			//1920x1080
 		}
-		VIEW.PreLaunchScreen(false);
 		
+		VIEW.PreLaunchScreen(false);
 		VIEW.MainMenuScreen(true); //DEFAULT
 		//VIEW.ThirdHall(true); // enter room here for immediate start room.
 		this.setAllButtonEvents();
@@ -243,7 +255,12 @@ public class Controller implements KeyListener{
 	public void MMS_Start() {
 		System.out.println("Starting...");
 		VIEW.MainMenuScreen(false);
-		VIEW.FrontPorch(true);
+		
+		VIEW.setCurrentRoom(VIEW.getFP().getFrontPorch());
+		MODEL.setCurrentRoom(1);
+		
+		//VIEW.MainMenuScreen(false);
+		//VIEW.FrontPorch(true);
 	}
 	public void MMS_Load() {
 		System.out.println("Opening loading screen...");
@@ -500,16 +517,6 @@ public class Controller implements KeyListener{
 		VIEW.AtticRoom(false);
 	}
 	//Keyboard keys----------------------------------------------------
-	
-	public void KeyButtonInventory() {
-		System.out.println();
-	}
-	public void KeyButtonEscape() {
-		
-	}
-	public void KeyButtonUse() {
-		
-	}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -520,8 +527,37 @@ public class Controller implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
+		System.out.println(e.getKeyCode());
+		//27 is escape.
 		
-		if(e.getKeyChar() == KeyEvent.VK_TAB) {
+		switch(e.getKeyChar()) {
+			case 'e':this.KeyBoardBindAction_Inventory();
+			break;
+			case 'f':;
+			break;
+			case '1':;
+			break;
+			case '2':;
+			break;
+			case '3':;
+			break;
+			case '4':;
+			break;
+			case '5':;
+			break;
+			case '6':;
+			break;
+			case '7':;
+			break;
+			case '8':;
+			break;
+			case '9':;
+			break;
+			case '0':;
+			break;
+		}
+		
+		if(e.getKeyCode() == KeyEvent.VK_TAB) {
 			System.out.println("\"TAB\"");
 			VIEW.getInventoryScreen();		
 		}
@@ -529,8 +565,30 @@ public class Controller implements KeyListener{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub		
 		
 	}
+	
+	public void KeyBoardBindAction_Inventory() {
+		if(this.getInventoryState() == false) {
+
+			VIEW.InventoryScreen(true);
+			VIEW.getInventoryScreen().getInventoryScreen().setLayer(VIEW.getInventoryScreen().getInventoryScreen(), 0);
+			System.out.println("Opening Iventory");
+			this.setInventoryState(true);
+		}
+
+
+	}
+	public void KeyBoardBindAction_Use() {
+		
+	}
+	public void setInventoryState(boolean State) {
+		InventoryOpen = State;
+	}
+	public boolean getInventoryState() {
+		return InventoryOpen;
+	}
+	
 	
 }

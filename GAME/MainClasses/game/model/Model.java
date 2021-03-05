@@ -5,6 +5,9 @@ public class Model {
 	private int GameH;
 	
 	private int WindowID;
+	private boolean InventoryOpen;
+	
+	private int CurrentRoom;
 	
 	public void setGameW(int GW) {
 		GameW = GW;
@@ -15,6 +18,9 @@ public class Model {
 	public void setWindowID(int ID) {
 		WindowID = ID;
 	}
+	public void setCurrentRoom(int currentRoom) {
+		CurrentRoom = currentRoom;
+	}
 	//gets
 	public int getGameW() {
 		return GameW;
@@ -24,5 +30,8 @@ public class Model {
 	}
 	public int getWindowID() {
 		return WindowID;
+	}
+	public int getCurrentRoom() {
+		return CurrentRoom;
 	}
 }

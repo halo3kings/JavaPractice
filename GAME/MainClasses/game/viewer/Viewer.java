@@ -1,12 +1,18 @@
 package game.viewer;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 public class Viewer extends Base {
+	
+	JPanel CurrentFrame = new JPanel();
 	
 	public Viewer(int W, int H) {
 		super(W, H);
 		PLS = new PreLaunchScreen();
 		this.Frame.add(PLS.getPreLaunchScreen());
-		this.Frame.addKeyListener(this);
+		
+		CurrentFrame.setVisible(true);
 	}
 	
 	// This is a list of instanced rooms for the viewer to then work with.
@@ -58,7 +64,7 @@ public class Viewer extends Base {
 		System.out.println("initializing Front porch ");
 		FP = new FrontPorch(WD,HT);
 		this.Frame.add(FP.getFrontPorch());
-		FP.getFrontPorch().setVisible(false);
+		FP.getFrontPorch().setVisible(true);
 		
 		System.out.println("initializing Garage ");
 		GRG = new Garage(WD,HT);
@@ -314,6 +320,13 @@ public class Viewer extends Base {
 	}
 	public InventoryScreen getInventoryScreen() {
 		return IS;
+	}
+	
+	public JPanel getCurrentRoom() {
+		return CurrentFrame;
+	}
+	public void setCurrentRoom(JPanel newCurrentRoom) {
+		CurrentFrame = newCurrentRoom;
 	}
 	
 	// when called this updates the Jframe by resetting its height and turning it invisible, then back to visible.

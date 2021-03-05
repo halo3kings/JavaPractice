@@ -8,7 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class AntiquesRoom {
-
+	
+	public int roomNumber;
 	
 	JPanel AntiquesRoom = new JPanel();
 	JLabel ImageLabel = new JLabel();
@@ -18,6 +19,7 @@ public class AntiquesRoom {
 	public boolean BorderPainted = true;
 	public boolean Focusable = true;
 	public boolean Visible = true;
+	
 	
 	JButton AntiquesRoom2 = new JButton();
 		ButtonDataStorage BDS = new ButtonDataStorage(530, 100, 100, 200);
