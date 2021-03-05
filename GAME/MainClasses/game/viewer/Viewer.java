@@ -6,42 +6,49 @@ public class Viewer extends Base {
 		super(W, H);
 		PLS = new PreLaunchScreen();
 		this.Frame.add(PLS.getPreLaunchScreen());
+		this.Frame.addKeyListener(this);
 	}
 	
-	PreLaunchScreen PLS;
-	MainMenuScreen MMS;
-	FrontPorch FP;
-	Garage GRG;
-	Hallway HW;
-	Lounge LG;
-	GreenHouse GH;
-	Library LB;
-	PoolHall PH;
-	Kitchen KT;
-	DiningRoom DR;
+	// This is a list of instanced rooms for the viewer to then work with.
 	
-	secondHall SH;
-	Study SD;
-	Office OF;
-	GuestRoom1 GR1;
-	GuestRoom2 GR2;
-	
-	ThirdHall TH;
-	MasterBedroom MB;
-	PaintersStudio PS;
-	AntiquesRoom AR;
-	AntiquesRoom2 AR2;
-	
-	Attic AT;
-	AtticRoom ATR;
+	//First Floor
+		PreLaunchScreen PLS;
+		MainMenuScreen MMS;
+		FrontPorch FP;
+		Garage GRG;
+		Hallway HW;
+		Lounge LG;
+		GreenHouse GH;
+		Library LB;
+		PoolHall PH;
+		Kitchen KT;
+		DiningRoom DR;
+	//Second Floor
+		secondHall SH;
+		Study SD;
+		Office OF;
+		GuestRoom1 GR1;
+		GuestRoom2 GR2;
+	//Third floor
+		ThirdHall TH;
+		MasterBedroom MB;
+		PaintersStudio PS;
+		AntiquesRoom AR;
+		AntiquesRoom2 AR2;
+	//Attic
+		Attic AT;
+		AtticRoom ATR;
+	//In game UI
+		InventoryScreen IS;
+		
 	
 	public void initRooms(int WD, int HT) {
 		//Initializing all the rooms.
 		
-		//System.out.println("initializing "The new Room you want to add" ");
-		//create the room object(int Width and int Height);
-		//add the new Room Object to the JFrame this.Frame.add(object.get(RoomPannel through getMethod());
-		//then set the new Room Objects Panel visibility to false.
+		// this method initializes all the rooms when called. when invoked the room instancing is finished and passed 
+		// a height an width to construct from. next the Frame has added to it the newly created room. The room is then
+		// set invisible until the time comes. Theoretically the Visibility can be removed and all changed within their 
+		// respective rooms. however this makes for an easy quick edit.
 		
 		System.out.println("initializing MainMenu ");
 		MMS = new MainMenuScreen(WD,HT);
@@ -152,9 +159,16 @@ public class Viewer extends Base {
 		ATR = new AtticRoom(WD,HT);
 		this.Frame.add(ATR.getAtticRoom());
 		ATR.getAtticRoom().setVisible(false);
+		
+		System.out.println("Initializing Inventory Screen");
+		IS = new InventoryScreen(WD,HT);
+		this.Frame.add(IS.getInventoryScreen());
+		IS.getInventoryScreen().setVisible(false);
+		
 			
 	}
-	//calling the rooms to be visible or not.
+	// The following methods allow for the instanced rooms to be toggled visible through abstraction.
+	
 	public void MainMenuScreen(boolean Visible) {
 		MMS.getMainMenu().setVisible(Visible);
 	}
@@ -224,8 +238,11 @@ public class Viewer extends Base {
 	public void AtticRoom(boolean Visible) {
 		ATR.getAtticRoom().setVisible(Visible);
 	}
+	public void InventoryScreen(boolean Visible) {
+		IS.getInventoryScreen().setVisible(Visible);
+	}
 	
-	
+	// These methods allow for a controller or external class easy access to the rooms and their contents. 
 	public PreLaunchScreen getPLS() {
 		return PLS;
 	}
@@ -295,7 +312,11 @@ public class Viewer extends Base {
 	public AtticRoom getAtticRoom() {
 		return ATR;
 	}
+	public InventoryScreen getInventoryScreen() {
+		return IS;
+	}
 	
+	// when called this updates the Jframe by resetting its height and turning it invisible, then back to visible.
 	public void updateWindow(int Width, int Height) {
 		Frame.setSize(Width, Height);		
 		Frame.setVisible(false);

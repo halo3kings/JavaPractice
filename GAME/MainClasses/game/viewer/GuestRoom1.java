@@ -9,12 +9,17 @@ import javax.swing.JPanel;
 
 public class GuestRoom1 {
 
-
 	JPanel GuestRoom1 = new JPanel();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton Hall = new JButton();
 	ButtonDataStorage BDS = new ButtonDataStorage(450,100,180,220);
+	
+	public boolean Opaque = true;
+	public boolean AreaFilled = true;
+	public boolean BorderPainted = true;
+	public boolean Focusable = true;
+	public boolean Visible = true;
 	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\GuestRoom1.png");
 	Image Resize = BackGround.getImage();
@@ -23,6 +28,8 @@ public class GuestRoom1 {
 	private int Width;
 	
 	GuestRoom1(int W, int H) {
+		this.toggleButtonStateFinal();
+		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -32,15 +39,13 @@ public class GuestRoom1 {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-			
-			
 			GuestRoom1.add(Hall);
-				Hall.setBounds(BDS.getX(),BDS.getY(),BDS.getWidth(),BDS.getHeight());
-				Hall.setVisible(true);
-				//Hall.setOpaque(false);
-				//Hall.setContentAreaFilled(false);
-				//Hall.setBorderPainted(false);
-				//Hall.setFocusable(false);
+				Hall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				Hall.setVisible(Visible);
+				Hall.setOpaque(Opaque);
+				Hall.setContentAreaFilled(AreaFilled);
+				Hall.setBorderPainted(BorderPainted);
+				Hall.setFocusable(Focusable);
 				
 		}
 		if(W == 1296) {
@@ -53,12 +58,12 @@ public class GuestRoom1 {
 			this.setWidth(BackGround.getIconWidth());
 			
 			GuestRoom1.add(Hall);
-			Hall.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-			Hall.setVisible(true);
-			//Hall.setOpaque(false);
-			//Hall.setContentAreaFilled(false);
-			//Hall.setBorderPainted(false);
-			//Hall.setFocusable(false);
+				Hall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				Hall.setVisible(Visible);
+				Hall.setOpaque(Opaque);
+				Hall.setContentAreaFilled(AreaFilled);
+				Hall.setBorderPainted(BorderPainted);
+				Hall.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -69,13 +74,13 @@ public class GuestRoom1 {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-		GuestRoom1.add(Hall);
-			Hall.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-			Hall.setVisible(true);
-			//Hall.setOpaque(false);
-			//Hall.setContentAreaFilled(false);
-			//Hall.setBorderPainted(false);
-			//Hall.setFocusable(false);
+			GuestRoom1.add(Hall);
+				Hall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				Hall.setVisible(Visible);
+				Hall.setOpaque(Opaque);
+				Hall.setContentAreaFilled(AreaFilled);
+				Hall.setBorderPainted(BorderPainted);
+				Hall.setFocusable(Focusable);
 		}
 
 		System.out.println("Building Stairs ");
@@ -129,6 +134,44 @@ public class GuestRoom1 {
 		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
 		Calc = (int)Math.floor(Temp);
 		return Calc;
+	}
+	public boolean getOpaque() {
+		return Opaque;
+	}
+	public boolean getAreaFilled() {
+		return AreaFilled;
+	}
+	public boolean getBorderPainted() {
+		return BorderPainted;
+	}
+	public boolean getFocusable() {
+		return Focusable;
+	}
+	public boolean getVisible() {
+		return Visible;
+	}
+	public void setOpaque(boolean OP) {
+		Opaque = OP;
+	}
+	public void setAreaFilled(boolean AF) {
+		AreaFilled = AF;
+	}
+	public void setBorderPainted(boolean BP) {
+		BorderPainted = BP;
+	}
+	public void setFocusable(boolean FO) {
+		Focusable = FO;
+	}
+	public void setVisible(boolean VS) {
+		Visible = VS;
+	}
+	
+	public void toggleButtonStateFinal() {
+		this.setAreaFilled(false);
+		this.setOpaque(false);
+		this.setBorderPainted(false);
+		this.setFocusable(false);
+		this.setVisible(true);
 	}
 	
 

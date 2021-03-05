@@ -13,7 +13,13 @@ public class Garage {
 	JLabel ImageLabel = new JLabel();
 	
 	JButton FrontPorch = new JButton();
-		ButtonDataStorage BDS = new ButtonDataStorage(400,100,180,200);
+		ButtonDataStorage BDS = new ButtonDataStorage(0, 0, 220, 360);
+		
+	public boolean Opaque = true;
+	public boolean AreaFilled = true;
+	public boolean BorderPainted = true;
+	public boolean Focusable = true;
+	public boolean Visible = true;
 	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\Garage.png");
 	Image Resize = BackGround.getImage();
@@ -22,6 +28,8 @@ public class Garage {
 	private int Width;
 	
 	Garage(int W, int H) {
+		this.toggleButtonStateFinal();
+		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -32,12 +40,12 @@ public class Garage {
 			this.setWidth(BackGround.getIconWidth());
 			
 			Garage.add(FrontPorch);
-				FrontPorch.setBounds(0, 0, 220, 360);
-				FrontPorch.setVisible(true);
-				//FrontPorch.setOpaque(false);
-				//FrontPorch.setContentAreaFilled(false);
-				//FrontPorch.setBorderPainted(false);
-				//FrontPorch.setFocusable(false);
+				FrontPorch.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				FrontPorch.setVisible(Visible);
+				FrontPorch.setOpaque(Opaque);
+				FrontPorch.setContentAreaFilled(AreaFilled);
+				FrontPorch.setBorderPainted(BorderPainted);
+				FrontPorch.setFocusable(Focusable);
 		}
 		if(W == 1296) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -49,12 +57,12 @@ public class Garage {
 			this.setWidth(BackGround.getIconWidth());
 			
 			Garage.add(FrontPorch);
-				FrontPorch.setBounds(0*2, 0*2, 220*2, 520);
-				FrontPorch.setVisible(true);
-				//FrontPorch.setOpaque(false);
-				//FrontPorch.setContentAreaFilled(false);
-				//FrontPorch.setBorderPainted(false);
-				//FrontPorch.setFocusable(false);
+				FrontPorch.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				FrontPorch.setVisible(Visible);
+				FrontPorch.setOpaque(Opaque);
+				FrontPorch.setContentAreaFilled(AreaFilled);
+				FrontPorch.setBorderPainted(BorderPainted);
+				FrontPorch.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -66,12 +74,12 @@ public class Garage {
 			this.setWidth(BackGround.getIconWidth());
 			
 			Garage.add(FrontPorch);
-				FrontPorch.setBounds(0*3, 0*3, 220*3, 880);
-				FrontPorch.setVisible(true);
-				//FrontPorch.setOpaque(false);
-				//FrontPorch.setContentAreaFilled(false);
-				//FrontPorch.setBorderPainted(false);
-				//FrontPorch.setFocusable(false);
+				FrontPorch.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				FrontPorch.setVisible(Visible);
+				FrontPorch.setOpaque(Opaque);
+				FrontPorch.setContentAreaFilled(AreaFilled);
+				FrontPorch.setBorderPainted(BorderPainted);
+				FrontPorch.setFocusable(Focusable);
 		}
 		
 		System.out.println("building Garage ");
@@ -124,6 +132,43 @@ public class Garage {
 		Calc = (int)Math.floor(Temp);
 		return Calc;
 	}
+	public boolean getOpaque() {
+		return Opaque;
+	}
+	public boolean getAreaFilled() {
+		return AreaFilled;
+	}
+	public boolean getBorderPainted() {
+		return BorderPainted;
+	}
+	public boolean getFocusable() {
+		return Focusable;
+	}
+	public boolean getVisible() {
+		return Visible;
+	}
+	public void setOpaque(boolean OP) {
+		Opaque = OP;
+	}
+	public void setAreaFilled(boolean AF) {
+		AreaFilled = AF;
+	}
+	public void setBorderPainted(boolean BP) {
+		BorderPainted = BP;
+	}
+	public void setFocusable(boolean FO) {
+		Focusable = FO;
+	}
+	public void setVisible(boolean VS) {
+		Visible = VS;
+	}
 	
+	public void toggleButtonStateFinal() {
+		this.setAreaFilled(false);
+		this.setOpaque(false);
+		this.setBorderPainted(false);
+		this.setFocusable(false);
+		this.setVisible(true);
+	}
 
 }

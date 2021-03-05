@@ -14,6 +14,12 @@ public class GreenHouse {
 	JButton Lounge = new JButton();
 	ButtonDataStorage BDS = new ButtonDataStorage(30, 100, 150, 330);
 	
+	public boolean Opaque = true;
+	public boolean AreaFilled = true;
+	public boolean BorderPainted = true;
+	public boolean Focusable = true;
+	public boolean Visible = true;
+	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\GreenHouse.png");
 	Image Resize = BackGround.getImage();
 	
@@ -22,6 +28,8 @@ public class GreenHouse {
 	private int Width;
 	
 	GreenHouse(int W, int H) {
+		this.toggleButtonStateFinal();
+		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -32,12 +40,12 @@ public class GreenHouse {
 			this.setWidth(BackGround.getIconWidth());
 			
 			GreenHouse.add(Lounge);
-				Lounge.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Lounge.setVisible(true);
-				//Lounge.setOpaque(false);
-				//Lounge.setContentAreaFilled(false);
-				//Lounge.setBorderPainted(false);
-				//Lounge.setFocusable(false);
+				Lounge.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				Lounge.setVisible(Visible);
+				Lounge.setOpaque(Opaque);
+				Lounge.setContentAreaFilled(AreaFilled);
+				Lounge.setBorderPainted(BorderPainted);
+				Lounge.setFocusable(Focusable);
 		}
 		if(W == 1296) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -50,11 +58,11 @@ public class GreenHouse {
 			
 			GreenHouse.add(Lounge);
 				Lounge.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Lounge.setVisible(true);
-				//Lounge.setOpaque(false);
-				//Lounge.setContentAreaFilled(false);
-				//Lounge.setBorderPainted(false);
-				//Lounge.setFocusable(false);
+				Lounge.setVisible(Visible);
+				Lounge.setOpaque(Opaque);
+				Lounge.setContentAreaFilled(AreaFilled);
+				Lounge.setBorderPainted(BorderPainted);
+				Lounge.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -67,11 +75,11 @@ public class GreenHouse {
 			
 			GreenHouse.add(Lounge);
 				Lounge.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Lounge.setVisible(true);
-				//Lounge.setOpaque(false);
-				//Lounge.setContentAreaFilled(false);
-				//Lounge.setBorderPainted(false);
-				//Lounge.setFocusable(false);
+				Lounge.setVisible(Visible);
+				Lounge.setOpaque(Opaque);
+				Lounge.setContentAreaFilled(AreaFilled);
+				Lounge.setBorderPainted(BorderPainted);
+				Lounge.setFocusable(Focusable);
 		}
 		
 		System.out.println("building GreenHouse ");
@@ -122,5 +130,43 @@ public class GreenHouse {
 		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
 		Calc = (int)Math.floor(Temp);
 		return Calc;
+	}
+	public boolean getOpaque() {
+		return Opaque;
+	}
+	public boolean getAreaFilled() {
+		return AreaFilled;
+	}
+	public boolean getBorderPainted() {
+		return BorderPainted;
+	}
+	public boolean getFocusable() {
+		return Focusable;
+	}
+	public boolean getVisible() {
+		return Visible;
+	}
+	public void setOpaque(boolean OP) {
+		Opaque = OP;
+	}
+	public void setAreaFilled(boolean AF) {
+		AreaFilled = AF;
+	}
+	public void setBorderPainted(boolean BP) {
+		BorderPainted = BP;
+	}
+	public void setFocusable(boolean FO) {
+		Focusable = FO;
+	}
+	public void setVisible(boolean VS) {
+		Visible = VS;
+	}
+	
+	public void toggleButtonStateFinal() {
+		this.setAreaFilled(false);
+		this.setOpaque(false);
+		this.setBorderPainted(false);
+		this.setFocusable(false);
+		this.setVisible(true);
 	}
 }

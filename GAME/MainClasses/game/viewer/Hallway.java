@@ -11,6 +11,12 @@ public class Hallway {
 	JPanel HallWay = new JPanel();
 	JLabel ImageLabel = new JLabel();
 	
+	public boolean Opaque = true;
+	public boolean AreaFilled = true;
+	public boolean BorderPainted = true;
+	public boolean Focusable = true;
+	public boolean Visible = true;
+	
 	JButton Lounge = new JButton();
 		ButtonDataStorage BDS = new ButtonDataStorage(60, 170, 70, 170);
 			
@@ -42,6 +48,8 @@ public class Hallway {
 	private int Width;
 	
 	Hallway(int W, int H) {
+		this.toggleButtonStateFinal();
+		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -55,67 +63,67 @@ public class Hallway {
 			
 			HallWay.add(Lounge);
 				Lounge.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Lounge.setVisible(true);
-				//Lounge.setOpaque(false);
-				//Lounge.setContentAreaFilled(false);
-				//Lounge.setBorderPainted(false);
-				//Lounge.setFocusable(false);
+				Lounge.setVisible(Visible);
+				Lounge.setOpaque(Opaque);
+				Lounge.setContentAreaFilled(AreaFilled);
+				Lounge.setBorderPainted(BorderPainted);
+				Lounge.setFocusable(Focusable);
 		
 			HallWay.add(Dining);
 				Dining.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-				Dining.setVisible(true);
-				//Dining.setOpaque(false);
-				//Dining.setContentAreaFilled(false);
-				//Dining.setBorderPainted(false);
-				//Dining.setFocusable(false);
+				Dining.setVisible(Visible);
+				Dining.setOpaque(Opaque);
+				Dining.setContentAreaFilled(AreaFilled);
+				Dining.setBorderPainted(BorderPainted);
+				Dining.setFocusable(Focusable);
 				
 			HallWay.add(Kitchen);
 				Kitchen.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
-				Kitchen.setVisible(true);
-				//Kitchen.setOpaque(false);
-				//Kitchen.setContentAreaFilled(false);
-				//Kitchen.setBorderPainted(false);
-				//Kitchen.setFocusable(false);
+				Kitchen.setVisible(Visible);
+				Kitchen.setOpaque(Opaque);
+				Kitchen.setContentAreaFilled(AreaFilled);
+				Kitchen.setBorderPainted(BorderPainted);
+				Kitchen.setFocusable(Focusable);
 				
 			HallWay.add(Stairs);
 				Stairs.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), this.ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
-				Stairs.setVisible(true);
-				//Stairs.setOpaque(false);
-				//Stairs.setContentAreaFilled(false);
-				//Stairs.setBorderPainted(false);
-			    //Stairs.setFocusable(false);
+				Stairs.setVisible(Visible);
+				Stairs.setOpaque(Opaque);
+				Stairs.setContentAreaFilled(AreaFilled);
+				Stairs.setBorderPainted(BorderPainted);
+				Stairs.setFocusable(Focusable);
 				
 			HallWay.add(Kitchen2);
 				Kitchen2.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
-				Kitchen2.setVisible(true);
-				//Kitchen2.setOpaque(false);
-				//Kitchen2.setContentAreaFilled(false);
-				//Kitchen2.setBorderPainted(false);
-				//Kitchen2.setFocusable(false);
+				Kitchen2.setVisible(Visible);
+				Kitchen2.setOpaque(Opaque);
+				Kitchen2.setContentAreaFilled(AreaFilled);
+				Kitchen2.setBorderPainted(BorderPainted);
+				Kitchen2.setFocusable(Focusable);
 				
 			HallWay.add(PoolHall);
 				PoolHall.setBounds(this.ScalingWidth(BDS5.getX()), this.ScalingHeight(BDS5.getY()), this.ScalingWidth(BDS5.getWidth()), this.ScalingHeight(BDS5.getHeight()));
-				PoolHall.setVisible(true);
-				//PoolHall.setOpaque(false);
-				//PoolHall.setContentAreaFilled(false);
-				//PoolHall.setBorderPainted(false);
-				//PoolHall.setFocusable(false);
+				PoolHall.setVisible(Visible);
+				PoolHall.setOpaque(Opaque);
+				PoolHall.setContentAreaFilled(AreaFilled);
+				PoolHall.setBorderPainted(BorderPainted);
+				PoolHall.setFocusable(Focusable);
 				
 			HallWay.add(Library);
 				Library.setBounds(this.ScalingWidth(BDS6.getX()), this.ScalingHeight(BDS6.getY()), this.ScalingWidth(BDS6.getWidth()), this.ScalingHeight(BDS6.getHeight()));
-				Library.setVisible(true);
-				//Library.setOpaque(false);
-				//Library.setContentAreaFilled(false);
-				//Library.setBorderPainted(false);
-				//Library.setFocusable(false);
+				Library.setVisible(Visible);
+				Library.setOpaque(Opaque);
+				Library.setContentAreaFilled(AreaFilled);
+				Library.setBorderPainted(BorderPainted);
+				Library.setFocusable(Focusable);
 			
 			HallWay.add(FrontPorch);
 				FrontPorch.setBounds(this.ScalingWidth(BDS7.getX()), this.ScalingHeight(BDS7.getY()), this.ScalingWidth(BDS7.getWidth()), this.ScalingHeight(BDS7.getHeight()));
-				FrontPorch.setVisible(true);
-				//FrontPorch.setOpaque(false);
-				//FrontPorch.setContentAreaFilled(false);
-				//FrontPorch.setBorderPainted(false);
-				//FrontPorch.setFocusable(false);
+				FrontPorch.setVisible(Visible);
+				FrontPorch.setOpaque(Opaque);
+				FrontPorch.setContentAreaFilled(AreaFilled);
+				FrontPorch.setBorderPainted(BorderPainted);
+				FrontPorch.setFocusable(Focusable);
 		
 		}
 		
@@ -131,67 +139,67 @@ public class Hallway {
 			
 		HallWay.add(Lounge);
 			Lounge.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-			Lounge.setVisible(true);
-			//Lounge.setOpaque(false);
-			//Lounge.setContentAreaFilled(false);
-			//Lounge.setBorderPainted(false);
-			//Lounge.setFocusable(false);
+			Lounge.setVisible(Visible);
+			Lounge.setOpaque(Opaque);
+			Lounge.setContentAreaFilled(AreaFilled);
+			Lounge.setBorderPainted(BorderPainted);
+			Lounge.setFocusable(Focusable);
 	
 		HallWay.add(Dining);
 			Dining.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-			Dining.setVisible(true);
-			//Dining.setOpaque(false);
-			//Dining.setContentAreaFilled(false);
-			//Dining.setBorderPainted(false);
-			//Dining.setFocusable(false);
+			Dining.setVisible(Visible);
+			Dining.setOpaque(Opaque);
+			Dining.setContentAreaFilled(AreaFilled);
+			Dining.setBorderPainted(BorderPainted);
+			Dining.setFocusable(Focusable);
 			
 		HallWay.add(Kitchen);
 			Kitchen.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
-			Kitchen.setVisible(true);
-			//Kitchen.setOpaque(false);
-			//Kitchen.setContentAreaFilled(false);
-			//Kitchen.setBorderPainted(false);
-			//Kitchen.setFocusable(false);
+			Kitchen.setVisible(Visible);
+			Kitchen.setOpaque(Opaque);
+			Kitchen.setContentAreaFilled(AreaFilled);
+			Kitchen.setBorderPainted(BorderPainted);
+			Kitchen.setFocusable(Focusable);
 			
 		HallWay.add(Stairs);
 			Stairs.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), this.ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
-			Stairs.setVisible(true);
-			//Stairs.setOpaque(false);
-			//Stairs.setContentAreaFilled(false);
-			//Stairs.setBorderPainted(false);
-		    //Stairs.setFocusable(false);
+			Stairs.setVisible(Visible);
+			Stairs.setOpaque(Opaque);
+			Stairs.setContentAreaFilled(AreaFilled);
+			Stairs.setBorderPainted(BorderPainted);
+			Stairs.setFocusable(Focusable);
 			
 		HallWay.add(Kitchen2);
 			Kitchen2.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
-			Kitchen2.setVisible(true);
-			//Kitchen2.setOpaque(false);
-			//Kitchen2.setContentAreaFilled(false);
-			//Kitchen2.setBorderPainted(false);
-			//Kitchen2.setFocusable(false);
+			Kitchen2.setVisible(Visible);
+			Kitchen2.setOpaque(Opaque);
+			Kitchen2.setContentAreaFilled(AreaFilled);
+			Kitchen2.setBorderPainted(BorderPainted);
+			Kitchen2.setFocusable(Focusable);
 			
 		HallWay.add(PoolHall);
 			PoolHall.setBounds(this.ScalingWidth(BDS5.getX()), this.ScalingHeight(BDS5.getY()), this.ScalingWidth(BDS5.getWidth()), this.ScalingHeight(BDS5.getHeight()));
-			PoolHall.setVisible(true);
-			//PoolHall.setOpaque(false);
-			//PoolHall.setContentAreaFilled(false);
-			//PoolHall.setBorderPainted(false);
-			//PoolHall.setFocusable(false);
+			PoolHall.setVisible(Visible);
+			PoolHall.setOpaque(Opaque);
+			PoolHall.setContentAreaFilled(AreaFilled);
+			PoolHall.setBorderPainted(BorderPainted);
+			PoolHall.setFocusable(Focusable);
 			
 		HallWay.add(Library);
 			Library.setBounds(this.ScalingWidth(BDS6.getX()), this.ScalingHeight(BDS6.getY()), this.ScalingWidth(BDS6.getWidth()), this.ScalingHeight(BDS6.getHeight()));
-			Library.setVisible(true);
-			//Library.setOpaque(false);
-			//Library.setContentAreaFilled(false);
-			//Library.setBorderPainted(false);
-			//Library.setFocusable(false);
+			Library.setVisible(Visible);
+			Library.setOpaque(Opaque);
+			Library.setContentAreaFilled(AreaFilled);
+			Library.setBorderPainted(BorderPainted);
+			Library.setFocusable(Focusable);
 			
 		HallWay.add(FrontPorch);
 			FrontPorch.setBounds(this.ScalingWidth(BDS7.getX()), this.ScalingHeight(BDS7.getY()), this.ScalingWidth(BDS7.getWidth()), this.ScalingHeight(BDS7.getHeight()));
-			FrontPorch.setVisible(true);
-			//FrontPorch.setOpaque(false);
-			//FrontPorch.setContentAreaFilled(false);
-			//FrontPorch.setBorderPainted(false);
-			//FrontPorch.setFocusable(false);
+			FrontPorch.setVisible(Visible);
+			FrontPorch.setOpaque(Opaque);
+			FrontPorch.setContentAreaFilled(AreaFilled);
+			FrontPorch.setBorderPainted(BorderPainted);
+			FrontPorch.setFocusable(Focusable);
 	
 		
 		}
@@ -207,67 +215,67 @@ public class Hallway {
 			
 		HallWay.add(Lounge);
 			Lounge.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-			Lounge.setVisible(true);
-			//Lounge.setOpaque(false);
-			//Lounge.setContentAreaFilled(false);
-			//Lounge.setBorderPainted(false);
-			//Lounge.setFocusable(false);
+			Lounge.setVisible(Visible);
+			Lounge.setOpaque(Opaque);
+			Lounge.setContentAreaFilled(AreaFilled);
+			Lounge.setBorderPainted(BorderPainted);
+			Lounge.setFocusable(Focusable);
 	
 		HallWay.add(Dining);
 			Dining.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-			Dining.setVisible(true);
-			//Dining.setOpaque(false);
-			//Dining.setContentAreaFilled(false);
-			//Dining.setBorderPainted(false);
-			//Dining.setFocusable(false);
+			Dining.setVisible(Visible);
+			Dining.setOpaque(Opaque);
+			Dining.setContentAreaFilled(AreaFilled);
+			Dining.setBorderPainted(BorderPainted);
+			Dining.setFocusable(Focusable);
 			
 		HallWay.add(Kitchen);
 			Kitchen.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
-			Kitchen.setVisible(true);
-			//Kitchen.setOpaque(false);
-			//Kitchen.setContentAreaFilled(false);
-			//Kitchen.setBorderPainted(false);
-			//Kitchen.setFocusable(false);
+			Kitchen.setVisible(Visible);
+			Kitchen.setOpaque(Opaque);
+			Kitchen.setContentAreaFilled(AreaFilled);
+			Kitchen.setBorderPainted(BorderPainted);
+			Kitchen.setFocusable(Focusable);
 			
 		HallWay.add(Stairs);
 			Stairs.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), this.ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
-			Stairs.setVisible(true);
-			//Stairs.setOpaque(false);
-			//Stairs.setContentAreaFilled(false);
-			//Stairs.setBorderPainted(false);
-		    //Stairs.setFocusable(false);
+			Stairs.setVisible(Visible);
+			Stairs.setOpaque(Opaque);
+			Stairs.setContentAreaFilled(AreaFilled);
+			Stairs.setBorderPainted(BorderPainted);
+			Stairs.setFocusable(Focusable);
 			
 		HallWay.add(Kitchen2);
 			Kitchen2.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
-			Kitchen2.setVisible(true);
-			//Kitchen2.setOpaque(false);
-			//Kitchen2.setContentAreaFilled(false);
-			//Kitchen2.setBorderPainted(false);
-			//Kitchen2.setFocusable(false);
+			Kitchen2.setVisible(Visible);
+			Kitchen2.setOpaque(Opaque);
+			Kitchen2.setContentAreaFilled(AreaFilled);
+			Kitchen2.setBorderPainted(BorderPainted);
+			Kitchen2.setFocusable(Focusable);
 			
 		HallWay.add(PoolHall);
 			PoolHall.setBounds(this.ScalingWidth(BDS5.getX()), this.ScalingHeight(BDS5.getY()), this.ScalingWidth(BDS5.getWidth()), this.ScalingHeight(BDS5.getHeight()));
-			PoolHall.setVisible(true);
-			//PoolHall.setOpaque(false);
-			//PoolHall.setContentAreaFilled(false);
-			//PoolHall.setBorderPainted(false);
-			//PoolHall.setFocusable(false);
+			PoolHall.setVisible(Visible);
+			PoolHall.setOpaque(Opaque);
+			PoolHall.setContentAreaFilled(AreaFilled);
+			PoolHall.setBorderPainted(BorderPainted);
+			PoolHall.setFocusable(Focusable);
 			
 		HallWay.add(Library);
 			Library.setBounds(this.ScalingWidth(BDS6.getX()), this.ScalingHeight(BDS6.getY()), this.ScalingWidth(BDS6.getWidth()), this.ScalingHeight(BDS6.getHeight()));
-			Library.setVisible(true);
-			//Library.setOpaque(false);
-			//Library.setContentAreaFilled(false);
-			//Library.setBorderPainted(false);
-			//Library.setFocusable(false);
+			Library.setVisible(Visible);
+			Library.setOpaque(Opaque);
+			Library.setContentAreaFilled(AreaFilled);
+			Library.setBorderPainted(BorderPainted);
+			Library.setFocusable(Focusable);
 	
 		HallWay.add(FrontPorch);
 			FrontPorch.setBounds(this.ScalingWidth(BDS7.getX()), this.ScalingHeight(BDS7.getY()), this.ScalingWidth(BDS7.getWidth()), this.ScalingHeight(BDS7.getHeight()));
-			FrontPorch.setVisible(true);
-			//FrontPorch.setOpaque(false);
-			//FrontPorch.setContentAreaFilled(false);
-			//FrontPorch.setBorderPainted(false);
-			//FrontPorch.setFocusable(false);
+			FrontPorch.setVisible(Visible);
+			FrontPorch.setOpaque(Opaque);
+			FrontPorch.setContentAreaFilled(AreaFilled);
+			FrontPorch.setBorderPainted(BorderPainted);
+			FrontPorch.setFocusable(Focusable);
 		}
 		
 		System.out.println("building Hallway ");
@@ -340,5 +348,43 @@ public class Hallway {
 		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
 		Calc = (int)Math.floor(Temp);
 		return Calc;
+	}
+	public boolean getOpaque() {
+		return Opaque;
+	}
+	public boolean getAreaFilled() {
+		return AreaFilled;
+	}
+	public boolean getBorderPainted() {
+		return BorderPainted;
+	}
+	public boolean getFocusable() {
+		return Focusable;
+	}
+	public boolean getVisible() {
+		return Visible;
+	}
+	public void setOpaque(boolean OP) {
+		Opaque = OP;
+	}
+	public void setAreaFilled(boolean AF) {
+		AreaFilled = AF;
+	}
+	public void setBorderPainted(boolean BP) {
+		BorderPainted = BP;
+	}
+	public void setFocusable(boolean FO) {
+		Focusable = FO;
+	}
+	public void setVisible(boolean VS) {
+		Visible = VS;
+	}
+	
+	public void toggleButtonStateFinal() {
+		this.setAreaFilled(false);
+		this.setOpaque(false);
+		this.setBorderPainted(false);
+		this.setFocusable(false);
+		this.setVisible(true);
 	}
 }

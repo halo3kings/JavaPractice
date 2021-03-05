@@ -23,6 +23,7 @@ public class Base {
 	
 	JFrame Frame = new JFrame();
 	
+	
 	Base(int W, int H){
 		this.setResolution(W, H);
 		this.createWindow();

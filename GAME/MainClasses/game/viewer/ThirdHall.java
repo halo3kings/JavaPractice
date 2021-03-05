@@ -12,6 +12,12 @@ public class ThirdHall {
 	JPanel ThirdHall = new JPanel();
 	JLabel ImageLabel = new JLabel();
 	
+	public boolean Opaque = true;
+	public boolean AreaFilled = true;
+	public boolean BorderPainted = true;
+	public boolean Focusable = true;
+	public boolean Visible = true;
+	
 	JButton SecondHall = new JButton();
 		ButtonDataStorage BDS = new ButtonDataStorage(225, 410, 200, 50);
 	
@@ -34,6 +40,8 @@ public class ThirdHall {
 	private int Width;
 	
 	ThirdHall(int W, int H) {
+		this.toggleButtonStateFinal();
+		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -45,43 +53,43 @@ public class ThirdHall {
 			
 		ThirdHall.add(SecondHall);
 			SecondHall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-			SecondHall.setVisible(true);
-			//SecondHall.setOpaque(false);
-			//SecondHall.setContentAreaFilled(false);
-			//SecondHall.setBorderPainted(false);
-			//SecondHall.setFocusable(false);
+			SecondHall.setVisible(Visible);
+			SecondHall.setOpaque(Opaque);
+			SecondHall.setContentAreaFilled(AreaFilled);
+			SecondHall.setBorderPainted(BorderPainted);
+			SecondHall.setFocusable(Focusable);
 			
 		ThirdHall.add(PaintersStudio);
 			PaintersStudio.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-			PaintersStudio.setVisible(true);
-			//PaintersStudio.setOpaque(false);
-			//PaintersStudio.setContentAreaFilled(false);
-			//PaintersStudio.setBorderPainted(false);
-			//PaintersStudio.setFocusable(false);
+			PaintersStudio.setVisible(Visible);
+			PaintersStudio.setOpaque(Opaque);
+			PaintersStudio.setContentAreaFilled(AreaFilled);
+			PaintersStudio.setBorderPainted(BorderPainted);
+			PaintersStudio.setFocusable(Focusable);
 			
 		ThirdHall.add(MasterBedroom);
 			MasterBedroom.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
-			MasterBedroom.setVisible(true);
-			//MasterBedroom.setOpaque(false);
-			//MasterBedroom.setContentAreaFilled(false);
-			//MasterBedroom.setBorderPainted(false);
-			//MasterBedroom.setFocusable(false);
+			MasterBedroom.setVisible(Visible);
+			MasterBedroom.setOpaque(Opaque);
+			MasterBedroom.setContentAreaFilled(AreaFilled);
+			MasterBedroom.setBorderPainted(BorderPainted);
+			MasterBedroom.setFocusable(Focusable);
 			
 		ThirdHall.add(AntiquesRoom);
 			AntiquesRoom.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), this.ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
-			AntiquesRoom.setVisible(true);
-			//AntiquesRoom.setOpaque(false);
-			//AntiquesRoom.setContentAreaFilled(false);
-			//AntiquesRoom.setBorderPainted(false);
-			//AntiquesRoom.setFocusable(false);
+			AntiquesRoom.setVisible(Visible);
+			AntiquesRoom.setOpaque(Opaque);
+			AntiquesRoom.setContentAreaFilled(AreaFilled);
+			AntiquesRoom.setBorderPainted(BorderPainted);
+			AntiquesRoom.setFocusable(Focusable);
 			
 		ThirdHall.add(Attic);
 			Attic.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
-			Attic.setVisible(true);
-			//Attic.setOpaque(false);
-			//Attic.setContentAreaFilled(false);
-			//Attic.setBorderPainted(false);
-			//Attic.setFocusable(false);
+			Attic.setVisible(Visible);
+			Attic.setOpaque(Opaque);
+			Attic.setContentAreaFilled(AreaFilled);
+			Attic.setBorderPainted(BorderPainted);
+			Attic.setFocusable(Focusable);
 
 		}
 		if(W == 1296) {
@@ -95,43 +103,43 @@ public class ThirdHall {
 			
 		ThirdHall.add(SecondHall);
 			SecondHall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-			SecondHall.setVisible(true);
-			//SecondHall.setOpaque(false);
-			//SecondHall.setContentAreaFilled(false);
-			//SecondHall.setBorderPainted(false);
-			//SecondHall.setFocusable(false);
+			SecondHall.setVisible(Visible);
+			SecondHall.setOpaque(Opaque);
+			SecondHall.setContentAreaFilled(AreaFilled);
+			SecondHall.setBorderPainted(BorderPainted);
+			SecondHall.setFocusable(Focusable);
 			
 		ThirdHall.add(PaintersStudio);
 			PaintersStudio.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-			PaintersStudio.setVisible(true);
-			//PaintersStudio.setOpaque(false);
-			//PaintersStudio.setContentAreaFilled(false);
-			//PaintersStudio.setBorderPainted(false);
-			//PaintersStudio.setFocusable(false);
+			PaintersStudio.setVisible(Visible);
+			PaintersStudio.setOpaque(Opaque);
+			PaintersStudio.setContentAreaFilled(AreaFilled);
+			PaintersStudio.setBorderPainted(BorderPainted);
+			PaintersStudio.setFocusable(Focusable);
 			
 		ThirdHall.add(MasterBedroom);
 			MasterBedroom.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
-			MasterBedroom.setVisible(true);
-			//MasterBedroom.setOpaque(false);
-			//MasterBedroom.setContentAreaFilled(false);
-			//MasterBedroom.setBorderPainted(false);
-			//MasterBedroom.setFocusable(false);
+			MasterBedroom.setVisible(Visible);
+			MasterBedroom.setOpaque(Opaque);
+			MasterBedroom.setContentAreaFilled(AreaFilled);
+			MasterBedroom.setBorderPainted(BorderPainted);
+			MasterBedroom.setFocusable(Focusable);
 			
 		ThirdHall.add(AntiquesRoom);
 			AntiquesRoom.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), this.ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
-			AntiquesRoom.setVisible(true);
-			//AntiquesRoom.setOpaque(false);
-			//AntiquesRoom.setContentAreaFilled(false);
-			//AntiquesRoom.setBorderPainted(false);
-			//AntiquesRoom.setFocusable(false);
+			AntiquesRoom.setVisible(Visible);
+			AntiquesRoom.setOpaque(Opaque);
+			AntiquesRoom.setContentAreaFilled(AreaFilled);
+			AntiquesRoom.setBorderPainted(BorderPainted);
+			AntiquesRoom.setFocusable(Focusable);
 			
 		ThirdHall.add(Attic);
 			Attic.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
-			Attic.setVisible(true);
-			//Attic.setOpaque(false);
-			//Attic.setContentAreaFilled(false);
-			//Attic.setBorderPainted(false);
-			//Attic.setFocusable(false);
+			Attic.setVisible(Visible);
+			Attic.setOpaque(Opaque);
+			Attic.setContentAreaFilled(AreaFilled);
+			Attic.setBorderPainted(BorderPainted);
+			Attic.setFocusable(Focusable);
 
 		}
 		if(W == 1936) {
@@ -145,43 +153,43 @@ public class ThirdHall {
 			
 		ThirdHall.add(SecondHall);
 			SecondHall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-			SecondHall.setVisible(true);
-			//SecondHall.setOpaque(false);
-			//SecondHall.setContentAreaFilled(false);
-			//SecondHall.setBorderPainted(false);
-			//SecondHall.setFocusable(false);
+			SecondHall.setVisible(Visible);
+			SecondHall.setOpaque(Opaque);
+			SecondHall.setContentAreaFilled(AreaFilled);
+			SecondHall.setBorderPainted(BorderPainted);
+			SecondHall.setFocusable(Focusable);
 			
 		ThirdHall.add(PaintersStudio);
 			PaintersStudio.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-			PaintersStudio.setVisible(true);
-			//PaintersStudio.setOpaque(false);
-			//PaintersStudio.setContentAreaFilled(false);
-			//PaintersStudio.setBorderPainted(false);
-			//PaintersStudio.setFocusable(false);
+			PaintersStudio.setVisible(Visible);
+			PaintersStudio.setOpaque(Opaque);
+			PaintersStudio.setContentAreaFilled(AreaFilled);
+			PaintersStudio.setBorderPainted(BorderPainted);
+			PaintersStudio.setFocusable(Focusable);
 			
 		ThirdHall.add(MasterBedroom);
 			MasterBedroom.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
-			MasterBedroom.setVisible(true);
-			//MasterBedroom.setOpaque(false);
-			//MasterBedroom.setContentAreaFilled(false);
-			//MasterBedroom.setBorderPainted(false);
-			//MasterBedroom.setFocusable(false);
+			MasterBedroom.setVisible(Visible);
+			MasterBedroom.setOpaque(Opaque);
+			MasterBedroom.setContentAreaFilled(AreaFilled);
+			MasterBedroom.setBorderPainted(BorderPainted);
+			MasterBedroom.setFocusable(Focusable);
 			
 		ThirdHall.add(AntiquesRoom);
 			AntiquesRoom.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), this.ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
-			AntiquesRoom.setVisible(true);
-			//AntiquesRoom.setOpaque(false);
-			//AntiquesRoom.setContentAreaFilled(false);
-			//AntiquesRoom.setBorderPainted(false);
-			//AntiquesRoom.setFocusable(false);
+			AntiquesRoom.setVisible(Visible);
+			AntiquesRoom.setOpaque(Opaque);
+			AntiquesRoom.setContentAreaFilled(AreaFilled);
+			AntiquesRoom.setBorderPainted(BorderPainted);
+			AntiquesRoom.setFocusable(Focusable);
 			
 		ThirdHall.add(Attic);
 			Attic.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
-			Attic.setVisible(true);
-			//Attic.setOpaque(false);
-			//Attic.setContentAreaFilled(false);
-			//Attic.setBorderPainted(false);
-			//Attic.setFocusable(false);
+			Attic.setVisible(Visible);
+			Attic.setOpaque(Opaque);
+			Attic.setContentAreaFilled(AreaFilled);
+			Attic.setBorderPainted(BorderPainted);
+			Attic.setFocusable(Focusable);
 
 		}
 		
@@ -246,5 +254,43 @@ public class ThirdHall {
 		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
 		Calc = (int)Math.floor(Temp);
 		return Calc;
+	}
+	public boolean getOpaque() {
+		return Opaque;
+	}
+	public boolean getAreaFilled() {
+		return AreaFilled;
+	}
+	public boolean getBorderPainted() {
+		return BorderPainted;
+	}
+	public boolean getFocusable() {
+		return Focusable;
+	}
+	public boolean getVisible() {
+		return Visible;
+	}
+	public void setOpaque(boolean OP) {
+		Opaque = OP;
+	}
+	public void setAreaFilled(boolean AF) {
+		AreaFilled = AF;
+	}
+	public void setBorderPainted(boolean BP) {
+		BorderPainted = BP;
+	}
+	public void setFocusable(boolean FO) {
+		Focusable = FO;
+	}
+	public void setVisible(boolean VS) {
+		Visible = VS;
+	}
+	
+	public void toggleButtonStateFinal() {
+		this.setAreaFilled(false);
+		this.setOpaque(false);
+		this.setBorderPainted(false);
+		this.setFocusable(false);
+		this.setVisible(true);
 	}
 }

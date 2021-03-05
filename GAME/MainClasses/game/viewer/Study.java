@@ -15,6 +15,12 @@ public class Study {
 	JButton Hall = new JButton();
 	ButtonDataStorage BDS = new ButtonDataStorage(400,100,100,200);
 	
+	public boolean Opaque = true;
+	public boolean AreaFilled = true;
+	public boolean BorderPainted = true;
+	public boolean Focusable = true;
+	public boolean Visible = true;
+	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\Study.png");
 	Image Resize = BackGround.getImage();
 	
@@ -24,6 +30,8 @@ public class Study {
 	
 	
 	Study(int W, int H) {
+		this.toggleButtonStateFinal();
+		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -33,15 +41,13 @@ public class Study {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-			
-			
 			Study.add(Hall);
 				Hall.setBounds(BDS.getX(),BDS.getY(),BDS.getWidth(),BDS.getHeight());
-				Hall.setVisible(true);
-				//Hall.setOpaque(false);
-				//Hall.setContentAreaFilled(false);
-				//Hall.setBorderPainted(false);
-				//Hall.setFocusable(false);
+				Hall.setVisible(Visible);
+				Hall.setOpaque(Opaque);
+				Hall.setContentAreaFilled(AreaFilled);
+				Hall.setBorderPainted(BorderPainted);
+				Hall.setFocusable(Focusable);
 				
 		}
 		if(W == 1296) {
@@ -53,13 +59,13 @@ public class Study {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-			Study.add(Hall);
+		Study.add(Hall);
 			Hall.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-			Hall.setVisible(true);
-			//Hall.setOpaque(false);
-			//Hall.setContentAreaFilled(false);
-			//Hall.setBorderPainted(false);
-			//Hall.setFocusable(false);
+			Hall.setVisible(Visible);
+			Hall.setOpaque(Opaque);
+			Hall.setContentAreaFilled(AreaFilled);
+			Hall.setBorderPainted(BorderPainted);
+			Hall.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -72,11 +78,11 @@ public class Study {
 			
 		Study.add(Hall);
 			Hall.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-			Hall.setVisible(true);
-			//Hall.setOpaque(false);
-			//Hall.setContentAreaFilled(false);
-			//Hall.setBorderPainted(false);
-			//Hall.setFocusable(false);
+			Hall.setVisible(Visible);
+			Hall.setOpaque(Opaque);
+			Hall.setContentAreaFilled(AreaFilled);
+			Hall.setBorderPainted(BorderPainted);
+			Hall.setFocusable(Focusable);
 		}
 
 		System.out.println("Building Stairs ");
@@ -139,6 +145,43 @@ public class Study {
 		System.out.println("Multiplying Ratio by input then rounding down: "+Calc);
 		return Calc;
 	}
+	public boolean getOpaque() {
+		return Opaque;
+	}
+	public boolean getAreaFilled() {
+		return AreaFilled;
+	}
+	public boolean getBorderPainted() {
+		return BorderPainted;
+	}
+	public boolean getFocusable() {
+		return Focusable;
+	}
+	public boolean getVisible() {
+		return Visible;
+	}
+	public void setOpaque(boolean OP) {
+		Opaque = OP;
+	}
+	public void setAreaFilled(boolean AF) {
+		AreaFilled = AF;
+	}
+	public void setBorderPainted(boolean BP) {
+		BorderPainted = BP;
+	}
+	public void setFocusable(boolean FO) {
+		Focusable = FO;
+	}
+	public void setVisible(boolean VS) {
+		Visible = VS;
+	}
 	
+	public void toggleButtonStateFinal() {
+		this.setAreaFilled(false);
+		this.setOpaque(false);
+		this.setBorderPainted(false);
+		this.setFocusable(false);
+		this.setVisible(true);
+	}
 
 }

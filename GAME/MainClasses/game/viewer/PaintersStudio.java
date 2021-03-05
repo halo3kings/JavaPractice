@@ -11,6 +11,12 @@ public class PaintersStudio {
 
 	JPanel PaintersStudio = new JPanel();
 	
+	public boolean Opaque = true;
+	public boolean AreaFilled = true;
+	public boolean BorderPainted = true;
+	public boolean Focusable = true;
+	public boolean Visible = true;
+	
 	JLabel ImageLabel = new JLabel();
 	
 	JButton HallWay = new JButton();
@@ -23,6 +29,8 @@ public class PaintersStudio {
 	private int Width;
 	
 	PaintersStudio(int W, int H) {
+		this.toggleButtonStateFinal();
+		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -35,11 +43,11 @@ public class PaintersStudio {
 				
 			PaintersStudio.add(HallWay);
 				HallWay.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				HallWay.setVisible(true);
-				//HallWay.setOpaque(false);
-				//HallWay.setContentAreaFilled(false);
-				//HallWay.setBorderPainted(false);
-				//HallWay.setFocusable(false);
+				HallWay.setVisible(Visible);
+				HallWay.setOpaque(Opaque);
+				HallWay.setContentAreaFilled(AreaFilled);
+				HallWay.setBorderPainted(BorderPainted);
+				HallWay.setFocusable(Focusable);
 		}
 		if(W == 1296) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -53,11 +61,11 @@ public class PaintersStudio {
 			
 			PaintersStudio.add(HallWay);
 				HallWay.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				HallWay.setVisible(true);
-				//HallWay.setOpaque(false);
-				//HallWay.setContentAreaFilled(false);
-				//HallWay.setBorderPainted(false);
-				//HallWay.setFocusable(false);	
+				HallWay.setVisible(Visible);
+				HallWay.setOpaque(Opaque);
+				HallWay.setContentAreaFilled(AreaFilled);
+				HallWay.setBorderPainted(BorderPainted);
+				HallWay.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -71,11 +79,11 @@ public class PaintersStudio {
 				
 			PaintersStudio.add(HallWay);
 				HallWay.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				HallWay.setVisible(true);
-				//HallWay.setOpaque(false);
-				//HallWay.setContentAreaFilled(false);
-				//HallWay.setBorderPainted(false);
-				//HallWay.setFocusable(false);	
+				HallWay.setVisible(Visible);
+				HallWay.setOpaque(Opaque);
+				HallWay.setContentAreaFilled(AreaFilled);
+				HallWay.setBorderPainted(BorderPainted);
+				HallWay.setFocusable(Focusable);	
 		}
 		
 		System.out.println("building PaintersStudio ");
@@ -128,6 +136,43 @@ public class PaintersStudio {
 		Calc = (int)Math.floor(Temp);
 		return Calc;
 	}
+	public boolean getOpaque() {
+		return Opaque;
+	}
+	public boolean getAreaFilled() {
+		return AreaFilled;
+	}
+	public boolean getBorderPainted() {
+		return BorderPainted;
+	}
+	public boolean getFocusable() {
+		return Focusable;
+	}
+	public boolean getVisible() {
+		return Visible;
+	}
+	public void setOpaque(boolean OP) {
+		Opaque = OP;
+	}
+	public void setAreaFilled(boolean AF) {
+		AreaFilled = AF;
+	}
+	public void setBorderPainted(boolean BP) {
+		BorderPainted = BP;
+	}
+	public void setFocusable(boolean FO) {
+		Focusable = FO;
+	}
+	public void setVisible(boolean VS) {
+		Visible = VS;
+	}
 	
+	public void toggleButtonStateFinal() {
+		this.setAreaFilled(false);
+		this.setOpaque(false);
+		this.setBorderPainted(false);
+		this.setFocusable(false);
+		this.setVisible(true);
+	}
 
 }

@@ -11,10 +11,15 @@ public class FrontPorch{
 	
 	JPanel FrontPorch = new JPanel();
 		ButtonDataStorage BDS = new ButtonDataStorage(100,0,120,480);
-		
 	JLabel ImageLabel = new JLabel();
 		ButtonDataStorage BDS1 = new ButtonDataStorage(550, 70, 300, 100);
 	
+	public boolean Opaque = true;
+	public boolean AreaFilled = true;
+	public boolean BorderPainted = true;
+	public boolean Focusable = true;
+	public boolean Visible = true;
+		
 	JButton Garage = new JButton();
 	JButton Hallway = new JButton();
 	
@@ -25,6 +30,8 @@ public class FrontPorch{
 	private int Width;
 
 	FrontPorch(int W, int H) {
+		this.toggleButtonStateFinal();
+		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -37,19 +44,19 @@ public class FrontPorch{
 			
 			FrontPorch.add(Hallway);
 				Hallway.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Hallway.setVisible(true);
-				//Hallway.setOpaque(false);
-				//Hallway.setContentAreaFilled(false);
-				//Hallway.setBorderPainted(false);
-				//Hallway.setFocusable(false);
+				Hallway.setVisible(Visible);
+				Hallway.setOpaque(Opaque);
+				Hallway.setContentAreaFilled(AreaFilled);
+				Hallway.setBorderPainted(BorderPainted);
+				Hallway.setFocusable(Focusable);
 			
 			FrontPorch.add(Garage);
 				Garage.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-				Garage.setVisible(true);
-				//Garage.setOpaque(false);
-				//Garage.setContentAreaFilled(false);
-				//Garage.setBorderPainted(false);
-				//Garage.setFocusable(false);
+				Garage.setVisible(Visible);
+				Garage.setOpaque(Opaque);
+				Garage.setContentAreaFilled(AreaFilled);
+				Garage.setBorderPainted(BorderPainted);
+				Garage.setFocusable(Focusable);
 		}
 		if(W == 1296) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -62,19 +69,19 @@ public class FrontPorch{
 			
 			FrontPorch.add(Hallway);
 				Hallway.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Hallway.setVisible(true);
-				//Hallway.setOpaque(false);
-				//Hallway.setContentAreaFilled(false);
-				//Hallway.setBorderPainted(false);
-				//Hallway.setFocusable(false);
+				Hallway.setVisible(Visible);
+				Hallway.setOpaque(Opaque);
+				Hallway.setContentAreaFilled(AreaFilled);
+				Hallway.setBorderPainted(BorderPainted);
+				Hallway.setFocusable(Focusable);
 				
 			FrontPorch.add(Garage);
 				Garage.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-				Garage.setVisible(true);
-				//Garage.setOpaque(false);
-				//Garage.setContentAreaFilled(false);
-				//Garage.setBorderPainted(false);
-				//Garage.setFocusable(false);
+				Garage.setVisible(Visible);
+				Garage.setOpaque(Opaque);
+				Garage.setContentAreaFilled(AreaFilled);
+				Garage.setBorderPainted(BorderPainted);
+				Garage.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -87,19 +94,19 @@ public class FrontPorch{
 			
 			FrontPorch.add(Hallway);
 				Hallway.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Hallway.setVisible(true);
-				//Hallway.setOpaque(false);
-				//Hallway.setContentAreaFilled(false);
-				//Hallway.setBorderPainted(false);
-				//Hallway.setFocusable(false);
+				Hallway.setVisible(Visible);
+				Hallway.setOpaque(Opaque);
+				Hallway.setContentAreaFilled(AreaFilled);
+				Hallway.setBorderPainted(BorderPainted);
+				Hallway.setFocusable(Focusable);
 			
 			FrontPorch.add(Garage);
 				Garage.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-				Garage.setVisible(true);
-				//Garage.setOpaque(false);
-				//Garage.setContentAreaFilled(false);
-				//Garage.setBorderPainted(false);
-				//Garage.setFocusable(false);
+				Garage.setVisible(Visible);
+				Garage.setOpaque(Opaque);
+				Garage.setContentAreaFilled(AreaFilled);
+				Garage.setBorderPainted(BorderPainted);
+				Garage.setFocusable(Focusable);
 		}
 
 		System.out.println("building front porch ");
@@ -156,6 +163,44 @@ public class FrontPorch{
 		Temp = (getWidthRatio(this.getWidth()) * (double)numberToCalc);
 		Calc = (int)Math.floor(Temp);
 		return Calc;
+	}
+	public boolean getOpaque() {
+		return Opaque;
+	}
+	public boolean getAreaFilled() {
+		return AreaFilled;
+	}
+	public boolean getBorderPainted() {
+		return BorderPainted;
+	}
+	public boolean getFocusable() {
+		return Focusable;
+	}
+	public boolean getVisible() {
+		return Visible;
+	}
+	public void setOpaque(boolean OP) {
+		Opaque = OP;
+	}
+	public void setAreaFilled(boolean AF) {
+		AreaFilled = AF;
+	}
+	public void setBorderPainted(boolean BP) {
+		BorderPainted = BP;
+	}
+	public void setFocusable(boolean FO) {
+		Focusable = FO;
+	}
+	public void setVisible(boolean VS) {
+		Visible = VS;
+	}
+	
+	public void toggleButtonStateFinal() {
+		this.setAreaFilled(false);
+		this.setOpaque(false);
+		this.setBorderPainted(false);
+		this.setFocusable(false);
+		this.setVisible(true);
 	}
 	
 

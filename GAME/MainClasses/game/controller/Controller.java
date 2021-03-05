@@ -1,9 +1,12 @@
 package game.controller;
 
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import game.model.Model;
 import game.viewer.Viewer;
 
-public class Controller{
+public class Controller implements KeyListener{
 	Model MODEL = new Model();
 	Viewer VIEW;
 	boolean Running = true;
@@ -25,9 +28,11 @@ public class Controller{
 		
 		this.setButtonActionEvents_PLS();
 		System.out.println("Button Events instanced");
+		
 	}
 	
 	//All the button Action events
+	
 	public void setAllButtonEvents() {
 		this.setButtonActionEvents_FrontPorch();
 		this.setButtonActionEvents_MMS();
@@ -54,7 +59,15 @@ public class Controller{
 		
 		this.setButtonActionEvents_Attic();
 		this.setButtonActionEvents_AtticRoom();
+		
+		//this method when called Initializes each button's actions when pressed. 
 	}
+	
+	// the following setButtonActionEvents_RoomName methods all are the assigning each buttons action to their respective response methods.
+	// for example the following "setButtonActionEvent_PLS()". From the View class, get the room class called PreLaunchScreen. from there get a
+	// button called start and then assign an actionListener. When the Action listener is called invoke the method called PLS_StartAction.
+	// The naming convention of the action methods are as follows. the RoomName_ButtonName so you can hopefully get an idea of what they do.
+	
 	public void setButtonActionEvents_PLS() {
 		VIEW.getPLS().getStart().addActionListener(e ->this.PLS_StartAction());
 		VIEW.getPLS().getOptions().addActionListener(e ->this.PLS_Options());
@@ -156,7 +169,7 @@ public class Controller{
 	public void setButtonActionEvents_AtticRoom() {
 		VIEW.getAtticRoom().getAttic().addActionListener(e -> this.AtticRoom_Attic());
 	}
-	
+
 	public void updateRoomID(int ID) {
 		MODEL.setWindowID(ID);
 	}
@@ -196,11 +209,12 @@ public class Controller{
 		}
 		VIEW.PreLaunchScreen(false);
 		
-		//VIEW.MainMenuScreen(true); DEFAULT
-		VIEW.ThirdHall(true); // enter room here for immediate start room.
+		VIEW.MainMenuScreen(true); //DEFAULT
+		//VIEW.ThirdHall(true); // enter room here for immediate start room.
 		this.setAllButtonEvents();
 		
 	}
+	//PreLaunch Screen button actions.
 	public void PLS_Quit() {
 		System.out.println("Quiting...");
 		VIEW.getFrame().dispose();
@@ -485,4 +499,38 @@ public class Controller{
 		VIEW.Attic(true);
 		VIEW.AtticRoom(false);
 	}
+	//Keyboard keys----------------------------------------------------
+	
+	public void KeyButtonInventory() {
+		System.out.println();
+	}
+	public void KeyButtonEscape() {
+		
+	}
+	public void KeyButtonUse() {
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+		if(e.getKeyChar() == KeyEvent.VK_TAB) {
+			System.out.println("\"TAB\"");
+			VIEW.getInventoryScreen();		
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

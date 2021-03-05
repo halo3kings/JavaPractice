@@ -12,6 +12,12 @@ public class Kitchen {
 	JPanel Kitchen = new JPanel();
 	JLabel ImageLabel = new JLabel();
 	
+	public boolean Opaque = true;
+	public boolean AreaFilled = true;
+	public boolean BorderPainted = true;
+	public boolean Focusable = true;
+	public boolean Visible = true;
+	
 	JButton Hall = new JButton();
 		ButtonDataStorage BDS = new ButtonDataStorage(10, 120, 130, 270);
 	
@@ -28,6 +34,8 @@ public class Kitchen {
 	private int Width;
 	
 	Kitchen(int W, int H) {
+		this.toggleButtonStateFinal();
+		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
 			BackGround = new ImageIcon(Resize640);
@@ -39,27 +47,27 @@ public class Kitchen {
 			
 			Kitchen.add(Hall);
 				Hall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Hall.setVisible(true);
-				//Hall.setOpaque(false);
-				//Hall.setContentAreaFilled(false);
-				//Hall.setBorderPainted(false);
-				//Hall.setFocusable(false);
+				Hall.setVisible(Visible);
+				Hall.setOpaque(Opaque);
+				Hall.setContentAreaFilled(AreaFilled);
+				Hall.setBorderPainted(BorderPainted);
+				Hall.setFocusable(Focusable);
 				
 			Kitchen.add(Hall2);
 				Hall2.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-				Hall2.setVisible(true);
-				//Hall2.setOpaque(false);
-				//Hall2.setContentAreaFilled(false);
-				//Hall2.setBorderPainted(false);
-				//Hall2.setFocusable(false);
+				Hall2.setVisible(Visible);
+				Hall2.setOpaque(Opaque);
+				Hall2.setContentAreaFilled(AreaFilled);
+				Hall2.setBorderPainted(BorderPainted);
+				Hall2.setFocusable(Focusable);
 				
 			Kitchen.add(DiningRoom);
 				DiningRoom.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
-				DiningRoom.setVisible(true);
-				//DiningRoom.setOpaque(false);
-				//DiningRoom.setContentAreaFilled(false);
-				//DiningRoom.setBorderPainted(false);
-				//DiningRoom.setFocusable(false);
+				DiningRoom.setVisible(Visible);
+				DiningRoom.setOpaque(Opaque);
+				DiningRoom.setContentAreaFilled(AreaFilled);
+				DiningRoom.setBorderPainted(BorderPainted);
+				DiningRoom.setFocusable(Focusable);
 		}
 		if(W == 1296) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -72,27 +80,27 @@ public class Kitchen {
 			
 			Kitchen.add(Hall);
 				Hall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Hall.setVisible(true);
-				//Hall.setOpaque(false);
-				//Hall.setContentAreaFilled(false);
-				//Hall.setBorderPainted(false);
-				//Hall.setFocusable(false);
+				Hall.setVisible(Visible);
+				Hall.setOpaque(Opaque);
+				Hall.setContentAreaFilled(AreaFilled);
+				Hall.setBorderPainted(BorderPainted);
+				Hall.setFocusable(Focusable);
 			
 			Kitchen.add(Hall2);
 				Hall2.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-				Hall2.setVisible(true);
-				//Hall2.setOpaque(false);
-				//Hall2.setContentAreaFilled(false);
-				//Hall2.setBorderPainted(false);
-				//Hall2.setFocusable(false);
+				Hall2.setVisible(Visible);
+				Hall2.setOpaque(Opaque);
+				Hall2.setContentAreaFilled(AreaFilled);
+				Hall2.setBorderPainted(BorderPainted);
+				Hall2.setFocusable(Focusable);
 			
 			Kitchen.add(DiningRoom);
 				DiningRoom.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
-				DiningRoom.setVisible(true);
-				//DiningRoom.setOpaque(false);
-				//DiningRoom.setContentAreaFilled(false);
-				//DiningRoom.setBorderPainted(false);
-				//DiningRoom.setFocusable(false);
+				DiningRoom.setVisible(Visible);
+				DiningRoom.setOpaque(Opaque);
+				DiningRoom.setContentAreaFilled(AreaFilled);
+				DiningRoom.setBorderPainted(BorderPainted);
+				DiningRoom.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -105,27 +113,27 @@ public class Kitchen {
 			
 			Kitchen.add(Hall);
 				Hall.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				Hall.setVisible(true);
-				//Hall.setOpaque(false);
-				//Hall.setContentAreaFilled(false);
-				//Hall.setBorderPainted(false);
-				//Hall.setFocusable(false);
+				Hall.setVisible(Visible);
+				Hall.setOpaque(Opaque);
+				Hall.setContentAreaFilled(AreaFilled);
+				Hall.setBorderPainted(BorderPainted);
+				Hall.setFocusable(Focusable);
 			
 			Kitchen.add(Hall2);
 				Hall2.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), this.ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-				Hall2.setVisible(true);
-				//Hall2.setOpaque(false);
-				//Hall2.setContentAreaFilled(false);
-				//Hall2.setBorderPainted(false);
-				//Hall2.setFocusable(false);
+				Hall2.setVisible(Visible);
+				Hall2.setOpaque(Opaque);
+				Hall2.setContentAreaFilled(AreaFilled);
+				Hall2.setBorderPainted(BorderPainted);
+				Hall2.setFocusable(Focusable);
 			
 			Kitchen.add(DiningRoom);
 				DiningRoom.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), this.ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
-				DiningRoom.setVisible(true);
-				//DiningRoom.setOpaque(false);
-				//DiningRoom.setContentAreaFilled(false);
-				//DiningRoom.setBorderPainted(false);
-				//DiningRoom.setFocusable(false);
+				DiningRoom.setVisible(Visible);
+				DiningRoom.setOpaque(Opaque);
+				DiningRoom.setContentAreaFilled(AreaFilled);
+				DiningRoom.setBorderPainted(BorderPainted);
+				DiningRoom.setFocusable(Focusable);
 		}
 		
 		System.out.println("building Kitchen ");
@@ -183,6 +191,43 @@ public class Kitchen {
 		Calc = (int)Math.floor(Temp);
 		return Calc;
 	}
+	public boolean getOpaque() {
+		return Opaque;
+	}
+	public boolean getAreaFilled() {
+		return AreaFilled;
+	}
+	public boolean getBorderPainted() {
+		return BorderPainted;
+	}
+	public boolean getFocusable() {
+		return Focusable;
+	}
+	public boolean getVisible() {
+		return Visible;
+	}
+	public void setOpaque(boolean OP) {
+		Opaque = OP;
+	}
+	public void setAreaFilled(boolean AF) {
+		AreaFilled = AF;
+	}
+	public void setBorderPainted(boolean BP) {
+		BorderPainted = BP;
+	}
+	public void setFocusable(boolean FO) {
+		Focusable = FO;
+	}
+	public void setVisible(boolean VS) {
+		Visible = VS;
+	}
 	
+	public void toggleButtonStateFinal() {
+		this.setAreaFilled(false);
+		this.setOpaque(false);
+		this.setBorderPainted(false);
+		this.setFocusable(false);
+		this.setVisible(true);
+	}
 
 }
