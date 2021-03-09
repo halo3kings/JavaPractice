@@ -1,5 +1,7 @@
 package game.viewer;
 
+import java.awt.Color;
+
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
@@ -15,7 +17,7 @@ public class Viewer extends Base {
 		super(W, H);
 		PLS = new PreLaunchScreen();
 		this.Frame.add(PLS.getPreLaunchScreen());
-		
+
 	}
 	
 	// This is a list of instanced rooms for the viewer to then work with.
@@ -69,107 +71,107 @@ public class Viewer extends Base {
 		System.out.println("Initializing Front porch ");
 		FP = new FrontPorch(WD,HT);
 		this.Frame.add(FP.getFrontPorch());
-		FP.getFrontPorch().setLayer(FP.getFrontPorch(),RoomLevel);
+		FP.getFrontPorch().setLayer(FP.getFrontPorch(),Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Garage ");
 		GRG = new Garage(WD,HT);
 		this.Frame.add(GRG.getGarage());
-		GRG.getGarage().setLayer(GRG.getGarage(), RoomLevel);
+		GRG.getGarage().setLayer(GRG.getGarage(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing HallWay");
 		HW = new Hallway(WD,HT);
 		this.Frame.add(HW.getHallWay());
-		HW.getHallWay().setLayer(HW.getHallWay(), RoomLevel);
+		HW.getHallWay().setLayer(HW.getHallWay(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Lounge");
 		LG = new Lounge(WD,HT);
 		this.Frame.add(LG.getLounge());
-		LG.getLounge().setLayer(LG.getLounge(), RoomLevel);
+		LG.getLounge().setLayer(LG.getLounge(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Green House");
 		GH =  new GreenHouse(WD,HT);
 		this.Frame.add(GH.getGreenHouse());
-		GH.getGreenHouse().setLayer(GH.getGreenHouse(), RoomLevel);
+		GH.getGreenHouse().setLayer(GH.getGreenHouse(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Library");
 		LB = new Library(WD,HT);
 		this.Frame.add(LB.getLibrary());
-		LB.getLibrary().setLayer(LB.getLibrary(), RoomLevel);
+		LB.getLibrary().setLayer(LB.getLibrary(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing PoolHall");
 		PH = new PoolHall(WD,HT);
 		this.Frame.add(PH.getPoolHall());
-		PH.getPoolHall().setLayer(PH.getPoolHall(), RoomLevel);
+		PH.getPoolHall().setLayer(PH.getPoolHall(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Kitchen");
 		KT = new Kitchen(WD,HT);
 		this.Frame.add(KT.getKitchen());
-		KT.getKitchen().setLayer(KT.getKitchen(), RoomLevel);
+		KT.getKitchen().setLayer(KT.getKitchen(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Dining Room");
 		DR = new DiningRoom(WD,HT);
 		this.Frame.add(DR.getDiningRoom());
-		DR.getDiningRoom().setLayer(DR.getDiningRoom(), RoomLevel);
+		DR.getDiningRoom().setLayer(DR.getDiningRoom(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Second Floor Hall");
 		SH = new secondHall(WD,HT);
 		this.Frame.add(SH.getsecondHall());
-		SH.getsecondHall().setLayer(SH.getsecondHall(), RoomLevel);
+		SH.getsecondHall().setLayer(SH.getsecondHall(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Study");
 		SD = new Study(WD,HT);
 		this.Frame.add(SD.getStudy());
-		SD.getStudy().setLayer(SD.getStudy(), RoomLevel);
+		SD.getStudy().setLayer(SD.getStudy(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Office");
 		OF = new Office(WD,HT);
 		this.Frame.add(OF.getOffice());
-		OF.getOffice().setLayer(OF.getOffice(), RoomLevel);
+		OF.getOffice().setLayer(OF.getOffice(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing GuestRoom1");
 		GR1 = new GuestRoom1(WD,HT);
 		this.Frame.add(GR1.getGuestRoom1());
-		GR1.getGuestRoom1().setLayer(GR1.getGuestRoom1(), RoomLevel);
+		GR1.getGuestRoom1().setLayer(GR1.getGuestRoom1(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing GuestRoom1");
 		GR2 = new GuestRoom2(WD,HT);
 		this.Frame.add(GR2.getGuestRoom2());
-		GR2.getGuestRoom2().setLayer(GR2.getGuestRoom2(), RoomLevel);
+		GR2.getGuestRoom2().setLayer(GR2.getGuestRoom2(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Third Hall");
 		TH = new ThirdHall(WD,HT);
 		this.Frame.add(TH.getThirdHall());
-		TH.getThirdHall().setLayer(TH.getThirdHall(), RoomLevel);
+		TH.getThirdHall().setLayer(TH.getThirdHall(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing MasterBedroom");
 		MB = new MasterBedroom(WD,HT);
 		this.Frame.add(MB.getMasterBedroom());
-		MB.getMasterBedroom().setLayer(MB.getMasterBedroom(), RoomLevel);
+		MB.getMasterBedroom().setLayer(MB.getMasterBedroom(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Painters Studio");
 		PS = new PaintersStudio(WD,HT);
 		this.Frame.add(PS.getPaintersStudio());
-		PS.getPaintersStudio().setLayer(PS.getPaintersStudio(), RoomLevel);
+		PS.getPaintersStudio().setLayer(PS.getPaintersStudio(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Antiques Room");
 		AR = new AntiquesRoom(WD,HT);
 		this.Frame.add(AR.getAntiquesRoom());
-		AR.getAntiquesRoom().setLayer(AR.getAntiquesRoom(), RoomLevel);
+		AR.getAntiquesRoom().setLayer(AR.getAntiquesRoom(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Antiques Room");
 		AR2 = new AntiquesRoom2(WD,HT);
 		this.Frame.add(AR2.getAntiquesRoom2());
-		AR2.getAntiquesRoom2().setLayer(AR2.getAntiquesRoom2(), RoomLevel);
+		AR2.getAntiquesRoom2().setLayer(AR2.getAntiquesRoom2(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Antiques Room");
 		AT = new Attic(WD,HT);
 		this.Frame.add(AT.getAttic());
-		AT.getAttic().setLayer(AT.getAttic(), RoomLevel);
+		AT.getAttic().setLayer(AT.getAttic(), Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Antiques Room");
 		ATR = new AtticRoom(WD,HT);
 		this.Frame.add(ATR.getAtticRoom());
-		ATR.getAtticRoom().setLayer(ATR.getAtticRoom(), RoomLevel);
+		ATR.getAtticRoom().setLayer(ATR.getAtticRoom(), Integer.valueOf(RoomLevel));
 		
 		//Enemy elements
 		
@@ -177,7 +179,7 @@ public class Viewer extends Base {
 		System.out.println("Initializing Inventory Screen");
 		IS = new InventoryScreen(WD,HT);
 		this.Frame.add(IS.getInventoryScreen());
-		IS.getInventoryScreen().setLayer(IS.getInventoryScreen(), PlayerHUD);
+		IS.getInventoryScreen().setLayer(IS.getInventoryScreen(),Integer.valueOf(PlayerHUD));
 		
 			
 	}
@@ -340,52 +342,167 @@ public class Viewer extends Base {
 		Frame.setVisible(false);
 		Frame.setVisible(true);
 	}
-	public void getCurrentRoom(int CurrentRoom) {
-		switch(CurrentRoom)	{		
-		case 1:this.getFP();
+	
+	public void refreshCurrentPane(int desiredRoom) {
+		switch(desiredRoom)	{		
+		case 1:this.FrontPorch(false);
+			   this.FrontPorch(true);
 		break;
-		case 2:this.getGarage();
+		case 2:this.Garage(false);
+			   this.Garage(true);
 		break;
-		case 3:this.getHallway();
+		case 3:this.Hallway(false);
+			   this.Hallway(true);
 		break;
-		case 4:this.getLounge();
+		case 4:this.Lounge(false);
+			   this.Lounge(true);
 		break;
-		case 5:this.getGreenHouse();
+		case 5:this.GreenHouse(false);
+			   this.GreenHouse(true);
 		break;
-		case 6:this.getDiningRoom();
+		case 6:this.DiningRoom(false);
+			   this.DiningRoom(true);
 		break;
-		case 7:this.getKitchen();
+		case 7:this.Kitchen(false);
+			   this.Kitchen(true);
 		break;
-		case 8:this.getPoolHall();
+		case 8:this.PoolHall(false);
+			   this.PoolHall(true);
 		break;
-		case 9:this.getLibrary();
+		case 9:this.Library(false);
+	   		   this.Library(true);
 		break;
-		case 10:this.getSecondHall();
+		case 10:this.SecondHall(false);
+			    this.SecondHall(true);
 		break;
-		case 11:this.getOffice();
+		case 11:this.Office(false);
+			    this.Office(true);
 		break;
-		case 12:this.getGuestRoom2();
+		case 12:this.GuestRoom2(false);
+			    this.GuestRoom2(true);
 		break;
-		case 13:this.getGuestRoom1();
+		case 13:this.GuestRoom1(false);
+				this.GuestRoom1(true);
 		break;
-		case 14:this.getStudy();
+		case 14:this.Study(false);
+				this.Study(true);
 		break;
-		case 15:this.getThirdHall();
+		case 15:this.ThirdHall(false);
+				this.ThirdHall(true);
 		break;
-		case 16:this.getPaintersStudio();
+		case 16:this.PaintersStudio(false);
+				this.PaintersStudio(true);
 		break;
-		case 17:this.getMasterBedroom();
+		case 17:this.MasterBedroom(false);
+				this.MasterBedroom(true);
 		break;
-		case 18:this.getAntiquesRoom();
+		case 18:this.AntiquesRoom(false);
+				this.AntiquesRoom(true);
 		break;
-		case 19:this.getAntiquesRoom2();
+		case 19:this.AntiquesRoom2(false);
+				this.AntiquesRoom2(true);
 		break;
-		case 20:this.getAttic();
+		case 20:this.Attic(false);
+				this.Attic(true);
 		break;
-		case 21:this.getAtticRoom();
+		case 21:this.AtticRoom(false);
+				this.AtticRoom(true);
+		break;
+		}
+		}
+	public void closeCurrentPane(int desiredRoom) {
+		switch(desiredRoom)	{		
+		case 1:this.FrontPorch(false);
+		break;
+		case 2:this.Garage(false);
+		break;
+		case 3:this.Hallway(false);
+		break;
+		case 4:this.Lounge(false);
+		break;
+		case 5:this.GreenHouse(false);
+		break;
+		case 6:this.DiningRoom(false);
+		break;
+		case 7:this.Kitchen(false);
+		break;
+		case 8:this.PoolHall(false);
+		break;
+		case 9:this.Library(false);
+		break;
+		case 10:this.SecondHall(false);
+		break;
+		case 11:this.Office(false);
+		break;
+		case 12:this.GuestRoom2(false);
+		break;
+		case 13:this.GuestRoom1(false);
+		break;
+		case 14:this.Study(false);
+		break;
+		case 15:this.ThirdHall(false);
+		break;
+		case 16:this.PaintersStudio(false);
+		break;
+		case 17:this.MasterBedroom(false);
+		break;
+		case 18:this.AntiquesRoom(false);
+		break;
+		case 19:this.AntiquesRoom2(false);
+		break;
+		case 20:this.Attic(false);
+		break;
+		case 21:this.AtticRoom(false);
 		break;
 		}
 	}
+	public void openASpecificPane(int desiredRoom) {
+		switch(desiredRoom)	{		
+		case 1:this.FrontPorch(true);
+		break;
+		case 2:this.Garage(true);
+		break;
+		case 3:this.Hallway(true);
+		break;
+		case 4:this.Lounge(true);
+		break;
+		case 5:this.GreenHouse(true);
+		break;
+		case 6:this.DiningRoom(true);
+		break;
+		case 7:this.Kitchen(true);
+		break;
+		case 8:this.PoolHall(true);
+		break;
+		case 9:this.Library(true);
+		break;
+		case 10:this.SecondHall(true);
+		break;
+		case 11:this.Office(true);
+		break;
+		case 12:this.GuestRoom2(true);
+		break;
+		case 13:this.GuestRoom1(true);
+		break;
+		case 14:this.Study(true);
+		break;
+		case 15:this.ThirdHall(true);
+		break;
+		case 16:this.PaintersStudio(true);
+		break;
+		case 17:this.MasterBedroom(true);
+		break;
+		case 18:this.AntiquesRoom(true);
+		break;
+		case 19:this.AntiquesRoom2(true);
+		break;
+		case 20:this.Attic(true);
+		break;
+		case 21:this.AtticRoom(true);
+		break;
+		}
+	}
+		
 	
 }
 	

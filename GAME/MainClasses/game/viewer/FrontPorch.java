@@ -1,3 +1,4 @@
+
 package game.viewer;
 
 import java.awt.Image;
@@ -116,7 +117,7 @@ public class FrontPorch{
 		FrontPorch.add(ImageLabel);
 		FrontPorch.setBounds(0,0,W,H);
 		FrontPorch.setLayout(null);
-		FrontPorch.setVisible(false);
+		FrontPorch.setVisible(true);
 		
 	}
 	

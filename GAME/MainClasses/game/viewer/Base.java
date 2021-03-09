@@ -2,6 +2,7 @@ package game.viewer;
 
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Base {
 	//Constants
@@ -21,8 +22,7 @@ public class Base {
 	private boolean open;
 	private boolean visiblity = true;
 	
-	JFrame Frame = new JFrame();
-	
+	JFrame Frame = new JFrame();	
 	
 	Base(int W, int H){
 		this.setResolution(W, H);

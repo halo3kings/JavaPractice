@@ -8,6 +8,7 @@ public class Model {
 	//private boolean InventoryOpen;
 	
 	private int CurrentRoom;
+	private int PreviousRoom;
 	
 	public void setGameW(int GW) {
 		GameW = GW;
@@ -20,6 +21,9 @@ public class Model {
 	}
 	public void setCurrentRoom(int currentRoom) {
 		CurrentRoom = currentRoom;
+	}
+	public void setPreviousRoom(int previousRoom) {
+		PreviousRoom = previousRoom;
 	}
 	//gets
 	public int getGameW() {
@@ -34,4 +38,8 @@ public class Model {
 	public int getCurrentRoom() {
 		return CurrentRoom;
 	}
+	public int getPreviousRoom() {
+		return PreviousRoom;
+	}
+
 }

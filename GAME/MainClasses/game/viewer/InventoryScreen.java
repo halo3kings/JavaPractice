@@ -68,6 +68,14 @@ public class InventoryScreen {
 				ItemSelected.setContentAreaFilled(AreaFilled);
 				ItemSelected.setBorderPainted(BorderPainted);
 				ItemSelected.setFocusable(Focusable);
+			
+			InventoryScreen.add(exit);
+				exit.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
+				exit.setVisible(Visible);
+				exit.setOpaque(Opaque);
+				exit.setContentAreaFilled(AreaFilled);
+				exit.setBorderPainted(BorderPainted);
+				exit.setFocusable(Focusable);
 		}
 		if(W == 1296) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -79,20 +87,36 @@ public class InventoryScreen {
 			this.setWidth(BackGround.getIconWidth());
 			
 			InventoryScreen.add(LeftArrow);
-				LeftArrow.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				LeftArrow.setVisible(Visible);
-				LeftArrow.setOpaque(Opaque);
-				LeftArrow.setContentAreaFilled(AreaFilled);
-				LeftArrow.setBorderPainted(BorderPainted);
-				LeftArrow.setFocusable(Focusable);
-				
-			InventoryScreen.add(RightArrow);
-				RightArrow.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-				RightArrow.setVisible(Visible);
-				RightArrow.setOpaque(Opaque);
-				RightArrow.setContentAreaFilled(AreaFilled);
-				RightArrow.setBorderPainted(BorderPainted);
-				RightArrow.setFocusable(Focusable);
+			LeftArrow.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+			LeftArrow.setVisible(Visible);
+			LeftArrow.setOpaque(Opaque);
+			LeftArrow.setContentAreaFilled(AreaFilled);
+			LeftArrow.setBorderPainted(BorderPainted);
+			LeftArrow.setFocusable(Focusable);
+			
+		InventoryScreen.add(RightArrow);
+			RightArrow.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
+			RightArrow.setVisible(Visible);
+			RightArrow.setOpaque(Opaque);
+			RightArrow.setContentAreaFilled(AreaFilled);
+			RightArrow.setBorderPainted(BorderPainted);
+			RightArrow.setFocusable(Focusable);
+			
+		InventoryScreen.add(ItemSelected);
+			ItemSelected.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
+			ItemSelected.setVisible(Visible);
+			ItemSelected.setOpaque(Opaque);
+			ItemSelected.setContentAreaFilled(AreaFilled);
+			ItemSelected.setBorderPainted(BorderPainted);
+			ItemSelected.setFocusable(Focusable);
+		
+		InventoryScreen.add(exit);
+			exit.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
+			exit.setVisible(Visible);
+			exit.setOpaque(Opaque);
+			exit.setContentAreaFilled(AreaFilled);
+			exit.setBorderPainted(BorderPainted);
+			exit.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -104,20 +128,36 @@ public class InventoryScreen {
 			this.setWidth(BackGround.getIconWidth());
 			
 			InventoryScreen.add(LeftArrow);
-				LeftArrow.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				LeftArrow.setVisible(Visible);
-				LeftArrow.setOpaque(Opaque);
-				LeftArrow.setContentAreaFilled(AreaFilled);
-				LeftArrow.setBorderPainted(BorderPainted);
-				LeftArrow.setFocusable(Focusable);
-				
-			InventoryScreen.add(RightArrow);
-				RightArrow.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
-				RightArrow.setVisible(Visible);
-				RightArrow.setOpaque(Opaque);
-				RightArrow.setContentAreaFilled(AreaFilled);
-				RightArrow.setBorderPainted(BorderPainted);
-				RightArrow.setFocusable(Focusable);
+			LeftArrow.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+			LeftArrow.setVisible(Visible);
+			LeftArrow.setOpaque(Opaque);
+			LeftArrow.setContentAreaFilled(AreaFilled);
+			LeftArrow.setBorderPainted(BorderPainted);
+			LeftArrow.setFocusable(Focusable);
+			
+		InventoryScreen.add(RightArrow);
+			RightArrow.setBounds(this.ScalingWidth(BDS1.getX()), this.ScalingHeight(BDS1.getY()), ScalingWidth(BDS1.getWidth()), this.ScalingHeight(BDS1.getHeight()));
+			RightArrow.setVisible(Visible);
+			RightArrow.setOpaque(Opaque);
+			RightArrow.setContentAreaFilled(AreaFilled);
+			RightArrow.setBorderPainted(BorderPainted);
+			RightArrow.setFocusable(Focusable);
+			
+		InventoryScreen.add(ItemSelected);
+			ItemSelected.setBounds(this.ScalingWidth(BDS2.getX()), this.ScalingHeight(BDS2.getY()), ScalingWidth(BDS2.getWidth()), this.ScalingHeight(BDS2.getHeight()));
+			ItemSelected.setVisible(Visible);
+			ItemSelected.setOpaque(Opaque);
+			ItemSelected.setContentAreaFilled(AreaFilled);
+			ItemSelected.setBorderPainted(BorderPainted);
+			ItemSelected.setFocusable(Focusable);
+		
+		InventoryScreen.add(exit);
+			exit.setBounds(this.ScalingWidth(BDS3.getX()), this.ScalingHeight(BDS3.getY()), ScalingWidth(BDS3.getWidth()), this.ScalingHeight(BDS3.getHeight()));
+			exit.setVisible(Visible);
+			exit.setOpaque(Opaque);
+			exit.setContentAreaFilled(AreaFilled);
+			exit.setBorderPainted(BorderPainted);
+			exit.setFocusable(Focusable);
 		}
 		
 		System.out.println("building InventoryScreen ");
@@ -135,6 +175,9 @@ public class InventoryScreen {
 	}
 	public JButton getItemSelected() {
 		return LeftArrow;
+	}
+	public JButton getExit() {
+		return exit;
 	}
 	public JLayeredPane getInventoryScreen() {
 		return InventoryScreen;
