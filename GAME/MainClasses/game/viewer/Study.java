@@ -5,11 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class Study {
+	private static int RoomNumber = 14;
 	
-	JPanel Study = new JPanel();
+	JLayeredPane Study = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton Hall = new JButton();
@@ -90,14 +91,14 @@ public class Study {
 		Study.add(ImageLabel);
 		Study.setBounds(0,0,W,H);
 		Study.setLayout(null);
-		Study.setVisible(true);
+		Study.setVisible(false);
 	}
 
 	public JButton getHall() {
 		return Hall;
 	}
 	
-	public JPanel getStudy() {
+	public JLayeredPane getStudy() {
 		return Study;
 	}
 	
@@ -182,6 +183,10 @@ public class Study {
 		this.setBorderPainted(false);
 		this.setFocusable(false);
 		this.setVisible(true);
+	}
+	
+	public int getRoomNumber() {
+		return RoomNumber;
 	}
 
 }

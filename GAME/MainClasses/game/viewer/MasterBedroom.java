@@ -5,11 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class MasterBedroom {
+	private static int RoomNumber = 17;
 
-	JPanel MasterBedroom = new JPanel();
+	JLayeredPane MasterBedroom = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -87,13 +88,13 @@ public class MasterBedroom {
 		MasterBedroom.add(ImageLabel);
 		MasterBedroom.setBounds(0,0,W,H);
 		MasterBedroom.setLayout(null);
-		MasterBedroom.setVisible(true);
+		MasterBedroom.setVisible(false);
 	}
 
 	public JButton getHallWay() {
 		return HallWay;
 	}
-	public JPanel getMasterBedroom() {
+	public JLayeredPane getMasterBedroom() {
 		return MasterBedroom;
 	}
 	public void setHeight(int height) {
@@ -169,6 +170,9 @@ public class MasterBedroom {
 		this.setBorderPainted(false);
 		this.setFocusable(false);
 		this.setVisible(true);
+	}
+	public int getRoomNumber() {
+		return RoomNumber;
 	}
 
 }

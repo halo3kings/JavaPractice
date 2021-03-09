@@ -5,11 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class PaintersStudio {
+	private static int RoomNumber = 16;
 
-	JPanel PaintersStudio = new JPanel();
+	JLayeredPane PaintersStudio = new JLayeredPane();
 	
 	public boolean Opaque = true;
 	public boolean AreaFilled = true;
@@ -91,13 +92,13 @@ public class PaintersStudio {
 		PaintersStudio.add(ImageLabel);
 		PaintersStudio.setBounds(0,0,W,H);
 		PaintersStudio.setLayout(null);
-		PaintersStudio.setVisible(true);
+		PaintersStudio.setVisible(false);
 	}
 
 	public JButton getHallWay() {
 		return HallWay;
 	}
-	public JPanel getPaintersStudio() {
+	public JLayeredPane getPaintersStudio() {
 		return PaintersStudio;
 	}
 	public void setHeight(int height) {
@@ -173,6 +174,9 @@ public class PaintersStudio {
 		this.setBorderPainted(false);
 		this.setFocusable(false);
 		this.setVisible(true);
+	}
+	public int getRoomNumber() {
+		return RoomNumber;
 	}
 
 }

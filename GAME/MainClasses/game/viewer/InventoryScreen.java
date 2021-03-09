@@ -5,19 +5,21 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class InventoryScreen {
 	
-	JPanel InventoryScreen = new JPanel();
+	JLayeredPane InventoryScreen = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton LeftArrow = new JButton();
 		ButtonDataStorage BDS = new ButtonDataStorage(0, 0, 20, 20);
 	JButton RightArrow = new JButton();
-		ButtonDataStorage BDS1 = new ButtonDataStorage(20, 20, 20, 20);
+		ButtonDataStorage BDS1 = new ButtonDataStorage(20, 0, 20, 20);
 	JButton ItemSelected = new JButton();
-		ButtonDataStorage BDS2 = new ButtonDataStorage(40, 40, 20, 20);
+		ButtonDataStorage BDS2 = new ButtonDataStorage(40, 0, 20, 20);
+	JButton exit = new JButton();
+		ButtonDataStorage BDS3 = new ButtonDataStorage(60, 0, 20, 20);
 	
 	public boolean Opaque = true;
 	public boolean AreaFilled = true;
@@ -134,7 +136,7 @@ public class InventoryScreen {
 	public JButton getItemSelected() {
 		return LeftArrow;
 	}
-	public JPanel getInventoryScreen() {
+	public JLayeredPane getInventoryScreen() {
 		return InventoryScreen;
 	}
 	

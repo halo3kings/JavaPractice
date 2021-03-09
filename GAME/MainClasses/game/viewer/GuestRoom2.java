@@ -5,11 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class GuestRoom2 {
+	private static int RoomNumber = 12;
 
-	JPanel GuestRoom2 = new JPanel();
+	JLayeredPane GuestRoom2 = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton Hall = new JButton();
@@ -88,14 +89,14 @@ public class GuestRoom2 {
 		GuestRoom2.add(ImageLabel);
 		GuestRoom2.setBounds(0,0,W,H);
 		GuestRoom2.setLayout(null);
-		GuestRoom2.setVisible(true);
+		GuestRoom2.setVisible(false);
 	}
 
 	public JButton getHall() {
 		return Hall;
 	}
 	
-	public JPanel getGuestRoom2() {
+	public JLayeredPane getGuestRoom2() {
 		return GuestRoom2;
 	}
 	
@@ -173,6 +174,8 @@ public class GuestRoom2 {
 		this.setFocusable(false);
 		this.setVisible(true);
 	}
-	
+	public int getRoomNumber() {
+		return RoomNumber;
+	}
 
 }

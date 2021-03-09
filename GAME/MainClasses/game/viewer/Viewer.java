@@ -1,18 +1,21 @@
 package game.viewer;
 
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
 public class Viewer extends Base {
-	
-	JPanel CurrentFrame = new JPanel();
+	public static int RoomLevel = 0;
+	public static int Enemies = 1;
+	public static int PlayerHUD = 2;
+	public static int AdditionalOverlay = 3;
+	public static int AdditionalOverlay1 = 4;
 	
 	public Viewer(int W, int H) {
 		super(W, H);
 		PLS = new PreLaunchScreen();
 		this.Frame.add(PLS.getPreLaunchScreen());
 		
-		CurrentFrame.setVisible(true);
 	}
 	
 	// This is a list of instanced rooms for the viewer to then work with.
@@ -47,6 +50,8 @@ public class Viewer extends Base {
 	//In game UI
 		InventoryScreen IS;
 		
+		
+		
 	
 	public void initRooms(int WD, int HT) {
 		//Initializing all the rooms.
@@ -56,120 +61,123 @@ public class Viewer extends Base {
 		// set invisible until the time comes. Theoretically the Visibility can be removed and all changed within their 
 		// respective rooms. however this makes for an easy quick edit.
 		
-		System.out.println("initializing MainMenu ");
+		//Room Elements
+		System.out.println("Initializing MainMenu ");
 		MMS = new MainMenuScreen(WD,HT);
 		this.Frame.add(MMS.getMainMenu());
-		MMS.getMainMenu().setVisible(false);
 		
-		System.out.println("initializing Front porch ");
+		System.out.println("Initializing Front porch ");
 		FP = new FrontPorch(WD,HT);
 		this.Frame.add(FP.getFrontPorch());
-		FP.getFrontPorch().setVisible(true);
+		FP.getFrontPorch().setLayer(FP.getFrontPorch(),RoomLevel);
 		
-		System.out.println("initializing Garage ");
+		System.out.println("Initializing Garage ");
 		GRG = new Garage(WD,HT);
 		this.Frame.add(GRG.getGarage());
-		GRG.getGarage().setVisible(false);
+		GRG.getGarage().setLayer(GRG.getGarage(), RoomLevel);
 		
-		System.out.println("initializing HallWay");
+		System.out.println("Initializing HallWay");
 		HW = new Hallway(WD,HT);
 		this.Frame.add(HW.getHallWay());
-		HW.getHallWay().setVisible(false);
+		HW.getHallWay().setLayer(HW.getHallWay(), RoomLevel);
 		
 		System.out.println("Initializing Lounge");
 		LG = new Lounge(WD,HT);
 		this.Frame.add(LG.getLounge());
-		LG.getLounge().setVisible(false);
+		LG.getLounge().setLayer(LG.getLounge(), RoomLevel);
 		
 		System.out.println("Initializing Green House");
 		GH =  new GreenHouse(WD,HT);
 		this.Frame.add(GH.getGreenHouse());
-		GH.getGreenHouse().setVisible(false);
+		GH.getGreenHouse().setLayer(GH.getGreenHouse(), RoomLevel);
 		
 		System.out.println("Initializing Library");
 		LB = new Library(WD,HT);
 		this.Frame.add(LB.getLibrary());
-		LB.getLibrary().setVisible(false);
+		LB.getLibrary().setLayer(LB.getLibrary(), RoomLevel);
 		
 		System.out.println("Initializing PoolHall");
 		PH = new PoolHall(WD,HT);
 		this.Frame.add(PH.getPoolHall());
-		PH.getPoolHall().setVisible(false);
+		PH.getPoolHall().setLayer(PH.getPoolHall(), RoomLevel);
 		
 		System.out.println("Initializing Kitchen");
 		KT = new Kitchen(WD,HT);
 		this.Frame.add(KT.getKitchen());
-		KT.getKitchen().setVisible(false);
+		KT.getKitchen().setLayer(KT.getKitchen(), RoomLevel);
 		
 		System.out.println("Initializing Dining Room");
 		DR = new DiningRoom(WD,HT);
 		this.Frame.add(DR.getDiningRoom());
-		DR.getDiningRoom().setVisible(false);
+		DR.getDiningRoom().setLayer(DR.getDiningRoom(), RoomLevel);
 		
 		System.out.println("Initializing Second Floor Hall");
 		SH = new secondHall(WD,HT);
 		this.Frame.add(SH.getsecondHall());
-		SH.getsecondHall().setVisible(false);
+		SH.getsecondHall().setLayer(SH.getsecondHall(), RoomLevel);
 		
 		System.out.println("Initializing Study");
 		SD = new Study(WD,HT);
 		this.Frame.add(SD.getStudy());
-		SD.getStudy().setVisible(false);
+		SD.getStudy().setLayer(SD.getStudy(), RoomLevel);
 		
 		System.out.println("Initializing Office");
 		OF = new Office(WD,HT);
 		this.Frame.add(OF.getOffice());
-		OF.getOffice().setVisible(false);
+		OF.getOffice().setLayer(OF.getOffice(), RoomLevel);
 		
 		System.out.println("Initializing GuestRoom1");
 		GR1 = new GuestRoom1(WD,HT);
 		this.Frame.add(GR1.getGuestRoom1());
-		GR1.getGuestRoom1().setVisible(false);
+		GR1.getGuestRoom1().setLayer(GR1.getGuestRoom1(), RoomLevel);
 		
 		System.out.println("Initializing GuestRoom1");
 		GR2 = new GuestRoom2(WD,HT);
 		this.Frame.add(GR2.getGuestRoom2());
-		GR2.getGuestRoom2().setVisible(false);
+		GR2.getGuestRoom2().setLayer(GR2.getGuestRoom2(), RoomLevel);
 		
 		System.out.println("Initializing Third Hall");
 		TH = new ThirdHall(WD,HT);
 		this.Frame.add(TH.getThirdHall());
-		TH.getThirdHall().setVisible(false);
+		TH.getThirdHall().setLayer(TH.getThirdHall(), RoomLevel);
 		
 		System.out.println("Initializing MasterBedroom");
 		MB = new MasterBedroom(WD,HT);
 		this.Frame.add(MB.getMasterBedroom());
-		MB.getMasterBedroom().setVisible(false);
+		MB.getMasterBedroom().setLayer(MB.getMasterBedroom(), RoomLevel);
 		
 		System.out.println("Initializing Painters Studio");
 		PS = new PaintersStudio(WD,HT);
 		this.Frame.add(PS.getPaintersStudio());
-		PS.getPaintersStudio().setVisible(false);
+		PS.getPaintersStudio().setLayer(PS.getPaintersStudio(), RoomLevel);
 		
 		System.out.println("Initializing Antiques Room");
 		AR = new AntiquesRoom(WD,HT);
 		this.Frame.add(AR.getAntiquesRoom());
-		AR.getAntiquesRoom().setVisible(false);
+		AR.getAntiquesRoom().setLayer(AR.getAntiquesRoom(), RoomLevel);
 		
 		System.out.println("Initializing Antiques Room");
 		AR2 = new AntiquesRoom2(WD,HT);
 		this.Frame.add(AR2.getAntiquesRoom2());
-		AR2.getAntiquesRoom2().setVisible(false);
+		AR2.getAntiquesRoom2().setLayer(AR2.getAntiquesRoom2(), RoomLevel);
 		
 		System.out.println("Initializing Antiques Room");
 		AT = new Attic(WD,HT);
 		this.Frame.add(AT.getAttic());
-		AT.getAttic().setVisible(false);
+		AT.getAttic().setLayer(AT.getAttic(), RoomLevel);
 		
 		System.out.println("Initializing Antiques Room");
 		ATR = new AtticRoom(WD,HT);
 		this.Frame.add(ATR.getAtticRoom());
-		ATR.getAtticRoom().setVisible(false);
+		ATR.getAtticRoom().setLayer(ATR.getAtticRoom(), RoomLevel);
 		
+		//Enemy elements
+		
+		//Player HUD elements
 		System.out.println("Initializing Inventory Screen");
 		IS = new InventoryScreen(WD,HT);
 		this.Frame.add(IS.getInventoryScreen());
-		IS.getInventoryScreen().setVisible(false);
+		IS.getInventoryScreen().setLayer(IS.getInventoryScreen(), PlayerHUD);
 		
 			
 	}
@@ -321,23 +329,65 @@ public class Viewer extends Base {
 	public InventoryScreen getInventoryScreen() {
 		return IS;
 	}
-	
-	public JPanel getCurrentRoom() {
-		return CurrentFrame;
-	}
-	public void setCurrentRoom(JPanel newCurrentRoom) {
-		CurrentFrame = newCurrentRoom;
-	}
-	
+			
 	// when called this updates the Jframe by resetting its height and turning it invisible, then back to visible.
 	public void updateWindow(int Width, int Height) {
 		Frame.setSize(Width, Height);		
 		Frame.setVisible(false);
 		Frame.setVisible(true);
 	}
-	
-	
+	public void refreshWindow() {		
+		Frame.setVisible(false);
+		Frame.setVisible(true);
 	}
+	public void getCurrentRoom(int CurrentRoom) {
+		switch(CurrentRoom)	{		
+		case 1:this.getFP();
+		break;
+		case 2:this.getGarage();
+		break;
+		case 3:this.getHallway();
+		break;
+		case 4:this.getLounge();
+		break;
+		case 5:this.getGreenHouse();
+		break;
+		case 6:this.getDiningRoom();
+		break;
+		case 7:this.getKitchen();
+		break;
+		case 8:this.getPoolHall();
+		break;
+		case 9:this.getLibrary();
+		break;
+		case 10:this.getSecondHall();
+		break;
+		case 11:this.getOffice();
+		break;
+		case 12:this.getGuestRoom2();
+		break;
+		case 13:this.getGuestRoom1();
+		break;
+		case 14:this.getStudy();
+		break;
+		case 15:this.getThirdHall();
+		break;
+		case 16:this.getPaintersStudio();
+		break;
+		case 17:this.getMasterBedroom();
+		break;
+		case 18:this.getAntiquesRoom();
+		break;
+		case 19:this.getAntiquesRoom2();
+		break;
+		case 20:this.getAttic();
+		break;
+		case 21:this.getAtticRoom();
+		break;
+		}
+	}
+	
+}
 	
 	
 

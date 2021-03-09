@@ -5,11 +5,13 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
 public class ThirdHall {
+	private static int RoomNumber = 15;	
 
-	JPanel ThirdHall = new JPanel();
+	JLayeredPane ThirdHall = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -198,7 +200,7 @@ public class ThirdHall {
 		ThirdHall.add(ImageLabel);
 		ThirdHall.setBounds(0,0,W,H);
 		ThirdHall.setLayout(null);
-		ThirdHall.setVisible(true);
+		ThirdHall.setVisible(false);
 	}
 	public JButton getSecondHall() {
 		return SecondHall;
@@ -215,7 +217,7 @@ public class ThirdHall {
 	public JButton getAttic() {
 		return Attic;
 	}
-	public JPanel getThirdHall() {
+	public JLayeredPane getThirdHall() {
 		return ThirdHall;
 	}
 	
@@ -292,5 +294,8 @@ public class ThirdHall {
 		this.setBorderPainted(false);
 		this.setFocusable(false);
 		this.setVisible(true);
+	}
+	public int getRoomNumber() {
+		return RoomNumber;
 	}
 }

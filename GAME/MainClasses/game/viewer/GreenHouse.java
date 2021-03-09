@@ -5,10 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class GreenHouse {
-	JPanel GreenHouse = new JPanel();
+	private static int RoomNumber = 5;
+	
+	JLayeredPane GreenHouse = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton Lounge = new JButton();
@@ -87,12 +89,12 @@ public class GreenHouse {
 		GreenHouse.add(ImageLabel);
 		GreenHouse.setBounds(0,0,W,H);
 		GreenHouse.setLayout(null);
-		GreenHouse.setVisible(true);
+		GreenHouse.setVisible(false);
 	}
 	public JButton getLounge() {
 		return Lounge;
 	}
-	public JPanel getGreenHouse() {
+	public JLayeredPane getGreenHouse() {
 		return GreenHouse;
 	}
 	public void setHeight(int height) {
@@ -168,5 +170,8 @@ public class GreenHouse {
 		this.setBorderPainted(false);
 		this.setFocusable(false);
 		this.setVisible(true);
+	}
+	public int getRoomNumber() {
+		return RoomNumber;
 	}
 }

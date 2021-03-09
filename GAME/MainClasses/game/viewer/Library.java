@@ -5,10 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class Library {
-	JPanel Library = new JPanel();
+	private static int RoomNumber = 9;
+	
+	JLayeredPane Library = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -86,12 +88,12 @@ public class Library {
 		Library.add(ImageLabel);
 		Library.setBounds(0,0,W,H);
 		Library.setLayout(null);
-		Library.setVisible(true);
+		Library.setVisible(false);
 	}
 	public JButton getHall() {
 		return Hall;
 	}
-	public JPanel getLibrary() {
+	public JLayeredPane getLibrary() {
 		return Library;
 	}
 	public void setHeight(int height) {
@@ -168,4 +170,8 @@ public class Library {
 		this.setFocusable(false);
 		this.setVisible(true);
 	}
+	public int getRoomNumber() {
+		return RoomNumber;
+	}
+	
 }

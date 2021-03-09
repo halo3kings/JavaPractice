@@ -5,11 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class Garage {
+	private static int RoomNumber = 2;
 
-	JPanel Garage = new JPanel();
+	JLayeredPane Garage = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton FrontPorch = new JButton();
@@ -87,12 +88,12 @@ public class Garage {
 		Garage.add(ImageLabel);
 		Garage.setBounds(0,0,W,H);
 		Garage.setLayout(null);
-		Garage.setVisible(true);
+		Garage.setVisible(false);
 	}
 	public JButton getFrontPorch() {
 		return FrontPorch;
 	}
-	public JPanel getGarage() {
+	public JLayeredPane getGarage() {
 		return Garage;
 	}
 	
@@ -169,6 +170,9 @@ public class Garage {
 		this.setBorderPainted(false);
 		this.setFocusable(false);
 		this.setVisible(true);
+	}
+	public int getRoomNumber() {
+		return RoomNumber;
 	}
 
 }

@@ -5,13 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class AntiquesRoom {
+	private static int RoomNumber = 18;
 	
-	public int roomNumber;
-	
-	JPanel AntiquesRoom = new JPanel();
+	JLayeredPane AntiquesRoom = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -116,7 +115,7 @@ public class AntiquesRoom {
 		AntiquesRoom.add(ImageLabel);
 		AntiquesRoom.setBounds(0,0,W,H);
 		AntiquesRoom.setLayout(null);
-		AntiquesRoom.setVisible(true);
+		AntiquesRoom.setVisible(false);
 	}
 	public JButton getAntiquesRoom2() {
 		return AntiquesRoom2;
@@ -124,7 +123,7 @@ public class AntiquesRoom {
 	public JButton getHallWay() {
 		return HallWay;
 	}
-	public JPanel getAntiquesRoom() {
+	public JLayeredPane getAntiquesRoom() {
 		return AntiquesRoom;
 	}
 	public void setHeight(int height) {
@@ -202,6 +201,10 @@ public class AntiquesRoom {
 		this.setFocusable(false);
 		this.setVisible(true);
 	}
+	public int getRoomNumber() {
+		return RoomNumber;
+	}
+
 
 	
 	

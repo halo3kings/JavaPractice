@@ -5,7 +5,7 @@ public class Model {
 	private int GameH;
 	
 	private int WindowID;
-	private boolean InventoryOpen;
+	//private boolean InventoryOpen;
 	
 	private int CurrentRoom;
 	

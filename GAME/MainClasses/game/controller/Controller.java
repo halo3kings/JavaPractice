@@ -222,7 +222,7 @@ public class Controller implements KeyListener{
 		
 		VIEW.PreLaunchScreen(false);
 		VIEW.MainMenuScreen(true); //DEFAULT
-		//VIEW.ThirdHall(true); // enter room here for immediate start room.
+		VIEW.ThirdHall(true); // enter room here for immediate start room.
 		this.setAllButtonEvents();
 		
 	}
@@ -255,12 +255,9 @@ public class Controller implements KeyListener{
 	public void MMS_Start() {
 		System.out.println("Starting...");
 		VIEW.MainMenuScreen(false);
+		VIEW.FrontPorch(true);
 		
-		VIEW.setCurrentRoom(VIEW.getFP().getFrontPorch());
-		MODEL.setCurrentRoom(1);
-		
-		//VIEW.MainMenuScreen(false);
-		//VIEW.FrontPorch(true);
+		MODEL.setCurrentRoom(VIEW.getFP().getRoomNumber());
 	}
 	public void MMS_Load() {
 		System.out.println("Opening loading screen...");
@@ -280,38 +277,52 @@ public class Controller implements KeyListener{
 		System.out.println("HallWay door");
 		VIEW.FrontPorch(false);
 		VIEW.Hallway(true);
+		
+		MODEL.setCurrentRoom(VIEW.getHallway().getRoomNumber());
 	}
 	public void FP_GarageDoor() {
 		System.out.println("Garage door");
 		VIEW.FrontPorch(false);
-		VIEW.Garage(true);
+		VIEW.Garage(true);		
+		
+		MODEL.setCurrentRoom(VIEW.getGarage().getRoomNumber());
 	}
 	//---Garage Buttons
 	public void Garage_FrontPortch() {
 		System.out.println("Going to front porch");
 		VIEW.FrontPorch(true);
 		VIEW.Garage(false);
+		
+		MODEL.setCurrentRoom(VIEW.getFP().getRoomNumber());
 	}
 	//---HallWay Buttons
 	public void HallWay_Lounge() {
 		System.out.println("Going to Lounge");
 		VIEW.Hallway(false);
 		VIEW.Lounge(true);
+		
+		MODEL.setCurrentRoom(VIEW.getLounge().getRoomNumber());
 	}
 	public void HallWay_Dining() {
 		System.out.println("Going to Dining");
 		VIEW.Hallway(false);
 		VIEW.DiningRoom(true);
+		
+		MODEL.setCurrentRoom(VIEW.getDiningRoom().getRoomNumber());
 	}
 	public void HallWay_Kitchen() {
 		System.out.println("Going to Kitchen");
 		VIEW.Hallway(false);
 		VIEW.Kitchen(true);
+		
+		MODEL.setCurrentRoom(VIEW.getKitchen().getRoomNumber());
 	}
 	public void HallWay_Stairs() {
 		System.out.println("Going up Stairs");
 		VIEW.Hallway(false);
 		VIEW.SecondHall(true);
+		
+		MODEL.setCurrentRoom(VIEW.getSecondHall().getRoomNumber());
 	}
 	public void HallWay_Kitchen2() {
 		this.HallWay_Kitchen();
@@ -320,50 +331,68 @@ public class Controller implements KeyListener{
 		System.out.println("Going to Pool Hall");
 		VIEW.Hallway(false);
 		VIEW.PoolHall(true);
+		
+		MODEL.setCurrentRoom(VIEW.getPoolHall().getRoomNumber());
 	}
 	public void HallWay_Library() {
 		System.out.println("Going to Library");
 		VIEW.Hallway(false);
 		VIEW.Library(true);
+		
+		MODEL.setCurrentRoom(VIEW.getLibrary().getRoomNumber());
 	}
 	public void HallWay_FrontPorch() {
 		System.out.println("Going to Front Porch");
 		VIEW.Hallway(false);
 		VIEW.FrontPorch(true);
+		
+		MODEL.setCurrentRoom(VIEW.getFP().getRoomNumber());
 	}
 	//---Lounge Buttons
 	public void Lounge_GreenHouse() {
 		System.out.println("Going to Green House");
 		VIEW.Lounge(false);
 		VIEW.GreenHouse(true);
+		
+		MODEL.setCurrentRoom(VIEW.getGreenHouse().getRoomNumber());
 	}
 	public void Lounge_HallWay()  {
 		System.out.println("Going to Hall way");
 		VIEW.Lounge(false);
 		VIEW.Hallway(true);
+		
+		MODEL.setCurrentRoom(VIEW.getHallway().getRoomNumber());
 	}
 	//---GreenHouse Button
 	public void GreenHouse_Lounge() {
 		System.out.println("Going to lounge");
 		VIEW.GreenHouse(false);
 		VIEW.Lounge(true);
+		
+		MODEL.setCurrentRoom(VIEW.getLounge().getRoomNumber());
 	}
 	//---Dining Buttons
 	public void DiningRoom_Hall() {
 		System.out.println("Going to Hall");
 		VIEW.DiningRoom(false);
 		VIEW.Hallway(true);
+		
+		MODEL.setCurrentRoom(VIEW.getHallway().getRoomNumber());
 	}
 	public void DiningRoom_Kitchen() {
 		System.out.println("Going to Kitchen");
 		VIEW.DiningRoom(false);
 		VIEW.Kitchen(true);
+		
+		MODEL.setCurrentRoom(VIEW.getKitchen().getRoomNumber());
 	}
 	//---kitchen Buttons
 	public void Kitchen_Hall() {
 		System.out.println("Going to hall");
 		VIEW.Kitchen(false);
 		VIEW.Hallway(true);
+		
+		MODEL.setCurrentRoom(VIEW.getHallway().getRoomNumber());
 	}
 	public void Kitchen_Hall2() {
 		this.Kitchen_Hall();
@@ -372,18 +401,24 @@ public class Controller implements KeyListener{
 		System.out.println("Going to dining room");
 		VIEW.Kitchen(false);
 		VIEW.DiningRoom(true);
+		
+		MODEL.setCurrentRoom(VIEW.getDiningRoom().getRoomNumber());
 	}
 	//---poolHall Button
 	public void PoolHall_Hall() {
 		System.out.println("going to hall");
 		VIEW.PoolHall(false);
 		VIEW.Hallway(true);
+		
+		MODEL.setCurrentRoom(VIEW.getHallway().getRoomNumber());
 	}
 	//---Library Button
 	public void Library_Hall() {
 		System.out.println("Going to hall");
 		VIEW.Library(false);
 		VIEW.Hallway(true);
+		
+		MODEL.setCurrentRoom(VIEW.getHallway().getRoomNumber());
 	}
 	
 	
@@ -392,55 +427,76 @@ public class Controller implements KeyListener{
 		System.out.println("Going to hall");
 		VIEW.Hallway(true);
 		VIEW.SecondHall(false);
+		
+		MODEL.setCurrentRoom(VIEW.getSecondHall().getRoomNumber());
 	}
 	public void SecondHall_Study() {
 		System.out.println("Going to Study");
 		VIEW.SecondHall(false);
 		VIEW.Study(true);
+		
+		MODEL.setCurrentRoom(VIEW.getStudy().getRoomNumber());
 	}
 	public void SecondHall_Office() {
 		System.out.println("Going to Office");
 		VIEW.SecondHall(false);
 		VIEW.Office(true);
+		
+		MODEL.setCurrentRoom(VIEW.getOffice().getRoomNumber());
 	}
 	public void SecondHall_GuestRoom1() {
 		System.out.println("Going to GuestRoom1");
 		VIEW.SecondHall(false);
 		VIEW.GuestRoom1(true);
+		
+		MODEL.setCurrentRoom(VIEW.getGuestRoom1().getRoomNumber());
 	}
 	public void SecondHall_GuestRoom2() {
 		System.out.println("Going to GuestRoom2");
 		VIEW.SecondHall(false);
 		VIEW.GuestRoom2(true);
+		
+		MODEL.setCurrentRoom(VIEW.getGuestRoom2().getRoomNumber());
 	}
 	public void SecondHall_ThirdHall() {
 		System.out.println("Going to Third Hall");
 		VIEW.SecondHall(false);
 		VIEW.ThirdHall(true);
+		
+		MODEL.setCurrentRoom(VIEW.getThirdHall().getRoomNumber());
 	}
 	//===Study Button
 	public void Study_SecondHall() {
 		System.out.println("Going to Second Hall");
 		VIEW.SecondHall(true);
 		VIEW.Study(false);
+		
+		MODEL.setCurrentRoom(VIEW.getSecondHall().getRoomNumber());
+		
 	}
 	//===Office
 	public void Office_SecondHall() {
 		System.out.println("Going to Second Hall");
 		VIEW.SecondHall(true);
 		VIEW.Office(false);
+		
+		MODEL.setCurrentRoom(VIEW.getSecondHall().getRoomNumber());
 	}
 	//===GuestRoom1
 	public void GuestRoom1_SecondHall() {
 		System.out.println("Going to Second Hall");
 		VIEW.SecondHall(true);
 		VIEW.GuestRoom1(false);
+		
+		MODEL.setCurrentRoom(VIEW.getSecondHall().getRoomNumber());
 	}
 	//===GuestRoom2
 	public void GuestRoom2_SecondHall() {
 		System.out.println("Going to Second Hall");
 		VIEW.SecondHall(true);
 		VIEW.GuestRoom2(false);
+		
+		MODEL.setCurrentRoom(VIEW.getSecondHall().getRoomNumber());
 	}
 	
 	//=-=Third Hall buttons
@@ -448,55 +504,75 @@ public class Controller implements KeyListener{
 		System.out.println("Going to Antiques Room");
 		VIEW.ThirdHall(false);
 		VIEW.AntiquesRoom(true);
+		
+		MODEL.setCurrentRoom(VIEW.getAntiquesRoom().getRoomNumber());
 	}
 	public void ThirdHall_PaintersStudio() {
 		System.out.println("Going to Painters Studio");
 		VIEW.ThirdHall(false);
 		VIEW.PaintersStudio(true);
+		
+		MODEL.setCurrentRoom(VIEW.getPaintersStudio().getRoomNumber());
 	}
 	public void ThirdHall_MasterBedroom() {
 		System.out.println("Going to masterBedroom");
 		VIEW.ThirdHall(false);
 		VIEW.MasterBedroom(true);
+		
+		MODEL.setCurrentRoom(VIEW.getMasterBedroom().getRoomNumber());
 	}
 	public void ThirdHall_Attic() {
 		System.out.println("Going to Attic");
 		VIEW.ThirdHall(false);
 		VIEW.Attic(true);
+		
+		MODEL.setCurrentRoom(VIEW.getAttic().getRoomNumber());
 	}
 	public void ThirdHall_SecondHall() {
 		System.out.println("Going to Second Hall");
 		VIEW.ThirdHall(false);
 		VIEW.SecondHall(true);
+		
+		MODEL.setCurrentRoom(VIEW.getSecondHall().getRoomNumber());
 	}
 	//=-=MasterBedroom Buttons
 	public void MasterBedroom_Hall() {
 		System.out.println("Going to Third Hall");
 		VIEW.MasterBedroom(false);
 		VIEW.ThirdHall(true);
+		
+		MODEL.setCurrentRoom(VIEW.getThirdHall().getRoomNumber());
 	}
 	//=-=PaintersStudio Buttons
 	public void PaintersStudio_Hall() {
 		System.out.println("Going to Third Hall");
 		VIEW.PaintersStudio(false);
 		VIEW.ThirdHall(true);
+		
+		MODEL.setCurrentRoom(VIEW.getThirdHall().getRoomNumber());
 	}
 	//=-=AntiquesRoom buttons
 	public void AntiquesRoom_Hall() {
 		System.out.println("Going to Third Hall");
 		VIEW.AntiquesRoom(false);
 		VIEW.ThirdHall(true);
+		
+		MODEL.setCurrentRoom(VIEW.getMasterBedroom().getRoomNumber());
 	}
 	public void AntiquesRoom_AntiquesRoom2() {
 		System.out.println("Going to back of Room");
 		VIEW.AntiquesRoom(false);
 		VIEW.AntiquesRoom2(true);
+		
+		MODEL.setCurrentRoom(VIEW.getAntiquesRoom2().getRoomNumber());
 	}
 	//=-=AntiquesRoom2 Buttons
 	public void AntiquesRoom2_AntiquesRoom() {
 		System.out.println("Going to Antiques room");
 		VIEW.AntiquesRoom(true);
 		VIEW.AntiquesRoom2(false);
+		
+		MODEL.setCurrentRoom(VIEW.getAntiquesRoom2().getRoomNumber());
 	}
 
 	//-=-Attic
@@ -504,17 +580,23 @@ public class Controller implements KeyListener{
 		System.out.println("Going to Attic Room");
 		VIEW.AtticRoom(true);
 		VIEW.Attic(false);
+		
+		MODEL.setCurrentRoom(VIEW.getAtticRoom().getRoomNumber());
 	}
 	public void Attic_ThirdHall() {
 		System.out.println("Going to Third Hall");
 		VIEW.ThirdHall(true);
 		VIEW.Attic(false);
+		
+		MODEL.setCurrentRoom(VIEW.getThirdHall().getRoomNumber());
 	}
 	//-=- Attic Room
 	public void AtticRoom_Attic() {
 		System.out.println("Going to Attic");
 		VIEW.Attic(true);
 		VIEW.AtticRoom(false);
+		
+		MODEL.setCurrentRoom(VIEW.getAttic().getRoomNumber());
 	}
 	//Keyboard keys----------------------------------------------------
 
@@ -568,18 +650,17 @@ public class Controller implements KeyListener{
 		// TODO Auto-generated method stub		
 		
 	}
-	
 	public void KeyBoardBindAction_Inventory() {
-		if(this.getInventoryState() == false) {
-
-			VIEW.InventoryScreen(true);
-			VIEW.getInventoryScreen().getInventoryScreen().setLayer(VIEW.getInventoryScreen().getInventoryScreen(), 0);
-			System.out.println("Opening Iventory");
-			this.setInventoryState(true);
+		System.out.println("is the inventory open: "+VIEW.getInventoryScreen().getInventoryScreen().isVisible());
+		if(VIEW.getInventoryScreen().getInventoryScreen().isVisible() == true) {
+			System.out.println("Closing Inventory");
+			VIEW.InventoryScreen(false);
+			VIEW.refreshWindow();
+			VIEW.getCurrentRoom(MODEL.getCurrentRoom()).s
+			
 		}
-
-
 	}
+		
 	public void KeyBoardBindAction_Use() {
 		
 	}
@@ -589,6 +670,6 @@ public class Controller implements KeyListener{
 	public boolean getInventoryState() {
 		return InventoryOpen;
 	}
-	
+		
 	
 }

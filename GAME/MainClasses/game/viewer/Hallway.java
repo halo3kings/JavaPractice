@@ -5,10 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class Hallway {
-	JPanel HallWay = new JPanel();
+	private static int RoomNumber = 3;
+	
+	JLayeredPane HallWay = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -283,7 +285,7 @@ public class Hallway {
 		HallWay.add(ImageLabel);
 		HallWay.setBounds(0,0,W,H);
 		HallWay.setLayout(null);
-		HallWay.setVisible(true);
+		HallWay.setVisible(false);
 		}
 	public JButton getLounge() {
 		return Lounge;
@@ -306,7 +308,7 @@ public class Hallway {
 	public JButton getLibrary() {
 		return Library;
 	}
-	public JPanel getHallWay() {
+	public JLayeredPane getHallWay() {
 		return HallWay;
 	}
 	public JButton getFrontPorch() {
@@ -386,5 +388,8 @@ public class Hallway {
 		this.setBorderPainted(false);
 		this.setFocusable(false);
 		this.setVisible(true);
+	}
+	public int getRoomNumber() {
+		return RoomNumber;
 	}
 }

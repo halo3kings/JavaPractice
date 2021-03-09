@@ -5,11 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class Office {
+	private static int RoomNumber = 11;
 
-	JPanel Office = new JPanel();
+	JLayeredPane Office = new JLayeredPane();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -88,14 +89,14 @@ public class Office {
 		Office.add(ImageLabel);
 		Office.setBounds(0,0,W,H);
 		Office.setLayout(null);
-		Office.setVisible(true);
+		Office.setVisible(false);
 	}
 
 	public JButton getHall() {
 		return Hall;
 	}
 	
-	public JPanel getOffice() {
+	public JLayeredPane getOffice() {
 		return Office;
 	}
 	
@@ -172,6 +173,9 @@ public class Office {
 		this.setBorderPainted(false);
 		this.setFocusable(false);
 		this.setVisible(true);
+	}
+	public int getRoomNumber() {
+		return RoomNumber;
 	}
 
 }

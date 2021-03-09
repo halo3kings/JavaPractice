@@ -5,11 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JLayeredPane;
 
 public class FrontPorch{
+	private static int RoomNumber = 1;
 	
-	JPanel FrontPorch = new JPanel();
+	JLayeredPane FrontPorch = new JLayeredPane();
 		ButtonDataStorage BDS = new ButtonDataStorage(100,0,120,480);
 	JLabel ImageLabel = new JLabel();
 		ButtonDataStorage BDS1 = new ButtonDataStorage(550, 70, 300, 100);
@@ -28,6 +29,7 @@ public class FrontPorch{
 	
 	private int Height;
 	private int Width;
+	
 
 	FrontPorch(int W, int H) {
 		this.toggleButtonStateFinal();
@@ -114,11 +116,11 @@ public class FrontPorch{
 		FrontPorch.add(ImageLabel);
 		FrontPorch.setBounds(0,0,W,H);
 		FrontPorch.setLayout(null);
-		FrontPorch.setVisible(true);
+		FrontPorch.setVisible(false);
 		
 	}
 	
-	public JPanel getFrontPorch() {
+	public JLayeredPane getFrontPorch() {
 		return FrontPorch;
 	}
 	public JButton getGarage() {
@@ -201,6 +203,10 @@ public class FrontPorch{
 		this.setBorderPainted(false);
 		this.setFocusable(false);
 		this.setVisible(true);
+	}
+	
+	public int getRoomNumber() {
+		return RoomNumber;
 	}
 	
 
