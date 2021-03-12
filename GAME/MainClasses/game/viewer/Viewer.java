@@ -13,10 +13,14 @@ public class Viewer extends Base {
 	public static int AdditionalOverlay = 3;
 	public static int AdditionalOverlay1 = 4;
 	
+	JLayeredPane GameScreen = new JLayeredPane();
+	
 	public Viewer(int W, int H) {
 		super(W, H);
 		PLS = new PreLaunchScreen();
 		this.Frame.add(PLS.getPreLaunchScreen());
+		
+		this.Frame.add(GameScreen);
 
 	}
 	
@@ -63,20 +67,22 @@ public class Viewer extends Base {
 		// set invisible until the time comes. Theoretically the Visibility can be removed and all changed within their 
 		// respective rooms. however this makes for an easy quick edit.
 		
+		GameScreen.setBounds(0,0,WD,HT);
+		GameScreen.setLayout(null);
+		GameScreen.setVisible(true);
+		
 		//Room Elements
 		System.out.println("Initializing MainMenu ");
 		MMS = new MainMenuScreen(WD,HT);
-		this.Frame.add(MMS.getMainMenu());
+		GameScreen.add(MMS.getMainMenu(),Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Front porch ");
 		FP = new FrontPorch(WD,HT);
-		this.Frame.add(FP.getFrontPorch());
-		FP.getFrontPorch().setLayer(FP.getFrontPorch(),Integer.valueOf(RoomLevel));
+		GameScreen.add(FP.getFrontPorch(),Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing Garage ");
 		GRG = new Garage(WD,HT);
-		this.Frame.add(GRG.getGarage());
-		GRG.getGarage().setLayer(GRG.getGarage(), Integer.valueOf(RoomLevel));
+		GameScreen.add(GRG.getGarage(),Integer.valueOf(RoomLevel));
 		
 		System.out.println("Initializing HallWay");
 		HW = new Hallway(WD,HT);

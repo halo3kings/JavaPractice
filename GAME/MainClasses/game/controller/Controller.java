@@ -49,9 +49,6 @@ public class Controller implements KeyListener{
 		Inventory = new InventoryAction();
 		Use = new UseAction();
 		
-		//adds a Keylistener to the Frame in View.
-		VIEW.getLabel().getInputMap().put(KeyStroke.getKeyStroke('e'), "InventoryAction");	
-		VIEW.getLabel().getActionMap().put("InventoryAction", Inventory );
 		
 	}
 	
@@ -103,11 +100,11 @@ public class Controller implements KeyListener{
 		VIEW.getPLS().getBBCredits().addActionListener(e ->this.PLS_BBCredits());
 	}
 	public void setButtonActionEvents_MMS() {
-		VIEW.getMMS().getStartButton().addActionListener(e ->this.MMS_Start());
+		VIEW.getMMS().getStart().addActionListener(e ->this.MMS_Start());
 		VIEW.getMMS().getQuit().addActionListener(e ->this.MMS_Quit());
 		VIEW.getMMS().getLoad().addActionListener(e ->this.MMS_Load());
-		VIEW.getMMS().getLLoad().addActionListener(e ->this.MMS_LLoad());
-		VIEW.getMMS().getLoadBB().addActionListener(e ->this.MMS_LoadBB());
+		VIEW.getMMS().getLoadScreenLB().addActionListener(e ->this.MMS_LLoad());
+		VIEW.getMMS().getLoadScreenBB().addActionListener(e ->this.MMS_LoadBB());
 	}
 	public void setButtonActionEvents_FrontPorch() {
 		VIEW.getFP().getGarage().addActionListener(e ->this.FP_GarageDoor());

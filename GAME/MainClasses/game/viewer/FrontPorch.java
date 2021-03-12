@@ -11,7 +11,7 @@ import javax.swing.JLayeredPane;
 public class FrontPorch{
 	private static int RoomNumber = 1;
 	
-	JLayeredPane FrontPorch = new JLayeredPane();
+	JLabel FrontPorch = new JLabel();
 		ButtonDataStorage BDS = new ButtonDataStorage(100,0,120,480);
 	JLabel ImageLabel = new JLabel();
 		ButtonDataStorage BDS1 = new ButtonDataStorage(550, 70, 300, 100);
@@ -121,7 +121,7 @@ public class FrontPorch{
 		
 	}
 	
-	public JLayeredPane getFrontPorch() {
+	public JLabel getFrontPorch() {
 		return FrontPorch;
 	}
 	public JButton getGarage() {
