@@ -5,29 +5,31 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
+import javax.swing.JLabel;
 
 public class InventoryScreen {
 	
-	JLayeredPane InventoryScreen = new JLayeredPane();
+	JLabel InventoryScreen = new JLabel();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton LeftArrow = new JButton();
-		ButtonDataStorage BDS = new ButtonDataStorage(0, 0, 20, 20);
+		ButtonDataStorage BDS = new ButtonDataStorage(7, 160, 25, 15);
 	JButton RightArrow = new JButton();
-		ButtonDataStorage BDS1 = new ButtonDataStorage(20, 0, 20, 20);
+		ButtonDataStorage BDS1 = new ButtonDataStorage(608,160,25, 15);
 	JButton ItemSelected = new JButton();
-		ButtonDataStorage BDS2 = new ButtonDataStorage(40, 0, 20, 20);
+		ButtonDataStorage BDS2 = new ButtonDataStorage(273, 105, 95, 124);
 	JButton exit = new JButton();
-		ButtonDataStorage BDS3 = new ButtonDataStorage(60, 0, 20, 20);
+		ButtonDataStorage BDS3 = new ButtonDataStorage(335, 445, 30, 18);
+	JButton back = new JButton();
+		ButtonDataStorage BDS4 = new ButtonDataStorage(555, 448, 35, 18);
 	
-	public boolean Opaque = true;
-	public boolean AreaFilled = true;
+	public boolean Opaque = false;
+	public boolean AreaFilled = false;
 	public boolean BorderPainted = true;
 	public boolean Focusable = true;
 	public boolean Visible = true;
 	
-	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Inventory\\InventoryScreen.png");
+	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\InventoryScreen.png");
 	Image Resize = BackGround.getImage();
 	
 	private int Height;
@@ -76,6 +78,14 @@ public class InventoryScreen {
 				exit.setContentAreaFilled(AreaFilled);
 				exit.setBorderPainted(BorderPainted);
 				exit.setFocusable(Focusable);
+				
+			InventoryScreen.add(back);
+				back.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
+				back.setVisible(Visible);
+				back.setOpaque(Opaque);
+				back.setContentAreaFilled(AreaFilled);
+				back.setBorderPainted(BorderPainted);
+				back.setFocusable(Focusable);
 		}
 		if(W == 1296) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -117,6 +127,14 @@ public class InventoryScreen {
 			exit.setContentAreaFilled(AreaFilled);
 			exit.setBorderPainted(BorderPainted);
 			exit.setFocusable(Focusable);
+			
+		InventoryScreen.add(back);
+			back.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
+			back.setVisible(Visible);
+			back.setOpaque(Opaque);
+			back.setContentAreaFilled(AreaFilled);
+			back.setBorderPainted(BorderPainted);
+			back.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -158,6 +176,14 @@ public class InventoryScreen {
 			exit.setContentAreaFilled(AreaFilled);
 			exit.setBorderPainted(BorderPainted);
 			exit.setFocusable(Focusable);
+			
+		InventoryScreen.add(back);
+			back.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
+			back.setVisible(Visible);
+			back.setOpaque(Opaque);
+			back.setContentAreaFilled(AreaFilled);
+			back.setBorderPainted(BorderPainted);
+			back.setFocusable(Focusable);
 		}
 		
 		System.out.println("building InventoryScreen ");
@@ -179,7 +205,10 @@ public class InventoryScreen {
 	public JButton getExit() {
 		return exit;
 	}
-	public JLayeredPane getInventoryScreen() {
+	public JButton getBack() {
+		return back;
+	}
+	public JLabel getInventoryScreen() {
 		return InventoryScreen;
 	}
 	

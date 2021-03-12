@@ -5,12 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
+import javax.swing.JLabel;
 
 public class Kitchen {
 	private static int RoomNumber = 7;
 	
-	JLayeredPane Kitchen = new JLayeredPane();
+	JLabel Kitchen = new JLabel();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -153,7 +153,7 @@ public class Kitchen {
 	public JButton getDiningRoom() {
 		return DiningRoom;
 	}
-	public JLayeredPane getKitchen() {
+	public JLabel getKitchen() {
 		return Kitchen;
 	}
 	public void setHeight(int height) {

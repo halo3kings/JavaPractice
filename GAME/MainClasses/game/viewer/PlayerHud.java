@@ -5,12 +5,15 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLabel;
 
-public class PaintersStudio {
-	private static int RoomNumber = 16;
-
-	JLabel PaintersStudio = new JLabel();
+public class PlayerHud {
+	private static int RoomNumber = -1;
+	
+	JLabel PlayerHud = new JLabel();
+	JLabel ImageLabel = new JLabel();
+	
+	JButton Inventory = new JButton();
+	ButtonDataStorage BDS = new ButtonDataStorage(587, 412, 40, 50);
 	
 	public boolean Opaque = true;
 	public boolean AreaFilled = true;
@@ -18,18 +21,14 @@ public class PaintersStudio {
 	public boolean Focusable = true;
 	public boolean Visible = true;
 	
-	JLabel ImageLabel = new JLabel();
-	
-	JButton HallWay = new JButton();
-		ButtonDataStorage BDS = new ButtonDataStorage(470, 120, 130, 200);
-	
-	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\PaintersStudio.png");
+	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\InventoryButton\\InventoryButtonImage.png");
 	Image Resize = BackGround.getImage();
+	
 	
 	private int Height;
 	private int Width;
 	
-	PaintersStudio(int W, int H) {
+	PlayerHud(int W, int H) {
 		this.toggleButtonStateFinal();
 		
 		if(W == 656) {
@@ -41,14 +40,13 @@ public class PaintersStudio {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-				
-			PaintersStudio.add(HallWay);
-				HallWay.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				HallWay.setVisible(Visible);
-				HallWay.setOpaque(Opaque);
-				HallWay.setContentAreaFilled(AreaFilled);
-				HallWay.setBorderPainted(BorderPainted);
-				HallWay.setFocusable(Focusable);
+			PlayerHud.add(Inventory);
+				Inventory.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				Inventory.setVisible(Visible);
+				Inventory.setOpaque(Opaque);
+				Inventory.setContentAreaFilled(AreaFilled);
+				Inventory.setBorderPainted(BorderPainted);
+				Inventory.setFocusable(Focusable);
 		}
 		if(W == 1296) {
 			Image Resize1280 = Resize.getScaledInstance(1280, 720, java.awt.Image.SCALE_SMOOTH);
@@ -59,14 +57,13 @@ public class PaintersStudio {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-			
-			PaintersStudio.add(HallWay);
-				HallWay.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				HallWay.setVisible(Visible);
-				HallWay.setOpaque(Opaque);
-				HallWay.setContentAreaFilled(AreaFilled);
-				HallWay.setBorderPainted(BorderPainted);
-				HallWay.setFocusable(Focusable);
+			PlayerHud.add(Inventory);
+				Inventory.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				Inventory.setVisible(Visible);
+				Inventory.setOpaque(Opaque);
+				Inventory.setContentAreaFilled(AreaFilled);
+				Inventory.setBorderPainted(BorderPainted);
+				Inventory.setFocusable(Focusable);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -77,29 +74,27 @@ public class PaintersStudio {
 			this.setHeight(BackGround.getIconHeight());
 			this.setWidth(BackGround.getIconWidth());
 			
-				
-			PaintersStudio.add(HallWay);
-				HallWay.setBounds(this.ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), this.ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
-				HallWay.setVisible(Visible);
-				HallWay.setOpaque(Opaque);
-				HallWay.setContentAreaFilled(AreaFilled);
-				HallWay.setBorderPainted(BorderPainted);
-				HallWay.setFocusable(Focusable);	
+			PlayerHud.add(Inventory);
+				Inventory.setBounds(ScalingWidth(BDS.getX()), this.ScalingHeight(BDS.getY()), ScalingWidth(BDS.getWidth()), this.ScalingHeight(BDS.getHeight()));
+				Inventory.setVisible(Visible);
+				Inventory.setOpaque(Opaque);
+				Inventory.setContentAreaFilled(AreaFilled);
+				Inventory.setBorderPainted(BorderPainted);
+				Inventory.setFocusable(Focusable);
 		}
 		
-		System.out.println("building PaintersStudio ");
+		System.out.println("building PlayerHud ");
 		ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
-		PaintersStudio.add(ImageLabel);
-		PaintersStudio.setBounds(0,0,W,H);
-		PaintersStudio.setLayout(null);
-		PaintersStudio.setVisible(false);
+		PlayerHud.add(ImageLabel);
+		PlayerHud.setBounds(0,0,W,H);
+		PlayerHud.setLayout(null);
+		PlayerHud.setVisible(false);
 	}
-
-	public JButton getHallWay() {
-		return HallWay;
+	public JButton getInventory() {
+		return Inventory;
 	}
-	public JLabel getPaintersStudio() {
-		return PaintersStudio;
+	public JLabel getPlayerHud() {
+		return PlayerHud;
 	}
 	public void setHeight(int height) {
 		Height = height;
@@ -178,5 +173,5 @@ public class PaintersStudio {
 	public int getRoomNumber() {
 		return RoomNumber;
 	}
-
 }
+

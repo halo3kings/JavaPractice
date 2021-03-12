@@ -5,12 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
+import javax.swing.JLabel;
 
 public class Garage {
 	private static int RoomNumber = 2;
 
-	JLayeredPane Garage = new JLayeredPane();
+	JLabel Garage = new JLabel();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton FrontPorch = new JButton();
@@ -93,7 +93,7 @@ public class Garage {
 	public JButton getFrontPorch() {
 		return FrontPorch;
 	}
-	public JLayeredPane getGarage() {
+	public JLabel getGarage() {
 		return Garage;
 	}
 	

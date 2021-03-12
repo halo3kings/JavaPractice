@@ -12,10 +12,8 @@ public class FrontPorch{
 	private static int RoomNumber = 1;
 	
 	JLabel FrontPorch = new JLabel();
-		ButtonDataStorage BDS = new ButtonDataStorage(100,0,120,480);
 	JLabel ImageLabel = new JLabel();
-		ButtonDataStorage BDS1 = new ButtonDataStorage(550, 70, 300, 100);
-	
+
 	public boolean Opaque = true;
 	public boolean AreaFilled = true;
 	public boolean BorderPainted = true;
@@ -23,7 +21,9 @@ public class FrontPorch{
 	public boolean Visible = true;
 		
 	JButton Garage = new JButton();
+		ButtonDataStorage BDS1 = new ButtonDataStorage(550, 70, 300, 100);
 	JButton Hallway = new JButton();
+		ButtonDataStorage BDS = new ButtonDataStorage(100,0,120,480);
 	
 	ImageIcon BackGround = new ImageIcon("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\Rooms\\FrontPorch.png");
 	Image Resize = BackGround.getImage();
@@ -117,7 +117,7 @@ public class FrontPorch{
 		FrontPorch.add(ImageLabel);
 		FrontPorch.setBounds(0,0,W,H);
 		FrontPorch.setLayout(null);
-		FrontPorch.setVisible(true);
+		FrontPorch.setVisible(false);
 		
 	}
 	

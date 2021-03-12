@@ -5,12 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
+import javax.swing.JLabel;
 
 public class AtticRoom {
 	private static int RoomNumber = 21;
 
-	JLayeredPane AtticRoom = new JLayeredPane();
+	JLabel AtticRoom = new JLabel();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -97,7 +97,7 @@ public class AtticRoom {
 	public JButton getAttic() {
 		return Attic;
 	}
-	public JLayeredPane getAtticRoom() {
+	public JLabel getAtticRoom() {
 		return AtticRoom;
 	}
 	public void setHeight(int height) {

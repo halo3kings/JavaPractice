@@ -12,7 +12,7 @@ import javax.swing.KeyStroke;
 import game.model.Model;
 import game.viewer.Viewer;
 
-public class Controller implements KeyListener{
+public class Controller{
 	Model MODEL = new Model();
 	Viewer VIEW;
 	boolean Running = true;
@@ -45,10 +45,6 @@ public class Controller implements KeyListener{
 		this.setButtonActionEvents_PLS();
 		System.out.println("Button Events instanced");
 		
-		//initializing key actions
-		Inventory = new InventoryAction();
-		Use = new UseAction();
-		
 		
 	}
 	
@@ -56,6 +52,7 @@ public class Controller implements KeyListener{
 	//this method when called Initializes each button's actions when pressed. 
 	
 	public void setAllButtonEvents() {
+		//Downstairs room buttons 
 		this.setButtonActionEvents_FrontPorch();
 		this.setButtonActionEvents_MMS();
 		this.setButtonActionEvents_Garage();
@@ -66,23 +63,24 @@ public class Controller implements KeyListener{
 		this.setButtonActionEvents_PoolHall();
 		this.setButtonActionEvents_Kitchen();
 		this.setButtonActionEvents_DiningRoom();
-		
+		//SecondFloor room buttons
 		this.setButtonActionEvents_SecondHall();
 		this.setButtonActionEvents_Study();
 		this.setButtonActionEvents_Office();
 		this.setButtonActionEvents_GuestRoom1();
 		this.setButtonActionEvents_GuestRoom2();
-		
+		//ThirdFloor room Buttons
 		this.setButtonActionEvents_ThirdHall();
 		this.setButtonActionEvents_MasterBedroom();
 		this.setButtonActionEvents_PaintersStudio();
 		this.setButtonActionEvents_AntiquesRoom();
 		this.setButtonActionEvents_AntiquesRoom2();
-		
+		//Attic Buttons
 		this.setButtonActionEvents_Attic();
 		this.setButtonActionEvents_AtticRoom();
-		
+		//Hud/inventory buttons
 		this.setButtonActionEvents_Inventory();
+		this.setButtonActionEvents_PlayerHudButtons();
 		
 	}
 	
@@ -197,7 +195,10 @@ public class Controller implements KeyListener{
 		VIEW.getInventoryScreen().getRightArrow().addActionListener(e -> this.InventoryButtons_RightArrow());
 		VIEW.getInventoryScreen().getItemSelected().addActionListener(e -> this.InventoryButtons_ItemSelected());
 		VIEW.getInventoryScreen().getExit().addActionListener(e -> this.InventoryButtons_Exit());
-		VIEW.getFrame().revalidate();
+		VIEW.getInventoryScreen().getBack().addActionListener(e ->this.InventoryButtons_Back());
+	}
+	public void setButtonActionEvents_PlayerHudButtons() {
+		VIEW.getPlayersHud().getInventory().addActionListener(e -> this.PlayerHudButton_Inventory());
 	}
 
 	public void updateRoomID(int ID) {
@@ -214,7 +215,7 @@ public class Controller implements KeyListener{
 	public void PLS_StartAction() {
 		System.out.println("Starting...");
 		if(VIEW.getPLS().getRes1().isSelected() == true) {
-			MODEL.setGameH(510);
+			MODEL.setGameH(519);
 			MODEL.setGameW(656);
 			VIEW.initRooms(MODEL.getGameW(),MODEL.getGameH());
 			VIEW.updateWindow(MODEL.getGameW(),MODEL.getGameH());
@@ -277,6 +278,7 @@ public class Controller implements KeyListener{
 		System.out.println("Starting...");
 		VIEW.MainMenuScreen(false);
 		VIEW.FrontPorch(true);
+		VIEW.PlayerHud(true);
 
 		MODEL.setPreviousRoom(MODEL.getCurrentRoom());
 		MODEL.setCurrentRoom(VIEW.getFP().getRoomNumber());
@@ -691,89 +693,25 @@ public class Controller implements KeyListener{
 	}
 	public void InventoryButtons_Exit() {
 		VIEW.InventoryScreen(false);
+		VIEW.MainMenuScreen(true);
+		System.out.println("Going Back to Menu");
+		//VIEW.openASpecificPane(MODEL.getCurrentRoom());
+	}
+	public void InventoryButtons_Back() {
+		VIEW.InventoryScreen(false);
+		VIEW.PlayerHud(true);
 		System.out.println("Closing Inventory");
-		VIEW.openASpecificPane(MODEL.getCurrentRoom());
+		//VIEW.openASpecificPane(MODEL.getCurrentRoom());
 	}
 	
-	//Keyboard keys----------------------------------------------------
-	public class InventoryAction extends AbstractAction{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Opening Inventory");
-			VIEW.InventoryScreen(true);
-			VIEW.closeCurrentPane(MODEL.getCurrentRoom());
-		}
-	}
-	public class UseAction extends AbstractAction{
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-	}
-
-	@Override
-	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
-		System.out.println(e.getKeyCode());
-		//27 is escape.
-		
-		switch(e.getKeyChar()) {
-			case 'e':
-					this.KeyBoardBindAction_Inventory();
-			break;
-			case 'f':;
-			break;
-			case '1':;
-			break;
-			case '2':;
-			break;
-			case '3':;
-			break;
-			case '4':;
-			break;
-			case '5':;
-			break;
-			case '6':;
-			break;
-			case '7':;
-			break;
-			case '8':;
-			break;
-			case '9':;
-			break;
-			case '0':;
-			break;
-		}
-		
-		if(e.getKeyCode() == KeyEvent.VK_TAB) {
-			System.out.println("\"TAB\"");
-			VIEW.getInventoryScreen();		
-		}
-	}
-
-	
-
-	@Override
-	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
-	}
-	@Override
-	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub		
-		
-	}
-	public void KeyBoardBindAction_Inventory() {
+	//-()-Player Hud Buttons
+	public void PlayerHudButton_Inventory() {
 		System.out.println("Opening Inventory");
 		VIEW.InventoryScreen(true);
-		VIEW.closeCurrentPane(MODEL.getCurrentRoom());
+		VIEW.PlayerHud(false);
 	}
-		
-	public void KeyBoardBindAction_Use() {
-		
-	}
+	
+	
 		
 	
 }

@@ -5,12 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
+import javax.swing.JLabel;
 
 public class PoolHall {
 	private static int RoomNumber = 8;
 	
-	JLayeredPane PoolHall = new JLayeredPane();
+	JLabel PoolHall = new JLabel();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -93,7 +93,7 @@ public class PoolHall {
 	public JButton getHall() {
 		return Hall;
 	}
-	public JLayeredPane getPoolHall() {
+	public JLabel getPoolHall() {
 		return PoolHall;
 	}
 	public void setHeight(int height) {

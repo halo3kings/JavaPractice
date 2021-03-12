@@ -5,12 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
+import javax.swing.JLabel;
 
 public class Study {
 	private static int RoomNumber = 14;
 	
-	JLayeredPane Study = new JLayeredPane();
+	JLabel Study = new JLabel();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton Hall = new JButton();
@@ -98,7 +98,7 @@ public class Study {
 		return Hall;
 	}
 	
-	public JLayeredPane getStudy() {
+	public JLabel getStudy() {
 		return Study;
 	}
 	

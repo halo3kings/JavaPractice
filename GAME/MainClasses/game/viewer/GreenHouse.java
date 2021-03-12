@@ -5,12 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
+import javax.swing.JLabel;
 
 public class GreenHouse {
 	private static int RoomNumber = 5;
 	
-	JLayeredPane GreenHouse = new JLayeredPane();
+	JLabel GreenHouse = new JLabel();
 	JLabel ImageLabel = new JLabel();
 	
 	JButton Lounge = new JButton();
@@ -94,7 +94,7 @@ public class GreenHouse {
 	public JButton getLounge() {
 		return Lounge;
 	}
-	public JLayeredPane getGreenHouse() {
+	public JLabel getGreenHouse() {
 		return GreenHouse;
 	}
 	public void setHeight(int height) {

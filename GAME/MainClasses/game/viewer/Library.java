@@ -5,12 +5,12 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JLayeredPane;
+import javax.swing.JLabel;
 
 public class Library {
 	private static int RoomNumber = 9;
 	
-	JLayeredPane Library = new JLayeredPane();
+	JLabel Library = new JLabel();
 	JLabel ImageLabel = new JLabel();
 	
 	public boolean Opaque = true;
@@ -93,7 +93,7 @@ public class Library {
 	public JButton getHall() {
 		return Hall;
 	}
-	public JLayeredPane getLibrary() {
+	public JLabel getLibrary() {
 		return Library;
 	}
 	public void setHeight(int height) {
