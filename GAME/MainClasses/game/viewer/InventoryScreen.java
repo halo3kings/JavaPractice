@@ -9,6 +9,10 @@ import javax.swing.JLabel;
 
 public class InventoryScreen {
 	
+	public int InvDisplayOrder[] = {0,1,2,3,4,5,6};
+	public int InvPosistionsX[] = {30,40,50,60,70,80,90,};
+	public int InvPosistionsY[] = {};
+	
 	JLabel InventoryScreen = new JLabel();
 	JLabel ImageLabel = new JLabel();
 	
