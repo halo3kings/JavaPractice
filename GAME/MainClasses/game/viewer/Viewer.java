@@ -53,7 +53,6 @@ public class Viewer extends Base {
 	//In game UI
 		InventoryScreen IS;
 		PlayerHud PHUD;
-		ItemIcons II;
 		
 		
 		
@@ -171,10 +170,6 @@ public class Viewer extends Base {
 		PHUD = new PlayerHud(WD,HT);
 		GameScreen.add(PHUD.getPlayerHud(),Integer.valueOf(PlayerHUD));
 		
-		System.out.println("Initializing Inventory Icons");
-		II = new ItemIcons(WD, HT);
-		GameScreen.add(II.getIcon(),Integer.valueOf(PlayerHUD));
-		
 		AllLayersVisibleSate(false);
 		this.Frame.add(GameScreen);	
 		
@@ -257,9 +252,6 @@ public class Viewer extends Base {
 	public void PlayerHud(boolean Visible) {
 		PHUD.getPlayerHud().setVisible(Visible);
 	}
-	public void ItemIcon(boolean Visible) {
-		II.getIcon().setVisible(Visible);
-	}
 	
 	// These methods allow for a controller or external class easy access to the rooms and their contents. 
 	public PreLaunchScreen getPLS() {
@@ -337,9 +329,7 @@ public class Viewer extends Base {
 	public PlayerHud getPlayersHud() {
 		return PHUD;
 	}
-	public ItemIcons getItemIcon() {
-		return II;
-	}
+
 			
 	// when called this updates the Jframe by resetting its height and turning it invisible, then back to visible.
 	public void updateWindow(int Width, int Height) {
@@ -374,7 +364,6 @@ public class Viewer extends Base {
 		this.AtticRoom(Visible);
 		this.InventoryScreen(Visible);
 		this.PlayerHud(Visible);
-		this.ItemIcon(Visible);
 	}
 	public void refreshCurrentPane(int desiredRoom) {
 		switch(desiredRoom)	{		

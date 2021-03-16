@@ -2,34 +2,89 @@ package game.viewer;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JLayer;
+import javax.swing.JLayeredPane;
 
 public class ItemIcons {
+	public int numberOfInvIcons = 16;
+	public int IconWidth = 80;
+	public int IconHeight = 168;
+	public boolean Visible = true;
+	private int Height;
+	private int Width;
+	private String VisibleIconImage;
+	public String ImageLocation[] = new String[numberOfInvIcons];
 	
-		private static int Width = 50;
-		private static int Height = 50;
-		private int NumberOfIcons = 16;
-
-		JLabel Icon = new JLabel();
-		JLabel ImageLabel[] = new JLabel[NumberOfIcons];
+	JLabel Icon = new JLabel();
+	JLabel ImageLabel = new JLabel();
+	
+	ImageIcon BackGround;
+	
+	ItemIcons(int W, int H,int SetImage) {
+		this.ImageLocationPopulator();
+		this.setImage(SetImage);
+		BackGround = new ImageIcon(this.getImage());
+		Image Resize = BackGround.getImage();
+			
 		
-		String ImageLocation[] = new String[NumberOfIcons];
-		ImageIcon INVIcon[] = new ImageIcon[NumberOfIcons];
-			
-		ItemIcons(int X, int Y,int W, int H) {
-			
-			System.out.println("building Icon ");
-			this.ImageLocationPopulator();
-			this.scalingImages(W);
-			this.setAllIconsVisibility(false);
-			
-			Icon.setBounds(X,Y,W,H);
-			Icon.setLayout(null);
-			Icon.setVisible(false);
-		}
+			if(W == 656) {
+				Image Resize640 = Resize.getScaledInstance(IconWidth,IconHeight, java.awt.Image.SCALE_SMOOTH);
+				BackGround = new ImageIcon(Resize640);
+				ImageLabel.setIcon(BackGround);
+				ImageLabel.setVisible(true);
+				System.out.println("resizing for 640 ");
+				this.setHeight(BackGround.getIconHeight());
+				this.setWidth(BackGround.getIconWidth());	
+			}
+			if(W == 1296) {
+				Image Resize1280 = Resize.getScaledInstance(this.ScalingWidth(IconWidth), this.ScalingHeight(IconHeight), java.awt.Image.SCALE_SMOOTH);
+				BackGround = new ImageIcon(Resize1280);
+				ImageLabel.setIcon(BackGround);
+				ImageLabel.setVisible(true);
+				System.out.println("resizing for 1280 ");
+				this.setHeight(BackGround.getIconHeight());
+				this.setWidth(BackGround.getIconWidth());
+			}
+			if(W == 1936) {
+				Image Resize1920 = Resize.getScaledInstance(this.ScalingWidth(IconWidth), this.ScalingHeight(IconHeight), java.awt.Image.SCALE_SMOOTH);
+				BackGround = new ImageIcon(Resize1920);
+				ImageLabel.setIcon(BackGround);
+				ImageLabel.setVisible(true);
+				System.out.println("resizing for 1920 ");
+				this.setHeight(BackGround.getIconHeight());
+				this.setWidth(BackGround.getIconWidth());
+				
+				System.out.println("building Icon ");
+				ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
+				Icon.add(ImageLabel);
+				Icon.setBounds(0,0,W,H);
+				Icon.setLayout(null);
+				Icon.setVisible(Visible);
+			}
 
+	}
+		public int getIconWidth() {
+			return IconWidth;
+		}
+		public int getIconHeight() {
+			return IconHeight;
+		}
+		public boolean Visibility() {
+			return Visible;
+		}
+		public void setVisibility(boolean visible) {
+			Visible = visible;
+		}
 		public JLabel getIcon() {
 			return Icon;
+		}
+		public void setImage(int DesiredImage) {
+			VisibleIconImage = ImageLocation[DesiredImage];
+		}
+		public String getImage() {
+			return VisibleIconImage;
 		}
 		public void setHeight(int height) {
 			Height = height;
@@ -67,14 +122,7 @@ public class ItemIcons {
 			Calc = (int)Math.floor(Temp);
 			return Calc;
 		}
-		public  void setSpecificIconVisible(int SpecificInvIcon, boolean Visible) {
-			ImageLabel[SpecificInvIcon].setVisible(Visible);
-		}
-		public void setAllIconsVisibility(boolean Visible) {
-			for(int i = 0; i > NumberOfIcons - 1; i++ ) {
-				ImageLabel[i].setVisible(Visible);
-			}
-		}
+	
 		public void ImageLocationPopulator() {
 			ImageLocation[0]  = "C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\Ammo.png";
 			ImageLocation[1]  = "C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\Book.png";
@@ -92,62 +140,8 @@ public class ItemIcons {
 			ImageLocation[13] = "C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\Medicine.png";
 			ImageLocation[14] = "C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\Revolver.png";
 			ImageLocation[15] = "C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\SaltBag.png";
-				
-			for(int i = 0; i > NumberOfIcons - 1; i++ ) {
-					INVIcon[i] = new ImageIcon(ImageLocation[i]);
-				}
+							   
 		}
-		public void scalingImages(int W) {
-					
-			for(int i = 0; i > NumberOfIcons - 1; i++) {				
-
-					Image Resize = INVIcon[i].getImage();
-					if(W == 656) {
-				
-					Image Resize640 = Resize.getScaledInstance(this.ScalingWidth(this.getWidth()), this.ScalingHeight(this.getHeight()), java.awt.Image.SCALE_SMOOTH);
-					INVIcon[i] = new ImageIcon(Resize640);
-					ImageLabel[i].setIcon(INVIcon[i]);
-					ImageLabel[i].setVisible(true);
-					System.out.println("resizing to 640 ");
-					this.setHeight(INVIcon[i].getIconHeight());
-					this.setWidth(INVIcon[i].getIconWidth());
-					
-					ImageLabel[i].setBounds(0,0,INVIcon[i].getIconWidth(),INVIcon[i].getIconHeight());
-					Icon.add(ImageLabel[i]);
-				}
-			
-				if(W == 1296) {
-					
-					Image Resize1280 = Resize.getScaledInstance(this.ScalingWidth(this.getWidth()), this.ScalingHeight(this.getHeight()), java.awt.Image.SCALE_SMOOTH);
-					INVIcon[i] = new ImageIcon(Resize1280);
-					ImageLabel[i].setIcon(INVIcon[i]);
-					ImageLabel[i].setVisible(true);
-					System.out.println("resizing to 640 ");
-					this.setHeight(INVIcon[i].getIconHeight());
-					this.setWidth(INVIcon[i].getIconWidth());
-					
-					ImageLabel[i].setBounds(0,0,INVIcon[i].getIconWidth(),INVIcon[i].getIconHeight());
-					Icon.add(ImageLabel[i]);
-				}
-				
-				if(W == 1936) {
-					
-					Image Resize1920 = Resize.getScaledInstance(this.ScalingWidth(this.getWidth()), this.ScalingHeight(this.getHeight()), java.awt.Image.SCALE_SMOOTH);
-					INVIcon[i] = new ImageIcon(Resize1920);
-					ImageLabel[i].setIcon(INVIcon[i]);
-					ImageLabel[i].setVisible(true);
-					System.out.println("resizing to 640 ");
-					this.setHeight(INVIcon[i].getIconHeight());
-					this.setWidth(INVIcon[i].getIconWidth());
-					
-					ImageLabel[i].setBounds(0,0,INVIcon[i].getIconWidth(),INVIcon[i].getIconHeight());
-					Icon.add(ImageLabel[i]);
-				}
-			}
-
-		}
-	}
-
-
+}
 
 
