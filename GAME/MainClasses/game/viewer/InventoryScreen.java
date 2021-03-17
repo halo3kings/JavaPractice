@@ -45,11 +45,18 @@ public class InventoryScreen {
 	private int Height;
 	private int Width;
 	
-	public int ItemIconX[] = {60,70,80,90,100,110,120};
-	public int ItemIconY = 60;
+	public int centerItemIconX = 238;
+	public int CenterItemIconY = 73;
+	
+	public int ItemIconX[] = {25,100,175, centerItemIconX ,355,430,505};
+	public int ItemIconY[] = {CenterItemIconY,105};
+	
+	public int[] ItemIconType = new int[16];
+
 	
 	InventoryScreen(int W, int H) {
 		//this.toggleButtonStateFinal();
+		this.populateItemIconTypeArray();
 		
 		if(W == 656) {
 			Image Resize640 = Resize.getScaledInstance(640, 480, java.awt.Image.SCALE_SMOOTH);
@@ -98,10 +105,10 @@ public class InventoryScreen {
 		return LeftArrow;
 	}
 	public JButton getRightArrow() {
-		return LeftArrow;
+		return RightArrow;
 	}
 	public JButton getItemSelected() {
-		return LeftArrow;
+		return ItemSelected;
 	}
 	public JButton getExit() {
 		return exit;
@@ -187,6 +194,46 @@ public class InventoryScreen {
 		this.setFocusable(false);
 		this.setVisible(true);
 	}
+	public void populateItemIconTypeArray() {
+		for(int i = 0; i <=  ItemIconType.length-1; i++) {
+			ItemIconType[i] = i + 1;
+			System.out.println(ItemIconType[i]);
+		}
+		System.out.println("ItemIconTypeArray finished Populating");
+	}
+	public void shiftIconsRight() {
+		int temp;
+		int[] tempA = new int[16];
+		
+		for(int i = 0; i<= ItemIconType.length-1;i++) {
+			tempA[i] = ItemIconType[i];
+			System.out.println(ItemIconType[i]);
+		}
+		System.out.println("Array Copied");
+		
+		temp = ItemIconType[ItemIconType.length - 1];
+		tempA[0] = temp;
+		for(int i = 1; i<= ItemIconType.length- 1;i++) {
+			tempA[i] = ItemIconType[i-1];
+		}
+		System.out.println("Array shifted");
+		
+		for(int i = 0; i<= ItemIconType.length-1;i++) {
+			ItemIconType[i] = tempA[i]; 
+			System.out.println(ItemIconType[i]);
+			slot0.Update(ItemIconType[i]);
+			slot1.Update(ItemIconType[i]);
+			slot2.Update(ItemIconType[i]);
+			slot3.Update(ItemIconType[i]);
+			slot4.Update(ItemIconType[i]);
+			slot5.Update(ItemIconType[i]);
+			slot6.Update(ItemIconType[i]);
+			
+		}
+	
+
+		
+	}
 	public void AddingElementsToLayer(int W, int H) {
 		
 	InventoryScreen.add(LeftArrow,Integer.valueOf(2));
@@ -229,32 +276,32 @@ public class InventoryScreen {
 		back.setBorderPainted(BorderPainted);
 		back.setFocusable(Focusable);
 		
-	slot0 = new ItemIcons(W,H,1);
+	slot0 = new ItemIcons(W,H,ItemIconType[0],false);
+		slot0.getIcon().setLocation(this.ScalingWidth(ItemIconX[0]),this.ScalingHeight(ItemIconY[1]));
 		InventoryScreen.add(slot0.getIcon(),Integer.valueOf(4));
-		slot0.getIcon().setBounds(this.ScalingWidth(ItemIconX[0]),this.ScalingHeight(ItemIconY),this.ScalingWidth(slot0.getIconWidth()),this.ScalingHeight(slot0.getIconHeight()));
 		
-	slot1 = new ItemIcons(W,H,1);
-		slot1.getIcon().setLocation(this.ScalingWidth(ItemIconX[1]),this.ScalingHeight(ItemIconY));
+	slot1 = new ItemIcons(W,H,ItemIconType[1],false);
+		slot1.getIcon().setLocation(this.ScalingWidth(ItemIconX[1]),this.ScalingHeight(ItemIconY[1]));
 		InventoryScreen.add(slot1.getIcon(),Integer.valueOf(5));
 		
-	slot2 = new ItemIcons(W,H,1);
-		slot2.getIcon().setLocation(this.ScalingWidth(ItemIconX[2]),this.ScalingHeight(ItemIconY));
+	slot2 = new ItemIcons(W,H,ItemIconType[2],false);
+		slot2.getIcon().setLocation(this.ScalingWidth(ItemIconX[2]),this.ScalingHeight(ItemIconY[1]));
 		InventoryScreen.add(slot2.getIcon(),Integer.valueOf(3));
 		
-	slot3 = new ItemIcons(W,H,1);
-		slot3.getIcon().setLocation(this.ScalingWidth(ItemIconX[3]),this.ScalingHeight(ItemIconY));
+	slot3 = new ItemIcons(W,H,ItemIconType[3],true);
+		slot3.getIcon().setLocation(this.ScalingWidth(ItemIconX[3]),this.ScalingHeight(ItemIconY[0]));
 		InventoryScreen.add(slot3.getIcon(),Integer.valueOf(2));
 		
-	slot4 = new ItemIcons(W,H,1);
-		slot4.getIcon().setLocation(this.ScalingWidth(ItemIconX[4]),this.ScalingHeight(ItemIconY));
+	slot4 = new ItemIcons(W,H,ItemIconType[4],false);
+		slot4.getIcon().setLocation(this.ScalingWidth(ItemIconX[4]),this.ScalingHeight(ItemIconY[1]));
 		InventoryScreen.add(slot4.getIcon(),Integer.valueOf(1));
 		
-	slot5 = new ItemIcons(W,H,1);
-		slot5.getIcon().setLocation(this.ScalingWidth(ItemIconX[5]),this.ScalingHeight(ItemIconY));
+	slot5 = new ItemIcons(W,H,ItemIconType[5],false);
+		slot5.getIcon().setLocation(this.ScalingWidth(ItemIconX[5]),this.ScalingHeight(ItemIconY[1]));
 		InventoryScreen.add(slot5.getIcon(),Integer.valueOf(0));
 		
-	slot6 = new ItemIcons(W,H,1);
-		slot6.getIcon().setLocation(this.ScalingWidth(ItemIconX[6]),this.ScalingHeight(ItemIconY));
+	slot6 = new ItemIcons(W,H,ItemIconType[6],false);
+		slot6.getIcon().setLocation(this.ScalingWidth(ItemIconX[6]),this.ScalingHeight(ItemIconY[1]));
 		InventoryScreen.add(slot6.getIcon(),Integer.valueOf(6));
 	}
 	

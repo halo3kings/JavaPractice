@@ -150,6 +150,16 @@ public class MainMenuScreen{
 			LoadScreenLoadButton.setFocusable(Focusable);
 			LoadScreenLoadButton.setFont(new Font("Cambria",Font.PLAIN,30));
 			LoadScreenLoadButton.setForeground(Color.WHITE);
+			
+		MainMenu.add(Quit);
+			Quit.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
+			Quit.setVisible(Visible);
+			Quit.setOpaque(Opaque);
+			Quit.setContentAreaFilled(AreaFilled);
+			Quit.setBorderPainted(BorderPainted);
+			Quit.setFocusable(Focusable);
+			Quit.setFont(new Font("Cambria",Font.PLAIN,30));
+			Quit.setForeground(Color.WHITE);
 		}
 		if(W == 1936) {
 			Image Resize1920 = Resize.getScaledInstance(1920, 1080, java.awt.Image.SCALE_SMOOTH);
@@ -199,7 +209,16 @@ public class MainMenuScreen{
 			LoadScreenLoadButton.setFocusable(Focusable);
 			LoadScreenLoadButton.setFont(new Font("Cambria",Font.PLAIN,30));
 			LoadScreenLoadButton.setForeground(Color.WHITE);
-			
+		
+		MainMenu.add(Quit);
+			Quit.setBounds(this.ScalingWidth(BDS4.getX()), this.ScalingHeight(BDS4.getY()), this.ScalingWidth(BDS4.getWidth()), this.ScalingHeight(BDS4.getHeight()));
+			Quit.setVisible(Visible);
+			Quit.setOpaque(Opaque);
+			Quit.setContentAreaFilled(AreaFilled);
+			Quit.setBorderPainted(BorderPainted);
+			Quit.setFocusable(Focusable);
+			Quit.setFont(new Font("Cambria",Font.PLAIN,30));
+			Quit.setForeground(Color.WHITE);	
 		}
 
 		System.out.println("building front porch ");

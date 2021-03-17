@@ -8,10 +8,13 @@ import javax.swing.JLayer;
 import javax.swing.JLayeredPane;
 
 public class ItemIcons {
-	public int numberOfInvIcons = 16;
-	public int IconWidth = 80;
-	public int IconHeight = 168;
+	public int numberOfInvIcons = 17;
+	public int IconWidth = 110;
+	public int IconHeight = 130;
+	public int centerIconWidth = 165;
+	public int centerIconHeight = 190;
 	public boolean Visible = true;
+	public boolean centerIcon = false;
 	private int Height;
 	private int Width;
 	private String VisibleIconImage;
@@ -22,49 +25,80 @@ public class ItemIcons {
 	
 	ImageIcon BackGround;
 	
-	ItemIcons(int W, int H,int SetImage) {
+	ItemIcons(int W, int H,int SetImage,boolean centerI) {
 		this.ImageLocationPopulator();
 		this.setImage(SetImage);
+		this.setWidth(W);
+		this.setHeight(H);
+		this.setCenterIcon(centerI);
+		this.drawingAndScalingIcons();
+	}
+		
+	public void drawingAndScalingIcons() {
 		BackGround = new ImageIcon(this.getImage());
 		Image Resize = BackGround.getImage();
 			
 		
-			if(W == 656) {
-				Image Resize640 = Resize.getScaledInstance(IconWidth,IconHeight, java.awt.Image.SCALE_SMOOTH);
-				BackGround = new ImageIcon(Resize640);
+			if(this.getWidth() == 656) {
+				if(centerIcon == true) {
+					Image Resize640 = Resize.getScaledInstance(centerIconWidth,centerIconHeight, java.awt.Image.SCALE_SMOOTH);
+					BackGround = new ImageIcon(Resize640);
+				}
+				if(centerIcon == false) {
+					Image Resize640 = Resize.getScaledInstance(IconWidth,IconHeight, java.awt.Image.SCALE_SMOOTH);
+					BackGround = new ImageIcon(Resize640);
+				}
+
 				ImageLabel.setIcon(BackGround);
 				ImageLabel.setVisible(true);
 				System.out.println("resizing for 640 ");
 				this.setHeight(BackGround.getIconHeight());
 				this.setWidth(BackGround.getIconWidth());	
 			}
-			if(W == 1296) {
-				Image Resize1280 = Resize.getScaledInstance(this.ScalingWidth(IconWidth), this.ScalingHeight(IconHeight), java.awt.Image.SCALE_SMOOTH);
-				BackGround = new ImageIcon(Resize1280);
+			if(this.getWidth() == 1296) {
+				if(centerIcon == true) {
+					Image Resize1280 = Resize.getScaledInstance(this.ScalingWidth(centerIconWidth), this.ScalingHeight(centerIconHeight), java.awt.Image.SCALE_SMOOTH);
+				}
+				if(centerIcon == false) {
+					Image Resize1280 = Resize.getScaledInstance(this.ScalingWidth(IconWidth), this.ScalingHeight(IconHeight), java.awt.Image.SCALE_SMOOTH);
+					BackGround = new ImageIcon(Resize1280);
+				}
 				ImageLabel.setIcon(BackGround);
 				ImageLabel.setVisible(true);
 				System.out.println("resizing for 1280 ");
 				this.setHeight(BackGround.getIconHeight());
 				this.setWidth(BackGround.getIconWidth());
 			}
-			if(W == 1936) {
-				Image Resize1920 = Resize.getScaledInstance(this.ScalingWidth(IconWidth), this.ScalingHeight(IconHeight), java.awt.Image.SCALE_SMOOTH);
-				BackGround = new ImageIcon(Resize1920);
+			if(this.getWidth() == 1936) {
+				if(centerIcon == true) {
+					Image Resize1920 = Resize.getScaledInstance(this.ScalingWidth(centerIconWidth), this.ScalingHeight(centerIconHeight), java.awt.Image.SCALE_SMOOTH);
+				}
+				if(centerIcon == false) {
+					Image Resize1920 = Resize.getScaledInstance(this.ScalingWidth(IconWidth), this.ScalingHeight(IconHeight), java.awt.Image.SCALE_SMOOTH);
+					BackGround = new ImageIcon(Resize1920);
+				}
 				ImageLabel.setIcon(BackGround);
 				ImageLabel.setVisible(true);
 				System.out.println("resizing for 1920 ");
 				this.setHeight(BackGround.getIconHeight());
 				this.setWidth(BackGround.getIconWidth());
-				
+			}
 				System.out.println("building Icon ");
 				ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
 				Icon.add(ImageLabel);
-				Icon.setBounds(0,0,W,H);
+				Icon.setBounds(0,0,this.getWidth(),this.getHeight());
 				Icon.setLayout(null);
 				Icon.setVisible(Visible);
-			}
+			
 
 	}
+		public void Update(int SetImage) {
+			this.setImage(SetImage);
+			this.drawingAndScalingIcons();
+		}
+		public void setCenterIcon(boolean centerI) {
+			centerIcon = centerI;
+		}
 		public int getIconWidth() {
 			return IconWidth;
 		}

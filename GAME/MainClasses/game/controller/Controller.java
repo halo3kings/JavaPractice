@@ -687,7 +687,9 @@ public class Controller{
 		
 	}
 	public void InventoryButtons_RightArrow() {
-		
+		VIEW.getInventoryScreen().shiftIconsRight();
+		System.out.println("Right arrow pressed");
+
 	}
 	public void InventoryButtons_ItemSelected() {
 		
