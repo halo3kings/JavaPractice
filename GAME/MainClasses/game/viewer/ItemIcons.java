@@ -32,6 +32,13 @@ public class ItemIcons {
 		this.setHeight(H);
 		this.setCenterIcon(centerI);
 		this.drawingAndScalingIcons();
+		
+		System.out.println("building Icon ");
+		ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
+		Icon.add(ImageLabel);
+		Icon.setBounds(0,0,this.getWidth(),this.getHeight());
+		Icon.setLayout(null);
+		Icon.setVisible(Visible);
 	}
 		
 	public void drawingAndScalingIcons() {
@@ -83,16 +90,15 @@ public class ItemIcons {
 				this.setHeight(BackGround.getIconHeight());
 				this.setWidth(BackGround.getIconWidth());
 			}
-				System.out.println("building Icon ");
-				ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
-				Icon.add(ImageLabel);
-				Icon.setBounds(0,0,this.getWidth(),this.getHeight());
-				Icon.setLayout(null);
-				Icon.setVisible(Visible);
 			
 
 	}
-		public void Update(int SetImage) {
+		public void Update(int W, int H,int SetImage,boolean centerI) {
+			this.setImage(SetImage);
+			this.setWidth(W);
+			this.setHeight(H);
+			this.setCenterIcon(centerI);
+			this.drawingAndScalingIcons();
 			this.setImage(SetImage);
 			this.drawingAndScalingIcons();
 		}
