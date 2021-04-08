@@ -684,7 +684,8 @@ public class Controller{
 	
 	//---Inventory Buttons
 	public void InventoryButtons_LeftArrow() {
-		
+		VIEW.getInventoryScreen().shiftIconsLeft();
+		System.out.println("Right arrow pressed");
 	}
 	public void InventoryButtons_RightArrow() {
 		VIEW.getInventoryScreen().shiftIconsRight();
@@ -703,13 +704,15 @@ public class Controller{
 	public void InventoryButtons_Back() {
 		VIEW.InventoryScreen(false);
 		VIEW.PlayerHud(true);
+		VIEW.openASpecificPane(MODEL.getCurrentRoom());
 		System.out.println("Closing Inventory");
-		//VIEW.openASpecificPane(MODEL.getCurrentRoom());
+		
 	}
 	
 	//-()-Player Hud Buttons
 	public void PlayerHudButton_Inventory() {
 		System.out.println("Opening Inventory");
+		VIEW.closeCurrentPane(MODEL.getCurrentRoom());
 		VIEW.InventoryScreen(true);
 		VIEW.PlayerHud(false);
 	}

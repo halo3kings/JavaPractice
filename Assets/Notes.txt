@@ -1,0 +1,1 @@
+Memory leak with how the inventory icons are drawn when moving them to the left.

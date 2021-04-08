@@ -259,9 +259,50 @@ public class InventoryScreen {
 			
 		slot6.Update(this.getW(),this.getH(),ItemIconType[7],false);
 			slot6.getIcon().setLocation(this.ScalingWidth(ItemIconX[6]),this.ScalingHeight(ItemIconY[1]));
-			
-
+	}
+	public void shiftIconsLeft() {
+		int temp;
+		int[] tempA = new int[16];
 		
+		for(int i = 0; i<= ItemIconType.length-1;i++) {
+			tempA[i] = ItemIconType[i];
+			System.out.println(ItemIconType[i]);
+		}
+		System.out.println("Array Copied");
+		
+		temp = ItemIconType[0];
+		tempA[ItemIconType.length - 1] = temp;
+		for(int i = 0; i<= ItemIconType.length-2;i++) {
+			System.out.println("Test, Iteration: "+i);
+			tempA[i] = ItemIconType[i+1];
+		}
+		System.out.println("Array shifted");
+		
+		for(int i = 0; i<= ItemIconType.length-1;i++) {
+			ItemIconType[i] = tempA[i]; 
+			System.out.println(ItemIconType[i]);
+					
+		}
+		slot0.Update(this.getW(),this.getH(),ItemIconType[1],false);
+			slot0.getIcon().setLocation(this.ScalingWidth(ItemIconX[0]),this.ScalingHeight(ItemIconY[1]));
+			
+		slot1.Update(this.getW(),this.getH(),ItemIconType[2],false);
+			slot1.getIcon().setLocation(this.ScalingWidth(ItemIconX[1]),this.ScalingHeight(ItemIconY[1]));
+			
+		slot2.Update(this.getW(),this.getH(),ItemIconType[3],false);
+			slot2.getIcon().setLocation(this.ScalingWidth(ItemIconX[2]),this.ScalingHeight(ItemIconY[1]));
+			
+		slot3.Update(this.getW(),this.getH(),ItemIconType[4],true);
+			slot3.getIcon().setLocation(this.ScalingWidth(ItemIconX[3]),this.ScalingHeight(ItemIconY[0]));
+			
+		slot4.Update(this.getW(),this.getH(),ItemIconType[5],false);
+			slot4.getIcon().setLocation(this.ScalingWidth(ItemIconX[4]),this.ScalingHeight(ItemIconY[1]));
+			
+		slot5.Update(this.getW(),this.getH(),ItemIconType[6],false);
+			slot5.getIcon().setLocation(this.ScalingWidth(ItemIconX[5]),this.ScalingHeight(ItemIconY[1]));
+			
+		slot6.Update(this.getW(),this.getH(),ItemIconType[7],false);
+			slot6.getIcon().setLocation(this.ScalingWidth(ItemIconX[6]),this.ScalingHeight(ItemIconY[1]));
 	}
 	public void AddingElementsToLayer(int W, int H) {
 		

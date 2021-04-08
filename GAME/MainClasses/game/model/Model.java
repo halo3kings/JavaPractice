@@ -1,6 +1,10 @@
 package game.model;
 
 public class Model {
+	
+	RoomPop RP = new RoomPop(10);
+	Player PLAYER = new Player();
+	
 	private int GameW;
 	private int GameH;
 	

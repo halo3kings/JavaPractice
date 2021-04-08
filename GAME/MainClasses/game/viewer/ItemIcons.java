@@ -21,12 +21,13 @@ public class ItemIcons {
 	public String ImageLocation[] = new String[numberOfInvIcons];
 	
 	JLabel Icon = new JLabel();
-	JLabel ImageLabel = new JLabel();
+	JLabel[] ImageLabel = new JLabel[numberOfInvIcons];
 	
-	ImageIcon BackGround;
+	ImageIcon BackGround = new ImageIcon();
 	
 	ItemIcons(int W, int H,int SetImage,boolean centerI) {
 		this.ImageLocationPopulator();
+		this.InitializingImageLabel();
 		this.setImage(SetImage);
 		this.setWidth(W);
 		this.setHeight(H);
@@ -34,16 +35,15 @@ public class ItemIcons {
 		this.drawingAndScalingIcons();
 		
 		System.out.println("building Icon ");
-		ImageLabel.setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
-		Icon.add(ImageLabel);
 		Icon.setBounds(0,0,this.getWidth(),this.getHeight());
 		Icon.setLayout(null);
 		Icon.setVisible(Visible);
 	}
 		
 	public void drawingAndScalingIcons() {
-		BackGround = new ImageIcon(this.getImage());
-		Image Resize = BackGround.getImage();
+		for(int i = 0; i< ImageLocation.length-1;i++) {
+			BackGround = new ImageIcon(ImageLocation[i]);
+			Image Resize = BackGround.getImage();
 			
 		
 			if(this.getWidth() == 656) {
@@ -56,11 +56,13 @@ public class ItemIcons {
 					BackGround = new ImageIcon(Resize640);
 				}
 
-				ImageLabel.setIcon(BackGround);
-				ImageLabel.setVisible(true);
+				ImageLabel[i].setIcon(BackGround);
+				ImageLabel[i].setVisible(true);
 				System.out.println("resizing for 640 ");
 				this.setHeight(BackGround.getIconHeight());
 				this.setWidth(BackGround.getIconWidth());	
+				ImageLabel[i].setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
+				Icon.add(ImageLabel[i]);
 			}
 			if(this.getWidth() == 1296) {
 				if(centerIcon == true) {
@@ -70,11 +72,13 @@ public class ItemIcons {
 					Image Resize1280 = Resize.getScaledInstance(this.ScalingWidth(IconWidth), this.ScalingHeight(IconHeight), java.awt.Image.SCALE_SMOOTH);
 					BackGround = new ImageIcon(Resize1280);
 				}
-				ImageLabel.setIcon(BackGround);
-				ImageLabel.setVisible(true);
+				ImageLabel[i].setIcon(BackGround);
+				ImageLabel[i].setVisible(true);
 				System.out.println("resizing for 1280 ");
 				this.setHeight(BackGround.getIconHeight());
 				this.setWidth(BackGround.getIconWidth());
+				ImageLabel[i].setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
+				Icon.add(ImageLabel[i]);
 			}
 			if(this.getWidth() == 1936) {
 				if(centerIcon == true) {
@@ -84,15 +88,24 @@ public class ItemIcons {
 					Image Resize1920 = Resize.getScaledInstance(this.ScalingWidth(IconWidth), this.ScalingHeight(IconHeight), java.awt.Image.SCALE_SMOOTH);
 					BackGround = new ImageIcon(Resize1920);
 				}
-				ImageLabel.setIcon(BackGround);
-				ImageLabel.setVisible(true);
+				ImageLabel[i].setIcon(BackGround);
+				ImageLabel[i].setVisible(true);
 				System.out.println("resizing for 1920 ");
 				this.setHeight(BackGround.getIconHeight());
 				this.setWidth(BackGround.getIconWidth());
+				ImageLabel[i].setBounds(0,0,BackGround.getIconWidth(),BackGround.getIconHeight());
+				Icon.add(ImageLabel[i]);
 			}
+			
+		}
 			
 
 	}
+		public void InitializingImageLabel() {
+			for(int i = 0; i <= ImageLabel.length -1; i++) {
+				ImageLabel[i] = new JLabel();
+			}
+		}
 		public void Update(int W, int H,int SetImage,boolean centerI) {
 			this.setImage(SetImage);
 			this.setWidth(W);
@@ -164,7 +177,7 @@ public class ItemIcons {
 		}
 	
 		public void ImageLocationPopulator() {
-			ImageLocation[0]  = "C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\Ammo.png";
+			ImageLocation[0]  = ("C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\Ammo.png");
 			ImageLocation[1]  = "C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\Book.png";
 			ImageLocation[2]  = "C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\FingerGuns.png";
 			ImageLocation[3]  = "C:\\Users\\austi\\OneDrive\\Desktop\\Programming stuff\\JavaPractice\\Assets\\GameUI\\Inventory\\Inventory Screen\\Inventory icons\\FlashLight.png";

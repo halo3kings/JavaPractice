@@ -20,6 +20,7 @@ public class OLDControllerOLD {
 	double Rando = Math.round((Math.random() * 1));
 	boolean ENDGAME;
 	
+	
 	public void getInputResponse() {
 		//help,Status,Grab,inventory,search,quit,use,attack,go
 		userInput = keyboard.next();
